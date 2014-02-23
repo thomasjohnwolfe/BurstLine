@@ -1,0 +1,29 @@
+notes
+///
+
+git help <command>
+git status
+git init
+git add
+git commit -m <message>
+ls -laxo
+
+git diff //compares workign and staging areas
+git diff --cached //compares staged that will go into next commit
+
+creat .gitignore file
+# a comment - this is ignored
+# no .a files
+*.a
+# but do track lib.a, even though you're ignoring .a files above
+!lib.a
+# only ignore the root TODO file, not subdir/TODO
+/TODO
+# ignore all files in the build/ directory
+build/
+# ignore doc/notes.txt, but not doc/server/arch.txt
+doc/*.txt
+# ignore all .txt files in the doc/ directory
+doc/**/*.txt
+
+see http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository
