@@ -6,7 +6,8 @@ git status
 git init
 git add
 git commit -m <message>
-git commit -a adds all files without using git add
+git commit -a adds all files without using git add (skips staging area)
+
 git commit VIM
 enter your message following the presented guidelines
 press Esc to make sure you are out of the insert mode
