@@ -6,10 +6,16 @@ git status
 git init
 git add
 git commit -m <message>
+
+git commit VIM
+enter your message following the presented guidelines
+press Esc to make sure you are out of the insert mode
+then type :wqEnter or ZZ.
+
 ls -laxo
 
-git diff //compares workign and staging areas
-git diff --cached //compares staged that will go into next commit
+git diff //compares workign and staging areas (only unstaged)
+git diff --cached //compares all staged that will go into next commit
 
 creat .gitignore file
 # a comment - this is ignored
