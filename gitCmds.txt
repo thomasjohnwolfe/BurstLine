@@ -18,6 +18,13 @@ enter your message following the presented guidelines
 press Esc to make sure you are out of the insert mode
 then type :wqEnter or ZZ.
 
+ equivalent to running something like this:
+
+ git mv file_name file_newName //renames files
+$ mv README.txt README
+$ git rm README.txt
+$ git add README
+
 ls -laxo
 
 git diff //compares workign and staging areas (only unstaged)
