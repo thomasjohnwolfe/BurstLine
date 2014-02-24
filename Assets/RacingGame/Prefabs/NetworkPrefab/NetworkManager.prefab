@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
+  - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -35,12 +36,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6e48a12686c8914daf3576904d512ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 32d0e0d3889749240b868d557a1d79b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnLocation: {fileID: 0}
-  carPrefab: {fileID: 100082, guid: 53160d63021feca48abdcb50fc64e226, type: 2}
+  connectionIP: 127.0.0.1
+  connectionPort: 25001
+  thing: {fileID: 100082, guid: 53160d63021feca48abdcb50fc64e226, type: 2}
   camera: {fileID: 100000, guid: 3e10c92b3c741a6489b95480128a8b46, type: 2}
+  myCar: {fileID: 0}
+  players: 0
+  player: 0
+--- !u!148 &14800000
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_StateSynchronization: 0
+  m_Observed: {fileID: 400000}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

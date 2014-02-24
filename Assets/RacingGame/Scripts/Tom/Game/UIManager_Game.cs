@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 //THIS SCRIPT TAKES CAR OF IN GAME UI
 //CALLING THE INIT() FUNCTION AFTER SPAWNING A CAR SHOULD TAKE CARE OF EVERYTHING
+//  Add "OtherPlayer" tags to objects will create minimap graphics at their location 
+
 class UIManager_Game : MonoBehaviour
 	{
 
+	Dictionary<GameObject,GameObject> OtherPlayersMiniMapLoc; //<player,minimapSprite>
 
 	//sprites
 	private static UISprite speedometer,boostMeter,shield,critLight,MapBG;
@@ -41,8 +45,31 @@ class UIManager_Game : MonoBehaviour
 	public Transform boundaryL,boundaryR,boundaryT,boundaryB;
 	Transform PlayerGlobalTransform;
 	private Vector2 mapDimensions;
+	private Transform miniMapBoundries;
 
-	//void Start(){}
+	public GameObject MiniMapSprite;
+
+	void Start()
+	{
+		OtherPlayersMiniMapLoc = new Dictionary<GameObject, GameObject> ();
+		InvokeRepeating ("FindOtherPlayers", 1f, 10f);
+		miniMapBoundries = GameObject.Find ("MiniMapBoundaries").transform;
+	}
+
+	private void FindOtherPlayers()
+	{
+		GameObject[] t = GameObject.FindGameObjectsWithTag ("OtherPlayer");
+		foreach (GameObject found in t)
+		{
+			if(!OtherPlayersMiniMapLoc.ContainsKey(found))
+			{
+				OtherPlayersMiniMapLoc.Add(found,CreatePlayersMiniMapSprite(found));
+				print ("found player, adding minimapSprite" + OtherPlayersMiniMapLoc[found].name);
+
+			}
+		}
+	}
+
 
 	//public method to be called when your local car is spawned
 	public void Init()
@@ -84,9 +111,33 @@ class UIManager_Game : MonoBehaviour
 		carSpawned = true;
 	}
 
+	GameObject CreatePlayersMiniMapSprite(GameObject t)
+	{
+		GameObject g= Instantiate(Resources.Load("MiniMap_OtherPlayer")) as GameObject;
+		g.transform.parent = GameObject.Find ("MapBG").transform;
+		g.transform.localScale = GameObject.Find ("PlayerLoc").transform.localScale;
+		g.transform.localRotation = GameObject.Find ("PlayerLoc").transform.localRotation;
+		g.transform.localPosition = GameObject.Find ("PlayerLoc").transform.localPosition;
+		return g;
+
+	}
+
+	void SetPlayersMiniMapLoc()
+	{
+		foreach (KeyValuePair<GameObject,GameObject> kvp in OtherPlayersMiniMapLoc)
+		{
+			kvp.Value.transform.localPosition = GlobalPosToMiniMap( MiniMapPosition(kvp.Key.transform)    );
+		}
+	}
+
+	Vector3 GlobalPosToMiniMap(Vector3 pos)
+	{
+		return new Vector3 (pos.x * MapBG.width, pos.y * MapBG.height - MapBG.height, 0);
+	}
+
 	public Vector3 MiniMapLoc
 	{
-		set {PlayerLocT.localPosition = new Vector3(value.x*MapBG.width,value.y*MapBG.height - MapBG.height,0) ;}
+		set {PlayerLocT.localPosition = GlobalPosToMiniMap(value) ;}
 		get {return new Vector3 (PlayerLocT.localPosition.x/MapBG.width,PlayerLocT.localPosition.y/MapBG.height,0);}
 	}
 
@@ -222,13 +273,21 @@ class UIManager_Game : MonoBehaviour
 		{
 			//Init ();
 			RunInspectorTestValues();
-			MiniMapLoc = MiniMapPosition();
+			UpdatePlayersMiniMap();
 		}
+		SetPlayersMiniMapLoc ();
 	}
 
-	public Vector3 MiniMapPosition()
+	void UpdatePlayersMiniMap()
 	{
-		return new Vector3((PlayerGlobalTransform.position.x - boundaryL.position.x)/mapDimensions.x,(PlayerGlobalTransform.position.z - boundaryB.position.z)/mapDimensions.y,0);
+		MiniMapLoc = MiniMapPosition(PlayerGlobalTransform);
+		//miniMapBoundries.position = new Vector3(PlayerGlobalTransform.position.x,miniMapBoundries.position.y,PlayerGlobalTransform.position.z);
+
+	}
+
+	public Vector3 MiniMapPosition(Transform t)
+	{
+		return new Vector3((t.position.x - boundaryL.position.x)/mapDimensions.x,(t.position.z - boundaryB.position.z)/mapDimensions.y,0);
 	}
 
 	//toggles enabled display
