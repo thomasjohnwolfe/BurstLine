@@ -8,7 +8,7 @@ public class networkManager : MonoBehaviour {
 	
 	public GameObject thing;
 	public GameObject camera;
-	//public GameObject myCar;
+	private GameObject myCar;
 	
 	public int players = 0;
 	public int player = 0;
