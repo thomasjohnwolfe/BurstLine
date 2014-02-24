@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class CarRally : MonoBehaviour {
 	public const int MAXSLOT = 3; 
-	public int health;
+	public float currentHealth;
+	public float maxHealth;
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
+	bool add = false;
+	public int boost = 3;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,20 +20,46 @@ public class CarRally : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	float getHealth(){
+		if(currentHealth <= 0) return 0;
+		return currentHealth;
+	}
+
+	void dealDamage(float val){
+		currentHealth -= val;
+	}
+
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Weapon"){
+			Debug.Log ("pick up item");
+			add = false;
 			assignedWeapon();
 			Destroy(c.gameObject);
+
 		}
 	}
+
+
 	
 	void assignedWeapon(){
-		int slot;
+		int slot = -1;
 		do{
 			slot = Random.Range(0,MAXSLOT);
-		}while(weaponIsAlreadyPickUp(slot));
-		addWeapon(slot);
-		Debug.Log("pick up "+slot);
+			Debug.Log("Random number "+slot);
+			if(weaponFull()){
+				if(boost<3) {
+					boost++;
+				}
+				else {
+					break;
+				}
+			}
+		}while(weaponIsAlreadyPickUp(slot) && !add);
+		if (!weaponIsAlreadyPickUp (slot) && !add) {
+			addWeapon (slot);
+			Debug.Log ("pick up " + slot);
+		}
 	}
 	
 	void addWeapon(int num){
@@ -37,6 +67,8 @@ public class CarRally : MonoBehaviour {
 		for(int i=0;i<MAXSLOT;i++){
 			if(this.weaponslot[i] == -1){
 				this.weaponslot[i] = num;
+				add = true;
+				return;
 			}
 		}
 	}
@@ -58,4 +90,16 @@ public class CarRally : MonoBehaviour {
 		}
 		return false;
 	}
+
+	bool weaponFull(){
+		for(int i=0;i<MAXSLOT;i++){
+			if(this.weaponslot[i] == -1){
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+
 }
