@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{564CBFE1-FE7B-5B0B-7424-5F6BA279CCE9}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-Boo-Editor</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>C:/Program Files (x86)/Unity4_3/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>C:/Program Files (x86)/Unity4_3/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	</Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Livity\Editor\AssemblyInfo.boo" />
+     <Compile Include="Assets\Livity\Editor\Commands.boo" />
+     <Compile Include="Assets\Livity\Editor\KeyboardModes.boo" />
+     <Compile Include="Assets\Livity\Editor\LivityPlayground.boo" />
+     <Compile Include="Assets\Livity\Editor\Markdown.boo" />
+     <Compile Include="Assets\Livity\Editor\MarkdownMenuItems.boo" />
+     <Compile Include="Assets\Livity\Editor\Squigglies.boo" />
+     <Compile Include="Assets\Livity\Examples\Editor\LiveBooWindow.boo" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\AssetStore\NGUI\ReadMe - 3.0.9 f1.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\RacingGame\Art\Shading\TransAlphaUlit.shader" />
+     <None Include="Assets\RacingGame\Art\Shading\CullingMask.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\Blaine\Shaders\Item_Pickup_Logo.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Text (SoftClip).shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\SamplePositions.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Livity\Fonts\SourceCodePro-License.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\RacingGame\Art\Shading\UnlitAlphaSelfIllum.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\Coord.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\AssetStore\ScriptInspector2\Editor\EditorResources\SourceCodePro\LICENSE.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\RadialBlur.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Text (AlphaClip).shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\InterpolateAlongRays.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\DepthBreaks.shader" />
+     <None Include="Assets\Blaine\Shaders\Ring_Metal_Shader.shader" />
+     <None Include="Assets\AssetStore\ScriptInspector2\readme.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SSAOShader.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\Blaine\Shaders\Item_Pickup_Box.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\RacingGame\Art\Shading\AlphaMask.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Blaine\Shaders\Ring_Shader.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Other\English.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Text.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Other\French.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Shaders\Refractive.shader" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\Raymarch.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\FinalInterpolation.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\Depth.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
+     <None Include="Assets\AssetStore\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\AssetStore\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
+     <None Include="Assets\Sample Assets\Effects\Light Shafts\Shaders\ColorFilter.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Blaine\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="ShaderForge">
+ <HintPath>Assets\Blaine\Tools\ShaderForge\Editor\Code\ShaderForge.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:\Program Files (x86)\Unity4_3\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity4_3\Editor\Data\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WP8.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity4_3\Editor\Data\PlaybackEngines\WP8Support\EditorExtensions\UnityEditor.WP8.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Metro.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity4_3\Editor\Data\PlaybackEngines\MetroSupport\EditorExtensions\UnityEditor.Metro.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.BB10.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity4_3\Editor\Data\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:\Program Files (x86)\Unity4_3\Editor\Data\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.LiveCoding.Runtime">
+ <HintPath>Assets\Livity\Runtime\Livity.Features.LiveCoding.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.NRefactory">
+ <HintPath>Assets\Livity\Runtime\Editor\ICSharpCode.NRefactory.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Composition.Unity.Editor">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Composition.Unity.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Grammars">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Grammars.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Messaging.Server">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Messaging.Server.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Languages.UnityScriptProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Languages.UnityScriptProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Preferences">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Preferences.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Composition">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Composition.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.LiveCoding.UI">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.LiveCoding.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Reactive.Unity.Editor">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Reactive.Unity.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Logging.Unity">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Logging.Unity.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.LiveCoding.UnityScriptProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.LiveCoding.UnityScriptProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeWatches.UI">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeWatches.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.REPL.BooProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.REPL.BooProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeWatches.Framework">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeWatches.Framework.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeWatches.Macros">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeWatches.Macros.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Text.UI.Engine">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Text.UI.Engine.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Reactive">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Reactive.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeWatches.Runtime">
+ <HintPath>Assets\Livity\Runtime\Livity.Features.CodeWatches.Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.IO.Unity.Editor">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.IO.Unity.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeWatches.PostProcessing">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeWatches.PostProcessing.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Reactive">
+ <HintPath>Assets\Livity\Runtime\Editor\System.Reactive.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.LiveCoding.Framework">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.LiveCoding.Framework.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Logging">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Logging.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Text.UI.Editor">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Text.UI.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.LiveCoding.CSharpProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.LiveCoding.CSharpProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Languages.CSharpProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Languages.CSharpProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeInsight">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeInsight.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Languages">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Languages.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.Lang.PatternMatching">
+ <HintPath>Assets\Livity\Runtime\Editor\Boo.Lang.PatternMatching.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Languages.BooProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Languages.BooProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Macros">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Macros.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeInsight.UnityScriptProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeInsight.UnityScriptProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Text">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Text.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.ContentTypes">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.ContentTypes.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.OMeta">
+ <HintPath>Assets\Livity\Runtime\Editor\Boo.OMeta.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.IO">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.IO.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.Lang.Interpreter">
+ <HintPath>Assets\Livity\Runtime\Editor\Boo.Lang.Interpreter.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeInsight.CSharpProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeInsight.CSharpProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.LiveCoding.BooProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.LiveCoding.BooProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Messaging">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Messaging.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Features.CodeInsight.BooProvider">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Features.CodeInsight.BooProvider.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.Adt">
+ <HintPath>Assets\Livity\Runtime\Editor\Boo.Adt.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Collections">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Collections.dll</HintPath>
+ </Reference>
+ <Reference Include="Livity.Bytecode">
+ <HintPath>Assets\Livity\Runtime\Editor\Livity.Bytecode.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{417AA75F-BE82-B370-61ED-ADE287697F66}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-UnityScript.unityproj">
+      <Project>{06CCF9E9-B5E9-6D80-BABA-E3A9FFA2F399}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+	   Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

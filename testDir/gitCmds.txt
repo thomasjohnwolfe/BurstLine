@@ -1,0 +1,80 @@
+notes
+///
+gitk <-visualer for log
+git help <command>
+git status
+git init
+git add
+git commit -m <message>
+	git commit -a adds all files without using git add (skips staging area)
+$ git rm //remvoes a file
+	$ git rm --cached readme.txt //moves file from tracking (but keeps file)
+
+git reset <file>
+	or git reset //does all
+	git reset HEAD file
+	
+git checkout -- <file> //dangerous~!!
+	discards changes on file until last commit
+
+git commit VIM
+	enter your message following the presented guidelines
+	press Esc to make sure you are out of the insert mode
+	then type :wqEnter or ZZ.
+
+ 
+ git mv file_name file_newName //renames files
+	equivalent to running something like this:
+		$ mv README.txt README
+		$ git rm README.txt
+		$ git add README
+
+ls -laxo
+	lists permissions and hidden files
+
+git diff //compares workign and staging areas (only unstaged)
+	git diff --cached //compares all staged that will go into next commit
+
+creat .gitignore file
+	# a comment - this is ignored
+	# no .a files
+	*.a
+	# but do track lib.a, even though you're ignoring .a files above
+	!lib.a
+	# only ignore the root TODO file, not subdir/TODO
+	/TODO
+	# ignore all files in the build/ directory
+	build/
+	# ignore doc/notes.txt, but not doc/server/arch.txt
+	doc/*.txt
+	# ignore all .txt files in the doc/ directory
+	doc/**/*.txt
+	
+git log  //commit history
+	git log -2 -p  //shows diff in last 2
+	git log --stat //shows stats for insertions and deltions
+	git log --pretty=oneline
+	
+git commit --amend //ammends current stage to current commit
+
+REFERENCE:: http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository
+
+git remote //list of remotes
+	-v to see url
+	 git remote show [remote-name]  //rw stats
+	
+git remote add [shortname] [url]: //to add remotes
+	git remote rename [remote-name] [new-name]
+		git remote rm //rmoves a remote
+
+git fetch [shortname]//fetches data, but does not merge
+
+git pull //fetch and merges
+
+git push [remote-name] [branch-name] //push commits upstream
+
+to configure commands
+	$ git config --global alias.unstage 'reset HEAD --'
+	$ git config --global alias.last 'log -1 HEAD'
+	//external progs
+	$ git config --global alias.visual '!gitk'
