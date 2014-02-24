@@ -1957,8 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ffa7a9cda5d7e418aad74129a14b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
+  currentHealth: 1
   weapon: []
   weaponslot: 
   target: {fileID: 0}
