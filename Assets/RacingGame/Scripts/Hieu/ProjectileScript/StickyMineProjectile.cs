@@ -12,9 +12,8 @@ public class StickyMineProjectile : ProjectileScript {
 	void Update () {
 		if (networkView.isMine) {
 			if (Time.time - time > lifetime) {
-				Debug.Log("destroy");
-				Network.RemoveRPCs (networkView.viewID);
-				Network.Destroy (gameObject);
+				//Debug.Log("destroy");
+				DestroyGameObject();
 			}
 		}
 	}

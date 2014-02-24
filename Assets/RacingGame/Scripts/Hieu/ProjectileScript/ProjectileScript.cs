@@ -21,4 +21,9 @@ public class ProjectileScript : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void DestroyGameObject(){
+		Network.RemoveRPCs(this.networkView.viewID);
+		Network.Destroy(this.gameObject);
+	}
 }
