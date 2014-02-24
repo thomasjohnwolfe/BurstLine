@@ -228,7 +228,7 @@ class UIManager_Game : MonoBehaviour
 		//assign test inspector values to script
 		SpeedoMeter = speedRegular;
 		Boost =speedBoost;
-		Shield = carStats.getHealth();
+		Shield = carStats.getHealth()/100f;
 
 
 		//grab time to test timer;

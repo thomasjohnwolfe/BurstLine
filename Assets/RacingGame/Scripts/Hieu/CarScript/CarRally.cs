@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class CarRally : MonoBehaviour {
 	public const int MAXSLOT = 3;
-	[Range (0,1)]
-	public float currentHealth = 1f;
+	[Range (0,100)]
+	public float currentHealth = 100f;
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
