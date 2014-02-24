@@ -10,9 +10,11 @@ public class RushProjectile : ProjectileScript {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Time.time - time > this.lifetime){
-			this.enabled = false;
-			time = Time.time;
+		if(networkView.isMine){
+			if(Time.time - time > this.lifetime){
+				this.enabled = false;
+				time = Time.time;
+			}
 		}
 		//Debug.Log(damage);
 	}
@@ -24,8 +26,9 @@ public class RushProjectile : ProjectileScript {
 	void OnTriggerEnter(Collider c){
 		//Debug.Log(c.gameObject.layer);
 		//set the layer of the collider subfolder, not the whole car gameobject
-		if(c.gameObject!=this.owner && c.gameObject.layer == 13){
-			Debug.Log(this.owner+" deal "+damage+" to "+c.gameObject.name);
+		if(c.gameObject.tag == "OtherPlayer"){
+			c.gameObject.GetComponent<CarRally>().dealDamage(damage);
+			//Debug.Log(this.owner+" deal "+damage+" to "+c.gameObject.name);
 		}
 	}
 }

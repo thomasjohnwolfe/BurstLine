@@ -12,7 +12,6 @@ public class CarRally : MonoBehaviour {
 	public int boost = 3;
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -20,12 +19,12 @@ public class CarRally : MonoBehaviour {
 	
 	}
 
-	float getHealth(){
+	public float getHealth(){
 		if(currentHealth <= 0) return 0;
 		return currentHealth;
 	}
 
-	void dealDamage(float val){
+	public void dealDamage(float val){
 		currentHealth -= val;
 	}
 

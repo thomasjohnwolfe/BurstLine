@@ -112,6 +112,7 @@ GameObject:
   - 65: {fileID: 6500000}
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400024}
+  - 148: {fileID: 14800004}
   m_Layer: 0
   m_Name: LeftBlade
   m_TagString: Untagged
@@ -131,6 +132,7 @@ GameObject:
   - 65: {fileID: 6500002}
   - 23: {fileID: 2300002}
   - 114: {fileID: 11400026}
+  - 148: {fileID: 14800002}
   m_Layer: 0
   m_Name: RightBlade
   m_TagString: Untagged
@@ -728,6 +730,7 @@ GameObject:
   - 65: {fileID: 6500010}
   - 23: {fileID: 2300016}
   - 114: {fileID: 11400028}
+  - 148: {fileID: 14800006}
   m_Layer: 0
   m_Name: RushProjectile
   m_TagString: Untagged
@@ -1958,7 +1961,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 0
   weapon: []
   weaponslot: 
   target: {fileID: 0}
@@ -2518,6 +2520,42 @@ NetworkView:
   m_Enabled: 1
   m_StateSynchronization: 1
   m_Observed: {fileID: 11400036}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800002
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100014}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400014}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800004
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400012}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
+--- !u!148 &14800006
+NetworkView:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100088}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 400088}
   m_ViewID:
     m_ID: 0
     m_Type: 0
