@@ -49,5 +49,8 @@ creat .gitignore file
 git log  //commit history
 	git log -2 -p  //shows diff in last 2
 	git log --stat //shows stats for insertions and deltions
+	git log --pretty=oneline
+	
+git commit --amend //ammends current stage to current commit
 
 REFERENCE:: http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository
