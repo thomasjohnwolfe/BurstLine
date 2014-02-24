@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public class CarRally : MonoBehaviour {
 	public const int MAXSLOT = 3; 
 	public float currentHealth;
-	public float maxHealth;
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
@@ -36,12 +35,8 @@ public class CarRally : MonoBehaviour {
 			add = false;
 			assignedWeapon();
 			Destroy(c.gameObject);
-
 		}
 	}
-
-
-	
 	void assignedWeapon(){
 		int slot = -1;
 		do{
