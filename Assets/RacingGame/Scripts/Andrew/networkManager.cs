@@ -33,6 +33,7 @@ public class networkManager : MonoBehaviour {
 				players = 1;
 				player = 1;
 				myCar.GetComponent<playerID>().ID = player;
+				myCar.tag = "Player";
 			}
 		}
 		else if (Network.peerType == NetworkPeerType.Client){
