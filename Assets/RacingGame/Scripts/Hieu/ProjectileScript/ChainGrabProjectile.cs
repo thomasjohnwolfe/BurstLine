@@ -10,31 +10,34 @@ public class ChainGrabProjectile : ProjectileScript {
 	
 	// Update is called once per frame
 	void Update () {
-		if(target == null){
-			if(Time.time - time > lifetime){
-				Destroy(this.gameObject);
+		if(networkView.isMine){
+			if(target == null){
+				if(Time.time - time > lifetime){
+					DestroyGameObject();
+				}
+				transform.Translate( Vector3.forward*speed*Time.deltaTime);
 			}
-			transform.Translate( Vector3.forward*speed*Time.deltaTime);
-		}
-		else{
-			target.GetComponent<DisableAll>().Disable();
-			target.transform.Translate(toOwner(target.transform.position)*-speed*Time.deltaTime,Space.World);
-			transform.Translate(toOwner(this.transform.position)*-speed*Time.deltaTime);
+			else{
+				target.GetComponent<DisableAll>().Disable();
+				target.transform.Translate(toOwner(target.transform.position)*-speed*Time.deltaTime,Space.World);
+				transform.Translate(toOwner(this.transform.position)*-speed*Time.deltaTime);
 
-			if( (target.transform.position - owner.transform.position).magnitude <10){
-				target.GetComponent<DisableAll>().Enable();
+				if( (target.transform.position - owner.transform.position).magnitude <10){
+					target.GetComponent<DisableAll>().Enable();
+				}
+				if( (this.transform.position - owner.transform.position).magnitude < 1){
+					DestroyGameObject();
+				}
 			}
-			if( (this.transform.position - owner.transform.position).magnitude < 1){
-				Destroy(this.gameObject);
-			}
-		}
 
-		Vector3 fwd = transform.TransformDirection(Vector3.forward);
-		RaycastHit hit;
-		if(Physics.Raycast(this.transform.position,fwd,out hit,2)){
-			Debug.Log(hit.collider.gameObject.name);
-			if(hit.collider.gameObject.tag == "Player"){
-				target = hit.collider.gameObject;
+			Vector3 fwd = transform.TransformDirection(Vector3.forward);
+			RaycastHit hit;
+			if(Physics.Raycast(this.transform.position,fwd,out hit,2)){
+				Debug.Log(hit.collider.gameObject.name);
+
+				if(hit.collider.gameObject.tag == "OtherPlayer"){
+					target = hit.collider.gameObject;
+				}
 			}
 		}
 	}
@@ -44,6 +47,7 @@ public class ChainGrabProjectile : ProjectileScript {
 		Debug.Log ((pos - this.owner.transform.position).normalized);
 		return (pos - this.owner.transform.position).normalized;
 	}
+
 	/*
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.layer == 13){

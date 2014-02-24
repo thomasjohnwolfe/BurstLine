@@ -12,8 +12,7 @@ public class LaserBeamProjectile : ProjectileScript {
 	void Update () {
 		if (networkView.isMine) {
 			if ((Time.time - time) > lifetime) {
-				Network.RemoveRPCs (networkView.viewID);
-				Network.Destroy (gameObject);
+				DestroyGameObject();
 			}
 		}
 	}
@@ -21,8 +20,7 @@ public class LaserBeamProjectile : ProjectileScript {
 	void OnCollisionEnter(Collision c){
 		if (networkView.isMine) {
 						if (c.gameObject.layer == 13) { //layer 13 is Cars
-							Network.RemoveRPCs (networkView.viewID);
-							Network.Destroy (gameObject);
+							DestroyGameObject();
 								//deal damage to the other car here
 						}
 				}
