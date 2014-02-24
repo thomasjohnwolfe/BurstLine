@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CarRally : MonoBehaviour {
-	public const int MAXSLOT = 3; 
-	public float currentHealth;
-	public float maxHealth;
+	public const int MAXSLOT = 3;
+	[Range (0,100)]
+	public float currentHealth = 100f;
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
@@ -13,7 +13,6 @@ public class CarRally : MonoBehaviour {
 	public int boost = 3;
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -21,12 +20,12 @@ public class CarRally : MonoBehaviour {
 	
 	}
 
-	float getHealth(){
+	public float getHealth(){
 		if(currentHealth <= 0) return 0;
 		return currentHealth;
 	}
 
-	void dealDamage(float val){
+	public void dealDamage(float val){
 		currentHealth -= val;
 	}
 
@@ -36,12 +35,8 @@ public class CarRally : MonoBehaviour {
 			add = false;
 			assignedWeapon();
 			Destroy(c.gameObject);
-
 		}
 	}
-
-
-	
 	void assignedWeapon(){
 		int slot = -1;
 		do{
@@ -103,3 +98,4 @@ public class CarRally : MonoBehaviour {
 
 
 }
+//testTom

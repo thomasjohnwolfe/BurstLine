@@ -24,6 +24,7 @@ public class ChainGrabProjectile : ProjectileScript {
 
 				if( (target.transform.position - owner.transform.position).magnitude <10){
 					target.GetComponent<DisableAll>().Enable();
+					target = null;
 				}
 				if( (this.transform.position - owner.transform.position).magnitude < 1){
 					DestroyGameObject();
