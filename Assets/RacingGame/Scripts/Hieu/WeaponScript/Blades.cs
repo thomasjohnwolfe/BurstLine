@@ -19,5 +19,6 @@ public class Blades : Weapon {
 	[RPC]
 	void playAnimation(string name){
 		this.animation.CrossFade(name);
+	
 	}
 }

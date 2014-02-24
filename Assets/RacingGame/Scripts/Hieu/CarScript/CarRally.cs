@@ -3,22 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CarRally : MonoBehaviour {
-	public const int MAXSLOT = 3;
 	[Range (0,100)]
 	public float currentHealth = 100f;
+	public int boost = 3;
+	public const int MAXSLOT = 3;
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
 	bool add = false;
-	public int boost = 3;
 	// Use this for initialization
 	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
+
 
 	public float getHealth(){
 		if(currentHealth <= 0) return 0;
@@ -27,6 +28,7 @@ public class CarRally : MonoBehaviour {
 
 	public void dealDamage(float val){
 		currentHealth -= val;
+		if(currentHealth<=0) currentHealth = 0;
 	}
 
 	void OnTriggerEnter(Collider c){
@@ -85,7 +87,7 @@ public class CarRally : MonoBehaviour {
 		}
 		return false;
 	}
-
+	
 	bool weaponFull(){
 		for(int i=0;i<MAXSLOT;i++){
 			if(this.weaponslot[i] == -1){
@@ -94,8 +96,5 @@ public class CarRally : MonoBehaviour {
 		}
 		return true;
 	}
-
-
-
 }
 //testTom

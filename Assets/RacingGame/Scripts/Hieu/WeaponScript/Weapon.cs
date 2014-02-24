@@ -20,5 +20,7 @@ public class Weapon : MonoBehaviour{
 		p.lifetime = w.lifetime;
 		p.owner = w.owner;
 		p.speed = w.speed;
+		Debug.Log("assign value");
+		Debug.Log (p.damage);
 	}
 }

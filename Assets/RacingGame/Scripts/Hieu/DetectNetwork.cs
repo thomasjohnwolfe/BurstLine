@@ -6,14 +6,14 @@ public class DetectNetwork : MonoBehaviour {
 	CarController carcontroller;
 	CarSelfRighting carselfrighting;
 	ObjectResetter objectresetter;
-	Anarchy script;
+	//Anarchy script;
 	// Use this for initialization
 	void Start () {
 		carusercontrol = GetComponent<CarUserControl> ();
 		carcontroller = GetComponent<CarController> ();
 		carselfrighting = GetComponent<CarSelfRighting> ();
 		objectresetter = GetComponent<ObjectResetter> ();
-		script = GetComponent<Anarchy> ();
+		//script = GetComponent<Anarchy> ();
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,7 @@ public class DetectNetwork : MonoBehaviour {
 			carcontroller.enabled = false;
 			carselfrighting.enabled = false;
 			objectresetter.enabled = false;
-			script.enabled = false;
+			//script.enabled = false;
 		}
 	}
 }
