@@ -1,8 +1,9 @@
-.DS_Store
-Library
-Temp
+/Temp/
+/Library/
+/obj/
 *.csproj
-*.pidb
 *.unityproj
 *.sln
+*.user
 *.userprefs
+*.DS_store
