@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class CarRally : MonoBehaviour {
 	public const int MAXSLOT = 3; 
-	public float health;
+	public float currentHealth;
+	public float maxHealth;
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
@@ -19,6 +20,16 @@ public class CarRally : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	float getHealth(){
+		if(currentHealth <= 0) return 0;
+		return currentHealth;
+	}
+
+	void dealDamage(float val){
+		currentHealth -= val;
+	}
+
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Weapon"){
 			Debug.Log ("pick up item");
@@ -28,6 +39,8 @@ public class CarRally : MonoBehaviour {
 
 		}
 	}
+
+
 	
 	void assignedWeapon(){
 		int slot = -1;
