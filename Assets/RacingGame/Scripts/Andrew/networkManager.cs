@@ -1,18 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class networkManager : MonoBehaviour {
 	
 	public string connectionIP = "127.0.0.1";
 	public int connectionPort = 25001;
-
+	
 	public GameObject thing;
 	public GameObject camera;
-	public GameObject myCar;
+	//public GameObject myCar;
 	
 	public int players = 0;
 	public int player = 0;
-
+	
 	void OnGUI(){
 		
 		//if (player > 0){
@@ -20,7 +20,7 @@ public class networkManager : MonoBehaviour {
 		//}
 		
 		if (Network.peerType == NetworkPeerType.Disconnected){
-
+			
 			GUI.Label(new Rect(10, 10, 300, 20), "Status: Disconnected");
 			if (GUI.Button(new Rect(10, 30, 120, 20), "Client Connect")){
 				
@@ -33,26 +33,25 @@ public class networkManager : MonoBehaviour {
 				players = 1;
 				player = 1;
 				myCar.GetComponent<playerID>().ID = player;
-				myCar.tag = "Player";
 			}
 		}
 		else if (Network.peerType == NetworkPeerType.Client){
-
+			
 			GUI.Label(new Rect(10, 10, 300, 20), "Status: Connected as Client");
 			if (GUI.Button(new Rect(10, 30, 120, 20), "Disconnect")){
-
+				
 				Network.Disconnect(200);
 			}
 		}
 		else if (Network.peerType == NetworkPeerType.Server){
-
+			
 			GUI.Label(new Rect(10, 10, 300, 20), "Status: Connected as Server");
 			if (GUI.Button(new Rect(10, 30, 120, 20), "Disconnect")){
 				Network.Disconnect(200);
 			}
 		}
 	}
-
+	
 	void OnConnectedToServer(){ 
 		Debug.Log ("Definitely Connected");
 		GameObject guy;
@@ -97,10 +96,11 @@ public class networkManager : MonoBehaviour {
 	GameObject newPlayer(){
 		GameObject peerBall = Network.Instantiate(thing,this.transform.position,Quaternion.identity,0) as GameObject;
 		GameObject c = Network.Instantiate (camera, Vector3.zero, Quaternion.identity, 0) as GameObject;
-		Debug.Log(peerBall);
+		c.tag = "Player";
+		//Debug.Log(peerBall);
 		GameObject.Find ("UI Root").GetComponent<UIManager_Game> ().Init ();
 		return peerBall;
-
+		
 	}
 	
 	
