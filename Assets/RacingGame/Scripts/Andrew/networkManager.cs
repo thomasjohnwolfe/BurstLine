@@ -95,8 +95,8 @@ public class networkManager : MonoBehaviour {
 	
 	GameObject newPlayer(){
 		GameObject peerBall = Network.Instantiate(thing,this.transform.position,Quaternion.identity,0) as GameObject;
+		peerBall.tag = "Player";
 		GameObject c = Network.Instantiate (camera, Vector3.zero, Quaternion.identity, 0) as GameObject;
-		c.tag = "Player";
 		//Debug.Log(peerBall);
 		GameObject.Find ("UI Root").GetComponent<UIManager_Game> ().Init ();
 		return peerBall;

@@ -14,8 +14,8 @@ public class DisableAll : MonoBehaviour {
 	}
 
 	public void Disable(){
-		this.rigidbody.isKinematic = true;
-		this.rigidbody.useGravity = false;
+		//this.rigidbody.isKinematic = true;
+		//this.rigidbody.useGravity = false;
 		this.GetComponent<CarController> ().enabled = false;
 		this.GetComponent<CarUserControl> ().enabled = false;
 		this.GetComponent<CarSelfRighting> ().enabled = false;
@@ -23,8 +23,8 @@ public class DisableAll : MonoBehaviour {
 	}
 	public void Enable(){
 		Debug.Log ("Enable script");
-		this.rigidbody.isKinematic = false;
-		this.rigidbody.useGravity = true;
+		//this.rigidbody.isKinematic = false;
+		//this.rigidbody.useGravity = true;
 		this.GetComponent<CarController> ().enabled = true;
 		this.GetComponent<CarUserControl> ().enabled = true;
 		this.GetComponent<CarSelfRighting> ().enabled = true;
