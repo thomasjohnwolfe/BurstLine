@@ -6,55 +6,63 @@ using System.Collections.Generic;
 //  Add "OtherPlayer" tags to objects will create minimap graphics at their location 
 
 class UIManager_Game : MonoBehaviour
-	{
+{
+					CarRally 			carStats;
+	Dictionary<GameObject,GameObject> 	OtherPlayersMiniMapLoc; //<player,minimapSprite>
+	
+	private static 	UISprite 		speedometer,
+									boostMeter,
+									shield,
+									critLight,
+									MapBG;
 
-	Dictionary<GameObject,GameObject> OtherPlayersMiniMapLoc; //<player,minimapSprite>
 
-	//sprites
-	private static UISprite speedometer,boostMeter,shield,critLight,MapBG;
-
-	//time
-	private static UILabel timeTxt;
+	private static 	UILabel 		timeTxt;
 
 	//shield
-	private Transform shieldT,PlayerLocT;
+	private 		Transform 		shieldT,
+									PlayerLocT;
 
 	//reference to car attributes
-	CarController carControl;
-	private bool carSpawned; //to read values when car is spawned
+	private			CarController	carControl;
+	private 		bool 		carSpawned; //to read values when car is spawned
 	
-	private bool critBlinking;
+	private 		bool 				critBlinking;
 
 	//public inspector values for boost, speed, sheild
 	[Range (0,1)]
-	public float speedBoost,speedRegular,sheildPercent;
+	public 			float 				speedBoost,
+										speedRegular,
+										sheildPercent;
 
 	//public bool for testing critical light
-	public bool criticalLightOn;
+	public 			bool 				criticalLightOn;
 
 	// fortesting
 	//public int boostNumber = 0;
 
-	private int boostMaxNum=2; //idx
+	private 		int 				boostMaxNum		=	2; //idx
 
 	//custom sprite classes
-	Weapon_UI[] weapon = new Weapon_UI[3];
-	Boost_UI[] boost = new Boost_UI[3];
+					Weapon_UI[] 		weapon = new Weapon_UI[3];
+					Boost_UI[] 			boost = new Boost_UI[3];
 
 	//miniMap
-	public Transform boundaryL,boundaryR,boundaryT,boundaryB;
-	Transform PlayerGlobalTransform;
-	private Vector2 mapDimensions;
-	private Transform miniMapBoundries;
+	public 			Transform 			boundaryL,boundaryR,boundaryT,boundaryB;
+					Transform			PlayerGlobalTransform;
+	private 		Vector2				mapDimensions;
+	private 		Transform			miniMapBoundries;
 
-	public GameObject MiniMapSprite;
+	public 			GameObject 			MiniMapSprite;
 
 	void Start()
 	{
 		OtherPlayersMiniMapLoc = new Dictionary<GameObject, GameObject> ();
 		InvokeRepeating ("FindOtherPlayers", 1f, 10f);
 		miniMapBoundries = GameObject.Find ("MiniMapBoundaries").transform;
+
 	}
+	
 
 	private void FindOtherPlayers()
 	{
@@ -94,7 +102,7 @@ class UIManager_Game : MonoBehaviour
 		PlayerLocT =  GameObject.Find("PlayerLoc").transform;
 
 		PlayerGlobalTransform = GameObject.FindGameObjectWithTag ("Player").transform;
-
+		carStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CarRally>();
 		// PLAYER PREFS TEST
 		Debug.Log("weapon1: " + PlayerPrefs.GetString("weapon1"));
 		Debug.Log("weapon2: " + PlayerPrefs.GetString("weapon2"));
@@ -171,10 +179,12 @@ class UIManager_Game : MonoBehaviour
 		set {
 				if(value == true && !critBlinking)
 				{
-					critBlinking = value;
+					critBlinking = value;//don't delete this
 					StartCoroutine(CritLight());
 				}
+
 				critBlinking = value;
+
 			}
 			
 	}
@@ -218,13 +228,14 @@ class UIManager_Game : MonoBehaviour
 		//assign test inspector values to script
 		SpeedoMeter = speedRegular;
 		Boost =speedBoost;
-		Shield = sheildPercent;
-		CriticalLightON = criticalLightOn;
+		Shield = carStats.getHealth();
+
 
 		//grab time to test timer;
 		TimeTotal = Time.time.ToString();
 
-
+		CriticalLightON = (carStats.getHealth()<0.5f);
+		Debug.Log(critBlinking);
 		//assign boost number
 		//setBoostNumber(boostNumber);
 
@@ -317,6 +328,7 @@ class UIManager_Game : MonoBehaviour
 
 			}
 		}
+		critLight.color = startC;
 
 	}
 }

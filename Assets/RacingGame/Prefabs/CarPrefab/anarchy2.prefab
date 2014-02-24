@@ -1960,7 +1960,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ffa7a9cda5d7e418aad74129a14b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   currentHealth: 0
+=======
+  currentHealth: 1
+>>>>>>> refs/remotes/origin/Hieu
   weapon: []
   weaponslot: 
   target: {fileID: 0}
