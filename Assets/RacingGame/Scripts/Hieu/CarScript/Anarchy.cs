@@ -22,14 +22,23 @@ public class Anarchy: CarRally {
 	
 	// Update is called once per frame
 	void Update () {
-		foreach (Weapon w in weapon){
-			if(Input.GetKeyDown(w.keyInput) && w.enabled){
-				
-				w.execute();
-				//w.enabled = false;
-				//for debug only
-				target = null;
+		if(!networkView.isMine){
+			networkView.RPC("updateHealth",RPCMode.All,getHealth());
+		}
+		if(networkView.isMine){
+			foreach (Weapon w in weapon){
+				if(Input.GetKeyDown(w.keyInput) && w.enabled){
+					w.execute();
+					//w.enabled = false;
+					//for debug only
+					target = null;
+				}
 			}
 		}
+
+	}
+	[RPC]
+	void updateHealth(float val){
+		currentHealth = val;
 	}
 }
