@@ -752,15 +752,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 218733458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e711943007c8b44db2c4e0874a71cc6, type: 3}
+  m_Script: {fileID: 11500000, guid: f5793195e0d5e9f4ca648b57bffb420d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handling: .25
-  speed: .5
-  accel: 1
-  boost: .200000003
+  handling: .200000003
+  speed: 1
+  accel: .100000001
+  boost: .5
   name: car2
-  description: this is a car2. Car2 loves you! So you should pick it!
+  description: this is car2
   item1: Honeycomb
   item2: Honeycomb
   item3: Honeycomb
@@ -2012,7 +2012,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 429939253}
-  - 114: {fileID: 429939254}
   - 114: {fileID: 429939255}
   m_Layer: 0
   m_Name: trackModels
@@ -2033,18 +2032,6 @@ Transform:
   m_Children:
   - {fileID: 1690718264}
   m_Father: {fileID: 1865551257}
---- !u!114 &429939254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 429939252}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b99dc7f916ce744895c4daff2854dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: {x: 0, y: 40, z: 0}
 --- !u!114 &429939255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2690,7 +2677,7 @@ Transform:
   m_GameObject: {fileID: 508829402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00292825769, y: .00292825769, z: .00292825769}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 1293612026}
   - {fileID: 2065929458}
@@ -4990,10 +4977,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 998036664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ad7fcbe3e7b18d44a4e9b17bbce2b35, type: 3}
+  m_Script: {fileID: 11500000, guid: ba9f50f44c2c59d4db3f10b897f0f95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameSceneName: Tom_Week6
+  GameSceneName: MainGame
   Cars:
   - {fileID: 2057982340}
   - {fileID: 218733458}
@@ -5881,16 +5868,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1150732125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e711943007c8b44db2c4e0874a71cc6, type: 3}
+  m_Script: {fileID: 11500000, guid: f5793195e0d5e9f4ca648b57bffb420d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handling: .300000012
-  speed: .200000003
-  accel: 1
-  boost: .5
+  handling: .200000003
+  speed: .100000001
+  accel: .899999976
+  boost: .899999976
   name: car3
-  description: this is car3. it is so amazing. Car3 is the best! Its the best around
-    nothing's gonna keep it down! Yeah Yeah yeah!
+  description: this is not not car3
   item1: Honeycomb
   item2: Honeycomb
   item3: Honeycomb
@@ -7130,7 +7116,7 @@ MonoBehaviour:
   ifDisabledOnPlay: 1
   disableWhenFinished: 0
   onFinished:
-  - mTarget: {fileID: 998036665}
+  - mTarget: {fileID: 0}
     mMethodName: SetActiveCar
     oneShot: 0
   eventReceiver: {fileID: 0}
@@ -7467,6 +7453,10 @@ Prefab:
       propertyPath: onFinished.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
+      propertyPath: onFinished.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 266
@@ -7548,6 +7538,14 @@ Prefab:
       value: 
       objectReference: {fileID: 998036665}
     - target: {fileID: 11400006, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
+      propertyPath: onFinished.Array.data[0].mMethodName
+      value: LoadGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
+      propertyPath: onFinished.Array.data[0].mTarget
+      value: 
+      objectReference: {fileID: 998036665}
+    - target: {fileID: 11400000, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
       propertyPath: onFinished.Array.data[0].mMethodName
       value: LoadGame
       objectReference: {fileID: 0}
@@ -9310,10 +9308,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849774929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b99dc7f916ce744895c4daff2854dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 197e4e7a6d919d54ba5fe89432937e65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: {x: 0, y: 20, z: 0}
+  rotateSpeed: {x: 0, y: 5, z: 0}
 --- !u!1 &1857290818
 GameObject:
   m_ObjectHideFlags: 0
@@ -9651,7 +9649,7 @@ Prefab:
     - target: {fileID: 11400006, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
       propertyPath: onFinished.Array.data[0].mTarget
       value: 
-      objectReference: {fileID: 998036665}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 63408c63499a40640b520d8f5876fcd9, type: 2}
   m_RootGameObject: {fileID: 658083472}
@@ -10247,19 +10245,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2057982340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e711943007c8b44db2c4e0874a71cc6, type: 3}
+  m_Script: {fileID: 11500000, guid: f5793195e0d5e9f4ca648b57bffb420d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handling: .699999988
-  speed: .5
+  handling: .5
+  speed: 1
   accel: .25
-  boost: .119999997
+  boost: .300000012
   name: anarchy
-  description: A brutal fighter.  Drag players in with your tractor beam and chop
-    them up or shoot them to pieces with the machine gun.
-  item1: Blades
+  description: This is anarchy. It rules
+  item1: Tractor Beam
   item2: Machine Gun
-  item3: Tractor Beam
+  item3: Blades
 --- !u!111 &2057982343
 Animation:
   m_ObjectHideFlags: 0

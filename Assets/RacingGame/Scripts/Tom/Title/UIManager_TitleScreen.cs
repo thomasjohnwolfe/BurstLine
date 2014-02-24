@@ -4,10 +4,10 @@ using System.Collections;
 public class UIManager_TitleScreen : MonoBehaviour
 {
 
-	public 	string 					GameSceneName;
-	public 	GameObject[] 			Cars;
+	public 	string 					GameSceneName = "MainGame";
+	public 	GameObject[] 			Cars = new GameObject[3];
 	public 	int 					carIdx = 0;
-	public  GameObject 				g;
+	public GameObject 				g;
 			IVehicleTitleUI 		currentCar;
 			UISlider 				handling,speed,accel,boost;
 			GameObject 				txtVehicleDesc;//Label for description
@@ -113,6 +113,7 @@ public class UIManager_TitleScreen : MonoBehaviour
 
 	public void LoadGame()
 	{
+		print("loading level");
 		SavePrefs();
 		Application.LoadLevel(GameSceneName);
 	}
