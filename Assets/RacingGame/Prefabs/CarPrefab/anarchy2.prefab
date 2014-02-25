@@ -1835,20 +1835,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSteerAngle: 28
-  steeringResponseSpeed: 200
-  maxSpeedSteerAngle: .230000004
-  maxSpeedSteerResponse: .5
+  steeringResponseSpeed: 300
+  maxSpeedSteerAngle: .200000003
+  maxSpeedSteerResponse: .303000003
   maxSpeed: 50
   maxTorque: 35
   minTorque: 10
   brakePower: 40
   adjustCentreOfMass: .25
   advanced:
-    burnoutSlipEffect: .400000006
+    burnoutSlipEffect: 1
     burnoutTendency: .200000003
     spinoutSlipEffect: .5
     sideSlideEffect: .5
-    downForce: 30
+    downForce: 60
     numGears: 5
     gearDistributionBias: .200000003
     steeringCorrection: 2

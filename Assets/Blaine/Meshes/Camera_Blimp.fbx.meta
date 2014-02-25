@@ -10,6 +10,14 @@ ModelImporter:
     100008: polySurface51
     100010: polySurface52
     100012: polySurface53
+    100014: Blimp_Thing
+    100016: polySurface54
+    100018: polySurface55
+    100020: polySurface56
+    100022: polySurface57
+    100024: transform1
+    100026: transform2
+    100028: transform3
     400000: //RootNode
     400002: polySurface19
     400004: polySurface36
@@ -17,21 +25,35 @@ ModelImporter:
     400008: polySurface51
     400010: polySurface52
     400012: polySurface53
+    400014: Blimp_Thing
+    400016: polySurface54
+    400018: polySurface55
+    400020: polySurface56
+    400022: polySurface57
+    400024: transform1
+    400026: transform2
+    400028: transform3
     2300000: polySurface36
     2300002: polySurface50
     2300004: polySurface51
     2300006: polySurface52
     2300008: polySurface53
+    2300010: polySurface56
+    2300012: polySurface57
     3300000: polySurface36
     3300002: polySurface50
     3300004: polySurface51
     3300006: polySurface52
     3300008: polySurface53
+    3300010: polySurface56
+    3300012: polySurface57
     4300000: polySurface36
     4300002: polySurface50
     4300004: polySurface51
     4300006: polySurface52
     4300008: polySurface53
+    4300010: polySurface56
+    4300012: polySurface57
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -51,7 +73,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00100000005
+    globalScale: .0500000007
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
