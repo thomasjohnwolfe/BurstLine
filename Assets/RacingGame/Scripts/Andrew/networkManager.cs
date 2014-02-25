@@ -65,7 +65,6 @@ public class networkManager : MonoBehaviour {
 	}
 	
 	
-	//----------------------------------------------------------------
 	void GetID(){
 		Debug.Log("Requesting Player Count");
 		networkView.RPC("RequestPlayerCount",RPCMode.Server);
@@ -89,8 +88,28 @@ public class networkManager : MonoBehaviour {
 	void BroadcastID(int _player,NetworkViewID _NVID){
 		Debug.Log("Broadcasting ID");
 		NetworkView.Find(_NVID).gameObject.GetComponent<playerID>().ID = _player;
+		gatherIDs();
 	}
 	//------------------------------------------------------------------
+	void gatherIDs(){
+		Debug.Log (myCar.GetComponent<playerID>().ID.ToString()+ "Requesting ID's");
+		GameObject[] playerObjs = GameObject.FindGameObjectsWithTag("OtherPlayer");
+		foreach(GameObject i in playerObjs){
+			networkView.RPC("requestObjID",RPCMode.Server,i.networkView.viewID);
+		}
+	}
+	[RPC]
+	void requestObjID(NetworkViewID _NVID,NetworkMessageInfo _info){
+		Debug.Log ("sending ID");
+		int requestedID = NetworkView.Find(_NVID).gameObject.GetComponent<playerID>().ID;
+		NetworkPlayer sender = _info.sender;
+		networkView.RPC("sendObjID",sender,requestedID,_NVID);
+	}
+	[RPC]
+	void sendObjID(int _ID,NetworkViewID _NVID){
+		Debug.Log ("Assigning ID " + _ID.ToString ());
+		NetworkView.Find(_NVID).gameObject.GetComponent<playerID>().ID = _ID;
+	}
 	
 	
 	GameObject newPlayer(){
