@@ -1943,7 +1943,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 1b159494d2e4bbf4eb1bce95895f17f4, type: 2}
       propertyPath: connectionIP
-      value: 127.0.0.1
+      value: 10.245.20.123
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b159494d2e4bbf4eb1bce95895f17f4, type: 2}
@@ -10135,7 +10135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d0e0d3889749240b868d557a1d79b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectionIP: 127.0.0.1
+  connectionIP: 10.245.20.123
   connectionPort: 25001
   thing: {fileID: 100082, guid: 53160d63021feca48abdcb50fc64e226, type: 2}
   camera: {fileID: 100000, guid: 3e10c92b3c741a6489b95480128a8b46, type: 2}
