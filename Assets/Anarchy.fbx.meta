@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 5e01a03df38db574784b677f2ea85ce6
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: body
+    100004: center_wheel
+    100006: l_axle
+    100008: l_back_wheel
+    100010: l_blade
+    100012: l_blade 1
+    100014: l_blade_wheel
+    100016: l_front_wheel
+    100018: l_wheel_tip
+    100020: polySurface139
+    100022: polySurface183
+    100024: polySurface184
+    100026: polySurface193
+    100028: polySurface197
+    100030: polySurface198
+    100032: polySurface211
+    100034: polySurface226
+    100036: polySurface238
+    100038: polySurface239
+    100040: r_axle
+    100042: r_back_wheel
+    100044: r_blade
+    100046: r_blade 1
+    100048: r_blade_wheel
+    100050: r_front_wheel
+    100052: r_wheel_tip
+    100054: transform39
+    100056: transform40
+    100058: transform41
+    100060: transform42
+    100062: transform43
+    100064: Vehicle_Body
+    400000: //RootNode
+    400002: body
+    400004: center_wheel
+    400006: l_axle
+    400008: l_back_wheel
+    400010: l_blade
+    400012: l_blade 1
+    400014: l_blade_wheel
+    400016: l_front_wheel
+    400018: l_wheel_tip
+    400020: polySurface139
+    400022: polySurface183
+    400024: polySurface184
+    400026: polySurface193
+    400028: polySurface197
+    400030: polySurface198
+    400032: polySurface211
+    400034: polySurface226
+    400036: polySurface238
+    400038: polySurface239
+    400040: r_axle
+    400042: r_back_wheel
+    400044: r_blade
+    400046: r_blade 1
+    400048: r_blade_wheel
+    400050: r_front_wheel
+    400052: r_wheel_tip
+    400054: transform39
+    400056: transform40
+    400058: transform41
+    400060: transform42
+    400062: transform43
+    400064: Vehicle_Body
+    2300000: center_wheel
+    2300002: l_back_wheel
+    2300004: r_back_wheel
+    3300000: center_wheel
+    3300002: l_back_wheel
+    3300004: r_back_wheel
+    4300000: center_wheel
+    4300002: l_back_wheel
+    4300004: r_back_wheel
+    4300006: r_blade
+    4300008: l_blade
+    4300010: body
+    4300012: l_axle
+    4300014: l_front_wheel
+    4300016: r_axle
+    4300018: r_front_wheel
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: body
+    13700002: l_axle
+    13700004: l_blade
+    13700006: l_front_wheel
+    13700008: r_axle
+    13700010: r_blade
+    13700012: r_front_wheel
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
