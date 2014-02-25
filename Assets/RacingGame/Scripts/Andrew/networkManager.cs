@@ -1,10 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class networkManager : MonoBehaviour {
-
-
+	
 	public string connectionIP = "127.0.0.1";
 	public int connectionPort = 25001;
 	
@@ -14,12 +12,7 @@ public class networkManager : MonoBehaviour {
 	
 	public int players = 0;
 	public int player = 0;
-
-
-	void Start(){
-
-	}
-
+	
 	void OnGUI(){
 		
 		//if (player > 0){
@@ -117,7 +110,6 @@ public class networkManager : MonoBehaviour {
 		Debug.Log ("Assigning ID " + _ID.ToString ());
 		NetworkView.Find(_NVID).gameObject.GetComponent<playerID>().ID = _ID;
 	}
-
 	
 	
 	GameObject newPlayer(){
@@ -127,6 +119,8 @@ public class networkManager : MonoBehaviour {
 		//Debug.Log(peerBall);
 		GameObject.Find ("UI Root").GetComponent<UIManager_Game> ().Init ();
 		return peerBall;
+		
 	}
+	
 	
 }

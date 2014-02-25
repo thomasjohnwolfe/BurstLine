@@ -53,14 +53,14 @@ class UIManager_Game : MonoBehaviour
 	private 		Vector2				mapDimensions;
 	private 		Transform			miniMapBoundries;
 
-	public 			GameObject 			MiniMapSprite;
+	private 			GameObject 			MiniMapSprite;
 
 	void Start()
 	{
 		OtherPlayersMiniMapLoc = new Dictionary<GameObject, GameObject> ();
-		InvokeRepeating ("FindOtherPlayers", 1f, 10f);
+		InvokeRepeating ("FindOtherPlayers", 1f, 3f);
 		miniMapBoundries = GameObject.Find ("MiniMapBoundaries").transform;
-
+		// = GameObject.Find("PlayerLoc");
 	}
 	
 
@@ -114,19 +114,38 @@ class UIManager_Game : MonoBehaviour
 		Debug.Log("boost: " + PlayerPrefs.GetFloat("boost"));
 		Debug.Log("handling: " + PlayerPrefs.GetFloat("handling"));
 		Debug.Log("accel: " + PlayerPrefs.GetFloat("accel"));
-
 		*/
+		StartCoroutine (InitMiniMapSprite ());
 		carSpawned = true;
+
 	}
 
-	GameObject CreatePlayersMiniMapSprite(GameObject t)
+	IEnumerator InitMiniMapSprite()
 	{
-		GameObject g= Instantiate(Resources.Load("MiniMap_OtherPlayer")) as GameObject;
-		g.transform.parent = GameObject.Find ("MapBG").transform;
-		g.transform.localScale = GameObject.Find ("PlayerLoc").transform.localScale;
-		g.transform.localRotation = GameObject.Find ("PlayerLoc").transform.localRotation;
-		g.transform.localPosition = GameObject.Find ("PlayerLoc").transform.localPosition;
-		return g;
+		playerID playerIDscr = GameObject.FindGameObjectWithTag("Player").GetComponent<playerID>();
+		while (playerIDscr.ID == 0)
+		{
+			yield return new WaitForSeconds(0.5f);
+			TagMiniMapSprite_PlayerNumber (PlayerLocT.gameObject, GameObject.FindGameObjectWithTag ("Player"));
+
+		}
+	}
+
+	void TagMiniMapSprite_PlayerNumber(GameObject spriteObject, GameObject player)
+	{
+		string name = player.GetComponent<playerID> ().ID.ToString();
+		spriteObject.GetComponent<UILabel> ().text =  (name == null)? "P " : "P "+name;
+	}
+
+	GameObject CreatePlayersMiniMapSprite(GameObject player)
+	{
+		GameObject spriteObj= Instantiate(Resources.Load("MiniMap_OtherPlayer")) as GameObject;
+		spriteObj.transform.parent = GameObject.Find ("MapBG").transform;
+		spriteObj.transform.localScale = GameObject.Find ("PlayerLoc").transform.localScale;
+		spriteObj.transform.localRotation = GameObject.Find ("PlayerLoc").transform.localRotation;
+		spriteObj.transform.localPosition = GameObject.Find ("PlayerLoc").transform.localPosition;
+		TagMiniMapSprite_PlayerNumber (spriteObj,player);
+		return spriteObj;
 
 	}
 

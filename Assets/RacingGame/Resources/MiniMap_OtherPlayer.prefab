@@ -50,7 +50,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 83, y: -160, z: 0}
+  m_LocalPosition: {x: 76, y: -157, z: 0}
   m_LocalScale: {x: 2.9096837, y: 2.9096837, z: 2.9096837}
   m_Children:
   - {fileID: 400000}
@@ -132,13 +132,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 28
-  mHeight: 22
+  mWidth: 14
+  mHeight: 16
   mDepth: 9
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.27272725
+  aspectRatio: .875
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 7a48ea22e80d1ac4b97fdd87f9009546, type: 2}

@@ -15,6 +15,7 @@ public class ResetPos : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("Player").transform.position = startPos.transform.position;;
 			GameObject.FindGameObjectWithTag("Player").transform.rotation = startPos.transform.rotation;
 			GameObject.FindGameObjectWithTag("Player").rigidbody.velocity = Vector3.zero;
+			GameObject.FindGameObjectWithTag("Player").rigidbody.angularVelocity = Vector3.zero;
 		}
 	}
 }
