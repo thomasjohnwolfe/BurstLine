@@ -9,17 +9,7 @@ EditorBuildSettings:
     path: Assets/CarDemo/Scenes/Level.unity
   - enabled: 0
     path: Assets/CarDemo/CarDemoClean.unity
-  - enabled: 0
-    path: Assets/RacingGame/Scenes/UITest.unity
-  - enabled: 0
-    path: Assets/RacingGame/Scenes/startScreen.unity
-  - enabled: 0
-    path: Assets/RacingGame/Scenes/Tom_Week6.unity
-  - enabled: 0
-    path: Assets/RacingGame/Scenes/Tom_Week6.unity
-  - enabled: 0
-    path: Assets/RacingGame/Scenes/Tom_Week6.unity
   - enabled: 1
-    path: Assets/RacingGame/Scenes/startScreen.unity
+    path: Assets/RacingGame/Scenes/titleScreen.unity
   - enabled: 1
-    path: Assets/RacingGame/Scenes/Tom_Week6.unity
+    path: Assets/RacingGame/Scenes/gameStart.unity
