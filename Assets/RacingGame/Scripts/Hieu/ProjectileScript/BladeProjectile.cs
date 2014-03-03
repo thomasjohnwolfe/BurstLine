@@ -27,6 +27,7 @@ public class BladeProjectile : ProjectileScript {
 
 			if(c.gameObject.tag == "OtherPlayer"){
 				c.gameObject.GetComponent<CarRally>().dealDamage(damage);
+				
 				//Debug.Log(this.owner+" deal "+damage+" to "+c.gameObject.name);
 			}
 		//}

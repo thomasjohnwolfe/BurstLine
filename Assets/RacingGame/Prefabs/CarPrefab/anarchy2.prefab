@@ -461,7 +461,7 @@ GameObject:
   - 4: {fileID: 400056}
   - 137: {fileID: 13700000}
   m_Layer: 0
-  m_Name: polySurface240
+  m_Name: carModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1965,6 +1965,7 @@ MonoBehaviour:
   weapon: []
   weaponslot: 
   target: {fileID: 0}
+  m: {fileID: 100056}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1
