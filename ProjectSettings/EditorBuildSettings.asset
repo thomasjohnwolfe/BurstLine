@@ -10,6 +10,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/CarDemo/CarDemoClean.unity
   - enabled: 1
-    path: Assets/RacingGame/Scenes/titleScreen.unity
+    path: Assets/Sample Assets/Scenes/titleScreen.unity
   - enabled: 1
-    path: Assets/RacingGame/Scenes/gameStart.unity
+    path: Assets/Sample Assets/Scenes/gameStart.unity

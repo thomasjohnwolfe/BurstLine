@@ -32,7 +32,7 @@ public class HomingMissileProjectile : ProjectileScript {
 		if (networkView.isMine) {
 				if (c.gameObject.layer == 13) { //layer 13 is Cars
 					DestroyGameObject();
-						//deal damage to the other car here
+					//deal damage to the other car here
 				}
 		}
 	}

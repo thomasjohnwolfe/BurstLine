@@ -16,7 +16,7 @@ public class Anarchy: CarRally {
 		weapon = new Weapon[MAXSLOT];
 		weaponslot = new int[MAXSLOT];
 		weapon[0] = this.GetComponent<Blades>() as Weapon;
-		weapon[1] = this.GetComponent<ChainGrab>() as Weapon;
+		weapon[1] = this.GetComponent<MachineGun>() as Weapon;
 		weapon[2] = this.GetComponent<Rush>() as Weapon;
 		for(int i = 0; i<MAXSLOT;i++){
 			weapon[i].owner = this.gameObject;
@@ -30,9 +30,9 @@ public class Anarchy: CarRally {
 	
 	// Update is called once per frame
 	void Update () {
-		if(!networkView.isMine){
-			networkView.RPC("updateHealth",RPCMode.All,getHealth());
-		}
+		//if(!networkView.isMine){
+		networkView.RPC("updateHealth",RPCMode.All,getHealth());
+		//}
 		if (!assigncolor) {
 			index = this.GetComponentInChildren<playerID> ().ID;
 		}
@@ -42,7 +42,6 @@ public class Anarchy: CarRally {
 		}
 
 		if(networkView.isMine){
-		
 			foreach (Weapon w in weapon){
 				if(Input.GetKeyDown(w.keyInput) && w.enabled){
 					w.execute();
@@ -59,7 +58,7 @@ public class Anarchy: CarRally {
 	}
 
 	void setCarColor(int i){
-		m.renderer.material.SetColor ("_Color", colorset[i-1]);
+		model.renderer.material.SetColor ("_Color", colorset[i-1]);
 	}
 
 }

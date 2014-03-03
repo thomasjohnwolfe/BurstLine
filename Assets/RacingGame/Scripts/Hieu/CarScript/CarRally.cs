@@ -8,9 +8,10 @@ public class CarRally : MonoBehaviour {
 	public int boost = 3;
 	public const int MAXSLOT = 3;
 	public Weapon[] weapon;
+	[HideInInspector]
 	public int[] weaponslot;
 	public GameObject target;
-	public GameObject m;
+	public GameObject model;
 	bool add = false;
 
 
@@ -38,9 +39,12 @@ public class CarRally : MonoBehaviour {
 			Debug.Log ("pick up item");
 			add = false;
 			assignedWeapon();
-			Destroy(c.gameObject);
+			Network.RemoveRPCs(c.gameObject.networkView.viewID);
+			Network.Destroy(c.gameObject);
+			//Destroy(c.gameObject);
 		}
 	}
+
 	void assignedWeapon(){
 		int slot = -1;
 		do{

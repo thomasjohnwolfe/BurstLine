@@ -5,8 +5,9 @@ public class HomingMissile : Weapon {
 	public float range = 60;
 	public float radius = 10;
  	GameObject target;
-
-
+	public GameObject shootLocation;
+	public GameObject projectilePrefab;
+	public int numberProjectile;
 	public override void execute(){
 		GameObject clone;
 		findTarget();	//find target
