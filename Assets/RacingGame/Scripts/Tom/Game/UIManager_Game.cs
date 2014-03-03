@@ -254,7 +254,7 @@ class UIManager_Game : MonoBehaviour
 		TimeTotal = Time.time.ToString();
 
 		CriticalLightON = (carStats.getHealth()<0.5f);
-		Debug.Log(critBlinking);
+		//Debug.Log(critBlinking);
 		//assign boost number
 		//setBoostNumber(boostNumber);
 
