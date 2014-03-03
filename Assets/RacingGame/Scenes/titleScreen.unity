@@ -1086,6 +1086,93 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 416058008}
+--- !u!1 &289015955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 289015956}
+  - 114: {fileID: 289015957}
+  m_Layer: 0
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &289015956
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289015955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 414483234}
+--- !u!114 &289015957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289015955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 110
+  mHeight: 18
+  mDepth: 0
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 6.11111116
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: 7a48ea22e80d1ac4b97fdd87f9009546, type: 2}
+  mText: Loading
+  mFontSize: 28
+  mFontStyle: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 1
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &293178708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1800,106 @@ MeshFilter:
   m_PrefabInternal: {fileID: 707206609}
   m_GameObject: {fileID: 400290556}
   m_Mesh: {fileID: 4300016, guid: 95786d4bde76343bdb177d3cd4d02bf9, type: 3}
+--- !u!1 &414483233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 414483234}
+  - 114: {fileID: 414483237}
+  - 54: {fileID: 414483236}
+  - 111: {fileID: 414483235}
+  m_Layer: 0
+  m_Name: panelLoading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &414483234
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414483233}
+  m_LocalRotation: {x: 0, y: -.715946794, z: 0, w: .698154926}
+  m_LocalPosition: {x: -1960.43005, y: 0, z: -49.339241}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 289015956}
+  m_Father: {fileID: 508829406}
+--- !u!111 &414483235
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414483233}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: ef2e0e5292a46d142b1c6e0689260b38, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: ef2e0e5292a46d142b1c6e0689260b38, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!54 &414483236
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414483233}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &414483237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 414483233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae942c9068183dc40a9d01f648273726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  showInPanelTool: 1
+  generateNormals: 0
+  widgetsAreStatic: 0
+  cullWhileDragging: 0
+  alwaysOnScreen: 0
+  anchorOffset: 0
+  renderQueue: 0
+  startingRenderQueue: 3010
+  mAlpha: 1
+  mClipping: 0
+  mClipRange: {x: 0, y: 0, z: 300, w: 200}
+  mClipSoftness: {x: 4, y: 4}
+  mDepth: 4
 --- !u!1 &416058007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2687,7 @@ Transform:
   - {fileID: 1721583999}
   - {fileID: 1104530228}
   - {fileID: 493884017}
+  - {fileID: 414483234}
   m_Father: {fileID: 0}
 --- !u!1 &520788420
 GameObject:
@@ -3455,6 +3643,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: onFinished.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400128, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: onFinished.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3510,6 +3706,30 @@ Prefab:
     - target: {fileID: 400076, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
       propertyPath: m_LocalScale.z
       value: .00416666688
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 414483235}
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: disableWhenFinished
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: onFinished.Array.data[0].mTarget
+      value: 
+      objectReference: {fileID: 998036665}
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: onFinished.Array.data[0].mMethodName
+      value: LoadGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400130, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
+      propertyPath: ifDisabledOnPlay
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bf4ad8769e97e84a8aa02f9842f5920, type: 2}
@@ -7362,10 +7582,7 @@ MonoBehaviour:
   clearSelection: 0
   ifDisabledOnPlay: 0
   disableWhenFinished: 0
-  onFinished:
-  - mTarget: {fileID: 998036665}
-    mMethodName: LoadGame
-    oneShot: 0
+  onFinished: []
   eventReceiver: {fileID: 0}
   callWhenFinished: 
 --- !u!114 &1652748795
@@ -7375,12 +7592,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 707206609}
   m_GameObject: {fileID: 1652748792}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f093ad5830afe44aba6efa8b8a5d5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 493884018}
+  target: {fileID: 414483235}
   clipName: Title_BackToMid
   trigger: 0
   playDirection: 1
@@ -7388,7 +7605,10 @@ MonoBehaviour:
   clearSelection: 0
   ifDisabledOnPlay: 0
   disableWhenFinished: 0
-  onFinished: []
+  onFinished:
+  - mTarget: {fileID: 998036665}
+    mMethodName: LoadGame
+    oneShot: 0
   eventReceiver: {fileID: 0}
   callWhenFinished: 
 --- !u!114 &1652748796
