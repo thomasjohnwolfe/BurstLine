@@ -7,53 +7,42 @@ using System.Collections.Generic;
 
 class UIManager_Game : MonoBehaviour
 {
-					CarRally 			carStats;
+
+	public 			bool 			criticalLightOn; //for coroutine trigger
+
+	[Range (0,1)]
+	public 			float 			sheildPercent;
+
+	private			CarRally 		carStats; //Hieu's script
+	private			CarController	carControl;
+	private 		bool 			carSpawned; 
 	Dictionary<GameObject,GameObject> 	OtherPlayersMiniMapLoc; //<player,minimapSprite>
 	
 	private static 	UISprite 		speedometer,
-									boostMeter,
+									//boostMeter,
 									shield,
 									critLight,
 									MapBG;
 
-
 	private static 	UILabel 		timeTxt;
-
-	//shield
-	private 		Transform 		shieldT,
-									PlayerLocT;
-
-	//reference to car attributes
-	private			CarController	carControl;
-	private 		bool 		carSpawned; //to read values when car is spawned
 	
-	private 		bool 				critBlinking;
+	private 		Transform 		shieldT, //tansform for Shield sprite
+									PlayerLocT; //transform for MiniMapspite
+	private 		GameObject 		MiniMapSprite;
 
-	//public inspector values for boost, speed, sheild
-	[Range (0,1)]
-	public 			float 				speedBoost,
-										speedRegular,
-										sheildPercent;
+	private 		bool 			critBlinking;
+	private 		int 			boostMaxNum		=	2; //idx
 
-	//public bool for testing critical light
-	public 			bool 				criticalLightOn;
 
-	// fortesting
-	//public int boostNumber = 0;
+	private			Weapon_UI[] 	weapon 		= 	new Weapon_UI[3];
+	private			Boost_UI[] 		boost 		= 	new Boost_UI[3];
 
-	private 		int 				boostMaxNum		=	2; //idx
 
-	//custom sprite classes
-					Weapon_UI[] 		weapon = new Weapon_UI[3];
-					Boost_UI[] 			boost = new Boost_UI[3];
-
-	//miniMap
-	public 			Transform 			boundaryL,boundaryR,boundaryT,boundaryB;
-					Transform			PlayerGlobalTransform;
-	private 		Vector2				mapDimensions;
-	private 		Transform			miniMapBoundries;
-
-	private 			GameObject 			MiniMapSprite;
+	public 			Transform 		boundaryL,boundaryR,boundaryT,boundaryB;
+	private			Transform		PlayerGlobalTransform;
+	private 		Vector2			mapDimensions;
+	private 		Transform		miniMapBoundries;
+	public			Color			speedStartColor,speedEndColor;
 
 	void Start()
 	{
@@ -69,16 +58,20 @@ class UIManager_Game : MonoBehaviour
 		GameObject[] t = GameObject.FindGameObjectsWithTag ("OtherPlayer");
 		foreach (GameObject found in t)
 		{
-			if(!OtherPlayersMiniMapLoc.ContainsKey(found))
-			{
-				OtherPlayersMiniMapLoc.Add(found,CreatePlayersMiniMapSprite(found));
-				print ("found player, adding minimapSprite" + OtherPlayersMiniMapLoc[found].name);
+			int id = found.GetComponent<playerID>()==null? 0:found.GetComponent<playerID>().ID;
 
+			if(id!=0)
+			{
+				if(!OtherPlayersMiniMapLoc.ContainsKey(found))
+				{
+					OtherPlayersMiniMapLoc.Add(found,CreatePlayersMiniMapSprite(found));
+					print ("found player, adding minimapSprite" + OtherPlayersMiniMapLoc[found].name);
+
+				}
 			}
 		}
 	}
-
-
+	
 	//public method to be called when your local car is spawned
 	public void Init()
 	{
@@ -92,7 +85,7 @@ class UIManager_Game : MonoBehaviour
 		mapDimensions = new Vector2(Mathf.Abs(boundaryR.position.x-boundaryL.position.x),Mathf.Abs(boundaryT.position.z-boundaryB.position.z));
 		carControl = GameObject.FindGameObjectWithTag("Player").GetComponent<CarController>();
 		speedometer = GameObject.Find("SpeedOmeter").GetComponent<UISprite>();
-		boostMeter = GameObject.Find("Boost").GetComponent<UISprite>();
+		//boostMeter = GameObject.Find("Boost").GetComponent<UISprite>();
 		shield = GameObject.Find("Shield_UI").GetComponent<UISprite>();
 		critLight = GameObject.Find("CriticalLight").GetComponent<UISprite>();
 		shieldT = GameObject.Find("Shield_UI").transform;
@@ -177,13 +170,14 @@ class UIManager_Game : MonoBehaviour
 	public float SpeedoMeter
 	{
 		get {return speedometer.fillAmount;}
-		set { speedometer.fillAmount = Mathf.Clamp( (value*.63f),0,0.63f);}
+		set { speedometer.fillAmount = Mathf.Clamp( (value*.5f),0,0.75f);}
 	}
 	public float Boost
 	{
-		get {return boostMeter.fillAmount;}
+		//get {return boostMeter.fillAmount;}
 		//set { boost.fillAmount = Mathf.Clamp( (value*.6f)+.41f,.41f,1.0f);}
-		set { boostMeter.fillAmount = Mathf.Clamp( (value*.63f),0,0.63f);}
+		set { ;}//speedometer.color = Color.Lerp (speedStartColor,speedEndColor,value);}
+			//boostMeter.fillAmount = Mathf.Clamp( (value*.63f),0,0.63f);}
 
 	}
 	public float Shield
@@ -227,39 +221,47 @@ class UIManager_Game : MonoBehaviour
 	//for activating a boost sequence 
 	public bool ActivateBoost()
 	{
-		setBoostNumber(boostMaxNum);
-		if(boostMaxNum <=0)
+		if(boostMaxNum <=-1)
 		{
 			return false;
 		}
-		else
-		{
-			return true;
-		}
+		setBoostNumber(boostMaxNum);
+
+		StartCoroutine(setBoostValueInSpeedScript(carControl.boostTime));
+		return true;
+
+	}
+
+	IEnumerator setBoostValueInSpeedScript(float time)
+	{
+		if(carControl.tomSpeedScript.Boosting == true) yield break;
+		Debug.Log("boosting");
+		carControl.tomSpeedScript.car.AddForce(carControl.tomSpeedScript.car.gameObject.transform.forward*1000,ForceMode.Force);
+		carControl.tomSpeedScript.Boosting = true;
+		//carControl.MaxSpeed *= 2f;
+		carControl.tomSpeedScript.applyDrag = false;
+		yield return new WaitForSeconds(time*0.9f);
+		carControl.tomSpeedScript.applyDrag = true;
+		Debug.Log("reApplyingDrag");
+		yield return new WaitForSeconds(time*0.1f);
+		carControl.tomSpeedScript.Boosting = false;
+		//carControl.MaxSpeed /= 2f;
+		Debug.Log("boosting stop");
 	}
 
 	void RunInspectorTestValues()
 	{
-		//assign public values for inspector
-		speedRegular =(carControl.CurrentSpeed*2 / carControl.MaxSpeed);
-		speedBoost= (carControl.CurrentSpeed*2 / carControl.MaxSpeed)-1f;
-
-		//assign test inspector values to script
-		SpeedoMeter = speedRegular;
-		Boost =speedBoost;
+		SpeedoMeter = carControl.tomSpeedScript.speedRatio;
+		speedometer.color = carControl.tomSpeedScript.Boosting? speedEndColor : speedStartColor;
 		Shield = carStats.getHealth()/100f;
 
-
-		//grab time to test timer;
 		TimeTotal = Time.time.ToString();
 
 		CriticalLightON = (carStats.getHealth()<0.5f);
-		//Debug.Log(critBlinking);
-		//assign boost number
-		//setBoostNumber(boostNumber);
 
 		if (Input.GetKeyDown(KeyCode.Alpha4))
 		{
+			if(carControl.tomSpeedScript.Boosting==false)
 			ActivateBoost();
 		}
 
@@ -311,8 +313,6 @@ class UIManager_Game : MonoBehaviour
 	void UpdatePlayersMiniMap()
 	{
 		MiniMapLoc = MiniMapPosition(PlayerGlobalTransform);
-		//miniMapBoundries.position = new Vector3(PlayerGlobalTransform.position.x,miniMapBoundries.position.y,PlayerGlobalTransform.position.z);
-
 	}
 
 	public Vector3 MiniMapPosition(Transform t)

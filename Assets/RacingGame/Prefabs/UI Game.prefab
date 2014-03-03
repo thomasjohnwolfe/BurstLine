@@ -226,7 +226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100028
 GameObject:
   m_ObjectHideFlags: 1
@@ -703,7 +703,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -276, y: -199.999985, z: 0}
+  m_LocalPosition: {x: -276.000031, y: -200.000015, z: 0}
   m_LocalScale: {x: .592136323, y: .592136323, z: .592136323}
   m_Children:
   - {fileID: 400046}
@@ -752,7 +752,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208, y: -172, z: 0}
+  m_LocalPosition: {x: 208.000015, y: -172, z: 0}
   m_LocalScale: {x: .785616577, y: .785616577, z: .785616636}
   m_Children:
   - {fileID: 400026}
@@ -938,7 +938,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
-  m_LocalRotation: {x: 0, y: 0, z: .843391478, w: .537299573}
+  m_LocalRotation: {x: 0, y: 0, z: .793353379, w: .608761489}
   m_LocalPosition: {x: -1, y: 1, z: 0}
   m_LocalScale: {x: .999954998, y: .999954998, z: .999955058}
   m_Children: []
@@ -1135,7 +1135,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89, y: 223.999985, z: 0}
+  m_LocalPosition: {x: 89, y: 224.000015, z: 0}
   m_LocalScale: {x: 1.21236801, y: 1.21236801, z: 1.21236801}
   m_Children:
   - {fileID: 400066}
@@ -2494,7 +2494,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .588235259, g: 1, b: .9148072, a: 1}
   mPivot: 4
   mWidth: 248
   mHeight: 250
@@ -2507,7 +2507,7 @@ MonoBehaviour:
   mSpriteName: bar
   mType: 3
   mFillDirection: 4
-  mFillAmount: .84799999
+  mFillAmount: .763999999
   mInvert: 1
   mFillCenter: 1
   centerType: 1
@@ -3126,14 +3126,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4774174ca1b0e643abe865a7bbf385e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBoost: 0
-  speedRegular: 0
-  sheildPercent: .949999988
   criticalLightOn: 1
+  sheildPercent: .949999988
   boundaryL: {fileID: 0}
   boundaryR: {fileID: 0}
   boundaryT: {fileID: 0}
   boundaryB: {fileID: 0}
+  speedStartColor: {r: .114186838, g: .970588207, b: .12009301, a: 1}
+  speedEndColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &11400088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3197,10 +3197,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 100068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b85495969b7851242984fb39604211cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bf893fca617d6f48895e36116117643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  find: 0
+  mainCameraName: Main Camera
+  playerTag: Player
+  otherPlayerTag: OtherPlayer
+  uiRootName: UI Root
+  trackingDist: 100
+  Offset: {x: 0, y: 1, z: 0}
+  pixelOffset: 25
+  nameLabelPrefab: {fileID: 100000, guid: 9803a023092ccde46a80ee5350fe3258, type: 2}
+  playerDotForwardVector: 0
+  playerWorldScreen: {x: 0, y: 0, z: 0}
+  playerScreenPoint: {x: 0, y: 0}
 --- !u!114 &11400094
 MonoBehaviour:
   m_ObjectHideFlags: 1

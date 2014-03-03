@@ -103,7 +103,10 @@ public class PlayerNumber : MonoBehaviour {
 		}
 	}
 
-	int GetCarID(GameObject car) {return car.GetComponent<playerID>().ID;}
+	int GetCarID(GameObject car) {
+
+		return car.GetComponent<playerID>() == null? 0 : car.GetComponent<playerID>().ID;
+	}
 
 	string GetCarName(GameObject car){return "Player "+  GetCarID(car);}
 

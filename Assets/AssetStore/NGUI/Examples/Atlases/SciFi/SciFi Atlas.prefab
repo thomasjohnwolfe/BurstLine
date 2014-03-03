@@ -74,16 +74,16 @@ MonoBehaviour:
     paddingBottom: 0
   - name: bar
     x: 0
-    y: 602
-    width: 401
-    height: 783
+    y: 617
+    width: 471
+    height: 768
     borderLeft: 0
     borderRight: 0
     borderTop: 0
     borderBottom: 0
-    paddingLeft: 404
-    paddingRight: 41
-    paddingTop: 29
+    paddingLeft: 336
+    paddingRight: 39
+    paddingTop: 44
     paddingBottom: 34
   - name: bg
     x: 0
@@ -111,19 +111,6 @@ MonoBehaviour:
     paddingRight: 9
     paddingTop: 8
     paddingBottom: 4
-  - name: boostSprite
-    x: 402
-    y: 946
-    width: 256
-    height: 256
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
   - name: Button
     x: 903
     y: 1415
@@ -165,7 +152,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Font - Header
     x: 0
-    y: 89
+    y: 104
     width: 256
     height: 512
     borderLeft: 0
@@ -177,8 +164,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Font - Normal
-    x: 402
-    y: 689
+    x: 472
+    y: 946
     width: 256
     height: 256
     borderLeft: 0
@@ -268,7 +255,7 @@ MonoBehaviour:
     paddingTop: 189
     paddingBottom: 189
   - name: speedNum
-    x: 402
+    x: 472
     y: 1203
     width: 546
     height: 182
