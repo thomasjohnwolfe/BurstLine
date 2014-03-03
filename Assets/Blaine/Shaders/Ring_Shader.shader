@@ -62,8 +62,8 @@ Shader "Shader Forge/Ring_Shader" {
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
 /////// Normals:
                 i.normalDir = normalize(i.normalDir);
-                float2 node_272 = i.uv0;
-                float3 normalLocal = tex2D(_Ring,TRANSFORM_TEX(node_272.rg, _Ring)).rgb;
+                float2 node_162 = i.uv0;
+                float3 normalLocal = tex2D(_Ring,TRANSFORM_TEX(node_162.rg, _Ring)).rgb;
                 float3 normalDirection =  mul( normalLocal, tangentTransform ); // Perturbed normals
                 
                 float nSign = sign( dot( viewDirection, i.normalDir ) ); // Reverse normal if this is a backface
@@ -78,11 +78,11 @@ Shader "Shader Forge/Ring_Shader" {
                 float NdotL = dot( normalDirection, lightDirection );
                 float3 diffuse = max( 0.0, NdotL) * attenColor + UNITY_LIGHTMODEL_AMBIENT.xyz*2;
 ////// Emissive:
-                float4 node_273 = _Time + _TimeEditor;
-                float3 emissive = (tex2D(_Ring,TRANSFORM_TEX((node_272.rg+node_273.g*float2(-1,0)), _Ring)).g*float3(0.8620691,0,1));
+                float4 node_163 = _Time + _TimeEditor;
+                float3 emissive = (tex2D(_Ring,TRANSFORM_TEX((node_162.rg+node_163.g*float2(-1,0)), _Ring)).g*float3(0.8620691,0,1));
                 float3 finalColor = 0;
                 float3 diffuseLight = diffuse;
-                finalColor += diffuseLight * (10.0*(tex2D(_Ring,TRANSFORM_TEX(node_272.rg, _Ring)).r*float3(0,0.25,1)));
+                finalColor += diffuseLight * (10.0*(tex2D(_Ring,TRANSFORM_TEX(node_162.rg, _Ring)).r*float3(0,0.25,1)));
                 finalColor += emissive;
 /// Final Color:
                 return fixed4(finalColor,1);
@@ -142,8 +142,8 @@ Shader "Shader Forge/Ring_Shader" {
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
 /////// Normals:
                 i.normalDir = normalize(i.normalDir);
-                float2 node_274 = i.uv0;
-                float3 normalLocal = tex2D(_Ring,TRANSFORM_TEX(node_274.rg, _Ring)).rgb;
+                float2 node_164 = i.uv0;
+                float3 normalLocal = tex2D(_Ring,TRANSFORM_TEX(node_164.rg, _Ring)).rgb;
                 float3 normalDirection =  mul( normalLocal, tangentTransform ); // Perturbed normals
                 
                 float nSign = sign( dot( viewDirection, i.normalDir ) ); // Reverse normal if this is a backface
@@ -159,7 +159,7 @@ Shader "Shader Forge/Ring_Shader" {
                 float3 diffuse = max( 0.0, NdotL) * attenColor;
                 float3 finalColor = 0;
                 float3 diffuseLight = diffuse;
-                finalColor += diffuseLight * (10.0*(tex2D(_Ring,TRANSFORM_TEX(node_274.rg, _Ring)).r*float3(0,0.25,1)));
+                finalColor += diffuseLight * (10.0*(tex2D(_Ring,TRANSFORM_TEX(node_164.rg, _Ring)).r*float3(0,0.25,1)));
 /// Final Color:
                 return fixed4(finalColor * 1,0);
             }
