@@ -4773,7 +4773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba9f50f44c2c59d4db3f10b897f0f95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameSceneName: Tom_Week6
+  GameSceneName: gameStart
   Cars:
   - {fileID: 2057982340}
   - {fileID: 218733458}
@@ -8419,6 +8419,10 @@ Prefab:
       propertyPath: Cars.Array.data[2]
       value: 
       objectReference: {fileID: 1150732125}
+    - target: {fileID: 11400000, guid: f9e979a288d02a14588135268e742687, type: 2}
+      propertyPath: GameSceneName
+      value: gameStart
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9e979a288d02a14588135268e742687, type: 2}
   m_RootGameObject: {fileID: 998036664}
