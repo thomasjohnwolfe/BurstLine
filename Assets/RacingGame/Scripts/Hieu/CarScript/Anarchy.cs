@@ -1,10 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Anarchy: CarRally {
-
+	List<Color> colorset = new List<Color> ();
+	int index = 0;
+	bool assigncolor = false;
 	// Use this for initialization
 	void Start () {
+		colorset.Add (Color.magenta);
+		colorset.Add (Color.red);
+		colorset.Add (Color.black);
+		colorset.Add (Color.blue);
+
 		weapon = new Weapon[MAXSLOT];
 		weaponslot = new int[MAXSLOT];
 		weapon[0] = this.GetComponent<Blades>() as Weapon;
@@ -25,7 +33,16 @@ public class Anarchy: CarRally {
 		if(!networkView.isMine){
 			networkView.RPC("updateHealth",RPCMode.All,getHealth());
 		}
+		if (!assigncolor) {
+			index = this.GetComponentInChildren<playerID> ().ID;
+		}
+		if (index!= 0 && !assigncolor) {
+			setCarColor(index);
+			assigncolor = true;
+		}
+
 		if(networkView.isMine){
+		
 			foreach (Weapon w in weapon){
 				if(Input.GetKeyDown(w.keyInput) && w.enabled){
 					w.execute();
@@ -35,10 +52,14 @@ public class Anarchy: CarRally {
 				}
 			}
 		}
-
 	}
 	[RPC]
 	void updateHealth(float val){
 		currentHealth = val;
 	}
+
+	void setCarColor(int i){
+		m.renderer.material.SetColor ("_Color", colorset[i-1]);
+	}
+
 }

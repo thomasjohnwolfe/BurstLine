@@ -309,6 +309,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100082, guid: 53160d63021feca48abdcb50fc64e226, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53160d63021feca48abdcb50fc64e226, type: 2}
   m_RootGameObject: {fileID: 565568369}
@@ -388,6 +392,7 @@ GameObject:
   - 65: {fileID: 232296551}
   - 23: {fileID: 232296550}
   - 114: {fileID: 232296549}
+  - 148: {fileID: 232296553}
   m_Layer: 0
   m_Name: RushProjectile
   m_TagString: Untagged
@@ -468,6 +473,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 168789483}
   m_GameObject: {fileID: 232296547}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!148 &232296553
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800006, guid: 53160d63021feca48abdcb50fc64e226,
+    type: 2}
+  m_PrefabInternal: {fileID: 168789483}
+  m_GameObject: {fileID: 232296547}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 232296548}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1 &274124126
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +578,7 @@ GameObject:
   - 65: {fileID: 407645515}
   - 23: {fileID: 407645514}
   - 114: {fileID: 407645513}
+  - 148: {fileID: 407645517}
   m_Layer: 0
   m_Name: LeftBlade
   m_TagString: Untagged
@@ -640,6 +659,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 168789483}
   m_GameObject: {fileID: 407645511}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!148 &407645517
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800004, guid: 53160d63021feca48abdcb50fc64e226,
+    type: 2}
+  m_PrefabInternal: {fileID: 168789483}
+  m_GameObject: {fileID: 407645511}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 407645512}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1 &451932521
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &565568370
 Transform:
   m_ObjectHideFlags: 0
@@ -945,12 +977,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75ffa7a9cda5d7e418aad74129a14b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  maxHealth: 0
+  currentHealth: 100
+  boost: 3
   weapon: []
   weaponslot: 
   target: {fileID: 0}
-  boost: 3
 --- !u!114 &565568382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -990,20 +1021,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSteerAngle: 28
-  steeringResponseSpeed: 200
-  maxSpeedSteerAngle: .230000004
-  maxSpeedSteerResponse: .5
+  steeringResponseSpeed: 300
+  maxSpeedSteerAngle: .200000003
+  maxSpeedSteerResponse: .303000003
   maxSpeed: 50
   maxTorque: 35
   minTorque: 10
   brakePower: 40
   adjustCentreOfMass: .25
   advanced:
-    burnoutSlipEffect: .400000006
+    burnoutSlipEffect: 1
     burnoutTendency: .200000003
     spinoutSlipEffect: .5
     sideSlideEffect: .5
-    downForce: 30
+    downForce: 60
     numGears: 5
     gearDistributionBias: .200000003
     steeringCorrection: 2
@@ -1666,6 +1697,7 @@ GameObject:
   - 65: {fileID: 1176794404}
   - 23: {fileID: 1176794403}
   - 114: {fileID: 1176794402}
+  - 148: {fileID: 1176794406}
   m_Layer: 0
   m_Name: RightBlade
   m_TagString: Untagged
@@ -1746,6 +1778,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 168789483}
   m_GameObject: {fileID: 1176794400}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!148 &1176794406
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 14800002, guid: 53160d63021feca48abdcb50fc64e226,
+    type: 2}
+  m_PrefabInternal: {fileID: 168789483}
+  m_GameObject: {fileID: 1176794400}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 1176794401}
+  m_ViewID:
+    m_ID: 0
+    m_Type: 0
 --- !u!1 &1183412056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1947,6 +1992,10 @@ Prefab:
     - target: {fileID: 14800000, guid: 1b159494d2e4bbf4eb1bce95895f17f4, type: 2}
       propertyPath: m_ViewID.m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1b159494d2e4bbf4eb1bce95895f17f4, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b159494d2e4bbf4eb1bce95895f17f4, type: 2}
@@ -2424,7 +2473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!148 &1845607503
 NetworkView:
   m_ObjectHideFlags: 0

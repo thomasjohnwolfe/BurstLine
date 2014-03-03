@@ -10,7 +10,10 @@ public class CarRally : MonoBehaviour {
 	public Weapon[] weapon;
 	public int[] weaponslot;
 	public GameObject target;
+	public GameObject m;
 	bool add = false;
+
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -19,7 +22,6 @@ public class CarRally : MonoBehaviour {
 	void Update () {
 
 	}
-
 
 	public float getHealth(){
 		if(currentHealth <= 0) return 0;

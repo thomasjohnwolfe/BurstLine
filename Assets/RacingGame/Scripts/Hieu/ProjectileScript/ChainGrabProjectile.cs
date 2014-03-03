@@ -16,6 +16,15 @@ public class ChainGrabProjectile : ProjectileScript {
 					DestroyGameObject();
 				}
 				transform.Translate( Vector3.forward*speed*Time.deltaTime);
+				Vector3 fwd = transform.TransformDirection(Vector3.forward);
+				RaycastHit hit;
+				if(Physics.Raycast(this.transform.position,fwd,out hit,2)){
+					Debug.Log(hit.collider.gameObject.name);
+					
+					if(hit.collider.gameObject.tag == "OtherPlayer"){
+						target = hit.collider.gameObject;
+					}
+				}
 			}
 			else{
 				target.GetComponent<DisableAll>().Disable();
@@ -31,15 +40,7 @@ public class ChainGrabProjectile : ProjectileScript {
 				}
 			}
 
-			Vector3 fwd = transform.TransformDirection(Vector3.forward);
-			RaycastHit hit;
-			if(Physics.Raycast(this.transform.position,fwd,out hit,2)){
-				Debug.Log(hit.collider.gameObject.name);
 
-				if(hit.collider.gameObject.tag == "OtherPlayer"){
-					target = hit.collider.gameObject;
-				}
-			}
 		}
 	}
 

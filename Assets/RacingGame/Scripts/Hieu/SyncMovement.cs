@@ -4,10 +4,11 @@ using System.Collections;
 public class SyncMovement : MonoBehaviour {
 	float speed;
 	float lastSynchronizationTime = 0f;
-	float syncDelay = 0f;
+	float syncDelay = 1f;
 	float syncTime = 0f;
 	Vector3 syncStartPosition = Vector3.zero;
 	Vector3 syncEndPosition = Vector3.zero;
+	Quaternion syncStartRotation, syncEndRotation = Quaternion.identity;
 	// Use this for initialization
 	void Awake()
 	{
@@ -35,6 +36,7 @@ public class SyncMovement : MonoBehaviour {
 	{
 		syncTime += Time.deltaTime;
 		rigidbody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
+		transform.rotation = Quaternion.Lerp (syncStartRotation, syncEndRotation, syncTime / syncDelay);
 	}
 
 	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
@@ -50,7 +52,7 @@ public class SyncMovement : MonoBehaviour {
 			syncVelocity = rigidbody.velocity;
 			stream.Serialize(ref syncVelocity);
 
-			syncRotation = rigidbody.rotation;
+			syncRotation = transform.rotation;
 			stream.Serialize(ref syncRotation);
 		}
 		else
@@ -65,6 +67,8 @@ public class SyncMovement : MonoBehaviour {
 			
 			syncEndPosition = syncPosition + syncVelocity * syncDelay;
 			syncStartPosition = rigidbody.position;
+			syncStartRotation = transform.rotation;
+			syncEndRotation = transform.rotation *  Quaternion.Euler(rigidbody.angularVelocity * syncDelay);
 		}
 	}
 	/*
