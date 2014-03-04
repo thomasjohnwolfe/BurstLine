@@ -10,12 +10,20 @@ public class ResetPos : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	if(Input.GetKeyDown(KeyCode.Escape))
+		if(Input.GetKeyDown(KeyCode.Escape))
 		{
 			GameObject.FindGameObjectWithTag("Player").transform.position = startPos.transform.position;;
 			GameObject.FindGameObjectWithTag("Player").transform.rotation = startPos.transform.rotation;
 			GameObject.FindGameObjectWithTag("Player").rigidbody.velocity = Vector3.zero;
 			GameObject.FindGameObjectWithTag("Player").rigidbody.angularVelocity = Vector3.zero;
 		}
+
+		if(Input.GetKeyDown(KeyCode.Backspace))
+		{
+			Application.LoadLevel(Application.loadedLevel);
+		}
+
 	}
+
+
 }

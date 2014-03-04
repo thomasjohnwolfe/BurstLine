@@ -78,6 +78,7 @@ public class CarController : MonoBehaviour
 	// and are required by the Wheel script to compute grip, burnout, skidding, etc
     public float MaxSpeed
     {
+		set { maxSpeed = value;}
         get { return maxSpeed; }
     }
 
@@ -85,6 +86,7 @@ public class CarController : MonoBehaviour
     public float MaxTorque
     {
         get { return maxTorque; }
+		set { maxTorque = value; }
     }
 
 
@@ -124,11 +126,15 @@ public class CarController : MonoBehaviour
 	bool reversing;
 	float targetAccelInput; // target accel input is our desired acceleration input. We smooth towards it later
 
+	public CarSpeedControl 	tomSpeedScript;  // <== Tom ADD
+	public float 			normalSpeedCap 		= 	50f;  // <== Tom ADD
 
-
+	public float 			dragCoef		=	0.25f;
+	public float			boostTime		= 	20f;
 
 	void Awake ()
     {
+		tomSpeedScript = new CarSpeedControl(this);  // <== Tom ADD
 		// get a reference to all wheel attached to the car.
 		wheels = GetComponentsInChildren<Wheel>();
 
@@ -145,6 +151,10 @@ public class CarController : MonoBehaviour
         maxReversingSpeed = maxSpeed * advanced.reversingSpeedFactor;
 	}
 
+	void Update()
+	{
+		tomSpeedScript.LimitSpeed();   // <== Tom ADD
+	}
 
 	void OnEnable()
 	{

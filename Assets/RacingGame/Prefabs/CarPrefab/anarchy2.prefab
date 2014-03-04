@@ -2720,7 +2720,7 @@ MonoBehaviour:
   steeringResponseSpeed: 300
   maxSpeedSteerAngle: .200000003
   maxSpeedSteerResponse: .303000003
-  maxSpeed: 50
+  maxSpeed: 60
   maxTorque: 35
   minTorque: 10
   brakePower: 40
@@ -2741,6 +2741,9 @@ MonoBehaviour:
     gearFactorSmoothing: 5
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
+  normalSpeedCap: 45
+  dragCoef: .25
+  boostTime: 10
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
