@@ -2,7 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class StickyMine : Weapon {
-
+	public GameObject shootLocation;
+	public GameObject projectilePrefab;
+	public int numberProjectile;
 	public override void execute(){
 		GameObject clone;
 		for(int i=0;i<this.numberProjectile;i++){

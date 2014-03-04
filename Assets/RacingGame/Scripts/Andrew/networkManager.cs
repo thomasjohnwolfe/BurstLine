@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class networkManager : MonoBehaviour {
@@ -12,6 +12,12 @@ public class networkManager : MonoBehaviour {
 	
 	public int players = 0;
 	public int player = 0;
+	public static networkManager _instance;
+	
+	void Awake()
+	{
+		_instance = this;
+	}
 	
 	void OnGUI(){
 		

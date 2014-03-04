@@ -10,13 +10,6 @@ public class RushProjectile : ProjectileScript {
 	
 	// Update is called once per frame
 	void Update () {
-		if(networkView.isMine){
-			if(Time.time - time > this.lifetime){
-				this.enabled = false;
-				time = Time.time;
-			}
-		}
-		//Debug.Log(damage);
 	}
 
 	void FixedUpdate(){
