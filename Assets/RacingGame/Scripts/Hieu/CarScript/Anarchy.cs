@@ -16,8 +16,11 @@ public class Anarchy: CarRally {
 		weapon = new Weapon[MAXSLOT];
 		weaponslot = new int[MAXSLOT];
 		weapon[0] = this.GetComponent<Blades>() as Weapon;
+		weapon[0].name = "Blades";
 		weapon[1] = this.GetComponent<MachineGun>() as Weapon;
+		weapon[1].name = "MachineGun";
 		weapon[2] = this.GetComponent<Rush>() as Weapon;
+		weapon[2].name = "Rush";
 		for(int i = 0; i<MAXSLOT;i++){
 			weapon[i].owner = this.gameObject;
 			//weapon[i].enabled = false;
@@ -43,7 +46,7 @@ public class Anarchy: CarRally {
 
 		if(networkView.isMine){
 			foreach (Weapon w in weapon){
-				if(Input.GetKeyDown(w.keyInput) && w.enabled){
+				if( (Input.GetKeyDown(w.keyInput) || Input.GetButtonDown(w.name)) && w.enabled){
 					w.execute();
 					//w.enabled = false;
 					//for debug only

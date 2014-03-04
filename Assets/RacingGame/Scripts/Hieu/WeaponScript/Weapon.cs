@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour{
 	public float damage;
 	public float lifetime;
 	[HideInInspector]
+	public string name;
 	public GameObject owner;
 	public virtual void execute(){
 		//Debug.Log("Weapon");

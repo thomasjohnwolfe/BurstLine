@@ -577,6 +577,7 @@ MonoBehaviour:
   speed: 100
   damage: 10
   lifetime: 5
+  name: 
   owner: {fileID: 0}
   shootLocation:
   - {fileID: 650355404}
@@ -602,6 +603,7 @@ MonoBehaviour:
   speed: 0
   damage: 15
   lifetime: 5
+  name: 
   owner: {fileID: 0}
   particle:
   - {fileID: 2081374355}
@@ -622,6 +624,7 @@ MonoBehaviour:
   speed: 10
   damage: 15
   lifetime: 2
+  name: 
   owner: {fileID: 0}
   particle: {fileID: 0}
 --- !u!65 &222142190
