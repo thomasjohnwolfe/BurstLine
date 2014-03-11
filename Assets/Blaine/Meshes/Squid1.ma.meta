@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: ed670b1a9716b40428ee53ed90486719
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Background_Stuff2:polySurface2042
+    100002: Fin
+    100004: Head1
+    100006: Sighn
+    100008: Squid
+    100010: //RootNode
+    100012: Tenticle1
+    100014: Tenticle2
+    100016: Tenticle3
+    100018: Tenticle4
+    100020: Tenticle5
+    100022: Tenticle6
+    100024: Tenticle7
+    100026: transform1
+    100028: transform2
+    400000: Background_Stuff2:polySurface2042
+    400002: Fin
+    400004: Head1
+    400006: Sighn
+    400008: Squid
+    400010: //RootNode
+    400012: Tenticle1
+    400014: Tenticle2
+    400016: Tenticle3
+    400018: Tenticle4
+    400020: Tenticle5
+    400022: Tenticle6
+    400024: Tenticle7
+    400026: transform1
+    400028: transform2
+    2300000: Head1
+    2300002: Sighn
+    2300004: Tenticle1
+    2300006: Tenticle2
+    2300008: Tenticle3
+    2300010: Tenticle4
+    2300012: Tenticle5
+    2300014: Tenticle6
+    2300016: Tenticle7
+    3300000: Head1
+    3300002: Sighn
+    3300004: Tenticle1
+    3300006: Tenticle2
+    3300008: Tenticle3
+    3300010: Tenticle4
+    3300012: Tenticle5
+    3300014: Tenticle6
+    3300016: Tenticle7
+    4300000: Tenticle2
+    4300002: Tenticle5
+    4300004: Tenticle3
+    4300006: Tenticle6
+    4300008: Sighn
+    4300010: Tenticle1
+    4300012: Tenticle4
+    4300014: Tenticle7
+    4300016: Head1
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 96
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Background_Stuff2:polySurface2042
+        weight: 1
+      - path: Fin
+        weight: 1
+      - path: Fin/transform1
+        weight: 1
+      - path: Head1
+        weight: 1
+      - path: Sighn
+        weight: 1
+      - path: Squid
+        weight: 1
+      - path: Squid/transform2
+        weight: 1
+      - path: Tenticle1
+        weight: 1
+      - path: Tenticle2
+        weight: 1
+      - path: Tenticle3
+        weight: 1
+      - path: Tenticle4
+        weight: 1
+      - path: Tenticle5
+        weight: 1
+      - path: Tenticle6
+        weight: 1
+      - path: Tenticle7
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
