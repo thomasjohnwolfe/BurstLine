@@ -19,6 +19,8 @@ public class networkManager : MonoBehaviour {
 	
 	private List<GameObject> spawns;
 	
+	private float countDown = 3f;
+				
 	public static networkManager _instance;
 
 	void Awake(){
@@ -33,8 +35,6 @@ public class networkManager : MonoBehaviour {
 			spawns.Add(i.gameObject);
 			
 		}
-		MasterServer.ClearHostList();
-		MasterServer.RequestHostList("Race");
 	}
 	
 	void OnGUI(){
@@ -74,6 +74,16 @@ public class networkManager : MonoBehaviour {
 			}
 			
 		}
+		
+		if (state == "countDown"){
+			GUI.Box(new Rect((Screen.width/2)-(size.x/2),(Screen.height/2)-(size.y/2)+100,(size.x),(size.y)),((int)Mathf.Ceil(countDown)).ToString());
+			countDown -= Time.deltaTime/2;
+			if (countDown <=0){
+				state = "started";
+				myCar.GetComponent<CarUserControl>().enabled = true;
+			}
+		}
+		
 		
 	}
 	
@@ -140,9 +150,8 @@ public class networkManager : MonoBehaviour {
 	
 	[RPC]
 	void startGame(){
-		GameSoundCommands.instance.PlayStartSound();
+		GameSoundCommands.instance.PlayStartSound ();
 		state = "countDown";
-		myCar.GetComponent<CarUserControl>().enabled = true;
 	}
 	
 	
@@ -157,19 +166,18 @@ public class networkManager : MonoBehaviour {
 		c.transform.parent = peerBall.transform;
 		c.transform.localPosition = new Vector3(.195f,.806f,-2.959f);
 		c.transform.rotation = peerBall.transform.rotation * Quaternion.Euler (353, 180, 0);
-		GameObject.Find ("UI Root").GetComponent<UIManager_Game> ().Init ();
-		//Debug.Log(peerBall);
 
+		//Debug.Log(peerBall);
+		GameObject.Find ("UI Root").GetComponent<UIManager_Game> ().Init ();
 		return peerBall;
 		
 	}
-
 	void CreateItem(){
-		GameObject[] spawn = GameObject.FindGameObjectsWithTag("SpawnItem");
+		GameObject[] spawn = GameObject.FindGameObjectsWithTag ("SpawnItem");
 		foreach (GameObject s in spawn) {
-			s.GetComponent<SpawnItemOverNetwork>().CreateItem();
+			s.GetComponent<SpawnItemOverNetwork>().CreateItem();		
 		}
+
 	}
-	
 	
 }

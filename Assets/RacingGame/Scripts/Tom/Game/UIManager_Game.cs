@@ -288,7 +288,7 @@ class UIManager_Game : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Alpha4)||Input.GetButtonDown("Boost"))
 		{
-			if(networkManager._instance.state == "countDown")
+			if(networkManager._instance.state == "started")
 			{
 				if(carControl.tomSpeedScript.Boosting==false)
 				{
