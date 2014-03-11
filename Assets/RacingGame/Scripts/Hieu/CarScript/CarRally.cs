@@ -60,7 +60,9 @@ public class CarRally : MonoBehaviour {
 			//Debug.Log("Random number "+slot);
 			if(weaponFull()){
 				if(boost<3) {
+					Debug.Break(); 
 					boost++;
+					UIManager_Game.instance.AddBoost();
 				}
 				else {
 					break;

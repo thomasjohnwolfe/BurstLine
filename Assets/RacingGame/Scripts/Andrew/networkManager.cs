@@ -52,7 +52,7 @@ public class networkManager : MonoBehaviour {
 				player = 1;
 				myCar = newPlayer();
 				myCar.GetComponent<playerID>().ID = player;
-				
+				CreateItem();
 				state = "serverWait";
 				Debug.Log("Started Server");
 				
@@ -157,15 +157,18 @@ public class networkManager : MonoBehaviour {
 		c.transform.parent = peerBall.transform;
 		c.transform.localPosition = new Vector3(.195f,.806f,-2.959f);
 		c.transform.rotation = peerBall.transform.rotation * Quaternion.Euler (353, 180, 0);
-
-		//Debug.Log(peerBall);
 		GameObject.Find ("UI Root").GetComponent<UIManager_Game> ().Init ();
+		//Debug.Log(peerBall);
+
+		return peerBall;
+		
+	}
+
+	void CreateItem(){
 		GameObject[] spawn = GameObject.FindGameObjectsWithTag("SpawnItem");
 		foreach (GameObject s in spawn) {
 			s.GetComponent<SpawnItemOverNetwork>().CreateItem();
 		}
-		return peerBall;
-		
 	}
 	
 	

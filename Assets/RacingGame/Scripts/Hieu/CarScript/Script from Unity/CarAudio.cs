@@ -153,7 +153,7 @@ public class CarAudio : MonoBehaviour {
 			//}
 
             // adjust the skid source based on the cars current skidding state
-			skidSource.volume = Mathf.Clamp01(carController.AvgSkid * 3 - 1);
+			skidSource.volume = Mathf.Clamp01(carController.AvgSkid * 3 - 1)/10f;
 			skidSource.pitch = Mathf.Lerp (0.8f, 1.3f, carController.SpeedFactor);
 			skidSource.dopplerLevel = useDoppler ? dopplerLevel : 0;
 		}

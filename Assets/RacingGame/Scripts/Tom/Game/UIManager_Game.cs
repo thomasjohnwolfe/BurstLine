@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 class UIManager_Game : MonoBehaviour
 {
-
+	public static UIManager_Game instance;
 	public 			bool 			criticalLightOn; //for coroutine trigger
 
 	[Range (0,1)]
@@ -43,6 +43,10 @@ class UIManager_Game : MonoBehaviour
 	private 		Vector2			mapDimensions;
 	private 		Transform		miniMapBoundries;
 	public			Color			speedStartColor,speedEndColor;
+
+	void Awake(){
+		instance = this;
+		}
 
 	void Start()
 	{
@@ -202,6 +206,10 @@ class UIManager_Game : MonoBehaviour
 			
 	}
 
+	public void AddBoost(){
+				setBoostNumber (boostMaxNum+2);
+		}
+
 	//for manually setting amount of boosts, likely a reset to 3
 	public void setBoostNumber(int num)
 	{
@@ -278,14 +286,17 @@ class UIManager_Game : MonoBehaviour
 
 		CriticalLightON = (carStats.getHealth()<0.5f);
 
-		if (Input.GetKeyDown(KeyCode.Alpha4))
+		if (Input.GetKeyDown(KeyCode.Alpha4)||Input.GetButtonDown("Boost"))
 		{
-			if(carControl.tomSpeedScript.Boosting==false)
+			if(networkManager._instance.state == "countDown")
 			{
-				GameSoundCommands.instance.PlayBoostEngine(carControl.boostTime);
-				GameSoundCommands.instance.PlayBoostStart();
-				carControl.gameObject.GetComponent<TrailRenderer>().enabled=true;
-				ActivateBoost();
+				if(carControl.tomSpeedScript.Boosting==false)
+				{
+					GameSoundCommands.instance.PlayBoostEngine(carControl.boostTime);
+					GameSoundCommands.instance.PlayBoostStart();
+					carControl.gameObject.GetComponent<TrailRenderer>().enabled=true;
+					ActivateBoost();
+				}
 			}
 		}
 		/*
@@ -324,7 +335,8 @@ class UIManager_Game : MonoBehaviour
 
 	void Update()
 	{
-
+		if (Input.GetKeyDown (KeyCode.Return))
+						AddBoost ();
 		if(carSpawned)
 		{
 			//Init ();
