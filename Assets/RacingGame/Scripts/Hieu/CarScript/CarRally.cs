@@ -11,7 +11,7 @@ public class CarRally : MonoBehaviour {
 	[HideInInspector]
 	public int[] weaponslot;
 	public GameObject target;
-	public GameObject model;
+	public GameObject[] model;
 	bool add = false;
 
 

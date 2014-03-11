@@ -36139,7 +36139,7 @@ NetworkView:
   m_StateSynchronization: 2
   m_Observed: {fileID: 1928370238}
   m_ViewID:
-    m_ID: 2
+    m_ID: 7
     m_Type: 1
 --- !u!1 &1928994518
 GameObject:

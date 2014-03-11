@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Anarchy: CarRally {
+	public Material[] mat;
 	List<Color> colorset = new List<Color> ();
 	int index = 0;
 	bool assigncolor = false;
@@ -12,6 +13,7 @@ public class Anarchy: CarRally {
 		colorset.Add (Color.red);
 		colorset.Add (Color.black);
 		colorset.Add (Color.blue);
+
 
 		weapon = new Weapon[MAXSLOT];
 		weaponslot = new int[MAXSLOT];
@@ -60,7 +62,12 @@ public class Anarchy: CarRally {
 	}
 
 	void setCarColor(int i){
-		model.renderer.material.SetColor ("_Color", colorset[i-1]);
+		//Debug.Log ("i  is " + i);
+		//Debug.Log (model[0].renderer.materials[0].name);
+		foreach (GameObject m in model) {
+			m.renderer.material	= mat[i-1];	
+		}
+		//model.renderer.material.SetColor ("_Color", colorset[i-1]);
 	}
 
 }

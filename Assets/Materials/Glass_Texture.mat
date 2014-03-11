@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Glass_Texture
-  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 1ed3555f622256b4eb9fe501ea84c9a2, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -20,9 +20,40 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+      data:
+        first:
+          name: _Cubemap
+        second:
+          m_Texture: {fileID: 8900000, guid: 2f821dbbb5e173e468876ef2e4eaa490, type: 2}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Glossyness
+        second: 4.61184168
+      data:
+        first:
+          name: _Specularity
+        second: 2.23214293
+      data:
+        first:
+          name: _CubemapSTR
+        second: .975976944
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _PaintColor
+        second: {r: .0344829559, g: 0, b: 1, a: 1}
+      data:
+        first:
+          name: _Glassolor
+        second: {r: .102941155, g: .480324239, b: 1, a: 1}
+      data:
+        first:
+          name: _GlassColor
+        second: {r: .235294104, g: .778499126, b: 1, a: 1}

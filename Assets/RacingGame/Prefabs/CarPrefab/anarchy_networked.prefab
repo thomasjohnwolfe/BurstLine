@@ -2141,7 +2141,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: e6bf3c749aa7f4e4e91aa60d8a916216, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2162,7 +2163,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: e6bf3c749aa7f4e4e91aa60d8a916216, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2183,7 +2185,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: e6bf3c749aa7f4e4e91aa60d8a916216, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2471,21 +2474,21 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
-  m_Mesh: {fileID: 4300004, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300004, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
 --- !u!33 &3300012
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100042}
-  m_Mesh: {fileID: 4300002, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
 --- !u!33 &3300014
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
-  m_Mesh: {fileID: 4300000, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
 --- !u!33 &3300016
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2905,7 +2908,17 @@ MonoBehaviour:
   weapon: []
   weaponslot: 
   target: {fileID: 0}
-  model: {fileID: 100096}
+  model:
+  - {fileID: 100096}
+  - {fileID: 100090}
+  - {fileID: 100088}
+  - {fileID: 100084}
+  - {fileID: 100086}
+  mat:
+  - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
+  - {fileID: 2100000, guid: 904df884781654643933e6bcd81620a7, type: 2}
+  - {fileID: 2100000, guid: 4f70ed66facf9d749b16aae77d7759c8, type: 2}
+  - {fileID: 2100000, guid: 626c1d13b021d584a9ffd47796a90216, type: 2}
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3050,7 +3063,9 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
+  - {fileID: 2100000, guid: b5e0668992509c94a945c421bbe07004, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3062,7 +3077,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300010, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300010, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
   m_Bones:
   - {fileID: 400080}
   m_BlendShapeWeights: []
@@ -3083,7 +3098,8 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3095,7 +3111,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300008, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300008, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
   m_Bones:
   - {fileID: 400024}
   - {fileID: 400080}
@@ -3117,7 +3133,8 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3129,7 +3146,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300006, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300006, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
   m_Bones:
   - {fileID: 400018}
   - {fileID: 400080}
@@ -3151,7 +3168,8 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
+  - {fileID: 2100000, guid: e6bf3c749aa7f4e4e91aa60d8a916216, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3163,7 +3181,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300018, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300014, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
   m_Bones:
   - {fileID: 400020}
   - {fileID: 400018}
@@ -3185,7 +3203,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3219,7 +3237,8 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: fe6b82cb1d22c0449b45dffb702a8455, type: 2}
+  - {fileID: 2100000, guid: e6bf3c749aa7f4e4e91aa60d8a916216, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3231,7 +3250,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300014, guid: e5872d120b1f7544da8341df703860d4, type: 3}
+  m_Mesh: {fileID: 4300014, guid: 5e01a03df38db574784b677f2ea85ce6, type: 3}
   m_Bones:
   - {fileID: 400026}
   - {fileID: 400024}
@@ -3253,7 +3272,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2381f10d844c9604aad341a8a61373c6, type: 2}
+  - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
