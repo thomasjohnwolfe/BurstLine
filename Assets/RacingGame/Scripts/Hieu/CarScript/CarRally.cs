@@ -13,7 +13,7 @@ public class CarRally : MonoBehaviour {
 	public GameObject target;
 	public GameObject[] model;
 	bool add = false;
-
+	public int lap = CheckLap.Lap;
 
 	// Use this for initialization
 	void Start () {
@@ -35,29 +35,40 @@ public class CarRally : MonoBehaviour {
 		if(currentHealth<=0) currentHealth = 0;
 		networkView.RPC ("broadcastDamage", RPCMode.All, currentHealth, networkView.viewID);
 	}
-	
+
+	public void addLap(){
+		lap++;
+		networkView.RPC("broadcastLap",RPCMode.All,networkView.viewID,lap);
+	}
+	[RPC]
+	void broadcastLap(NetworkViewID id,int _lap){
+		NetworkView.Find (id).GetComponent<CarRally>().lap = _lap;
+	}
 	[RPC]
 	void broadcastDamage(float _currentHealth,NetworkViewID _ID){
 		NetworkView.Find (_ID).GetComponent<CarRally> ().currentHealth = _currentHealth;
 	}
 
+
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Weapon"){
-			Debug.Log ("pick up item");
-			add = false;
-			assignedWeapon();
-			Network.RemoveRPCs(c.gameObject.networkView.viewID);
 			Network.Destroy(c.gameObject.networkView.viewID);
-			//Destroy(c.gameObject);
+			Debug.Log ("pick up item");
+			assignedWeapon();
 		}
 	}
 
 
-	void assignedWeapon(){
+	public void assignedWeapon(){
 		int slot = -1;
-		do{
+		while(true)
+		{
 			slot = Random.Range(0,MAXSLOT);
-			//Debug.Log("Random number "+slot);
+			Debug.Log("Random number "+slot);
+			if(!weaponIsAlreadyPickUp(slot)){
+				addWeapon (slot);
+				break;
+			}
 			if(weaponFull()){
 				if(boost<3) {
 					Debug.Break(); 
@@ -68,11 +79,14 @@ public class CarRally : MonoBehaviour {
 					break;
 				}
 			}
-		}while(weaponIsAlreadyPickUp(slot) && !add);
+		}
+		//}while(weaponIsAlreadyPickUp(slot) && !add);
+		/*
 		if (!weaponIsAlreadyPickUp (slot) && !add) {
 			addWeapon (slot);
 			Debug.Log ("pick up " + slot);
 		}
+		*/
 	}
 	
 	public void addWeapon(int num){
@@ -81,7 +95,7 @@ public class CarRally : MonoBehaviour {
 		for(int i=0;i<MAXSLOT;i++){
 			if(this.weaponslot[i] == -1){
 				this.weaponslot[i] = num;
-				add = true;
+				//add = true;
 				return;
 			}
 		}

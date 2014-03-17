@@ -35,9 +35,6 @@ public class Anarchy: CarRally {
 	
 	// Update is called once per frame
 	void Update () {
-		//if(!networkView.isMine){
-		//networkView.RPC("updateHealth",RPCMode.All,getHealth());
-		//}
 		if (!assigncolor) {
 			index = this.GetComponentInChildren<playerID> ().ID;
 		}
@@ -56,6 +53,8 @@ public class Anarchy: CarRally {
 			}
 		}
 	}
+
+
 	[RPC]
 	void updateHealth(float val){
 		currentHealth = val;

@@ -17,6 +17,9 @@ TagManager:
   - CheckPoint
   - CheckPointManager
   - 
+  - SpawnItem
+  - FinishLine
+  - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
   Builtin Layer 2: Ignore Raycast
@@ -31,7 +34,7 @@ TagManager:
   User Layer 11: Pickups
   User Layer 12: Ground
   User Layer 13: UI
-  User Layer 14: 
+  User Layer 14: CarLayer
   User Layer 15: 
   User Layer 16: 
   User Layer 17: 

@@ -22,6 +22,8 @@ public class networkManager : MonoBehaviour {
 	private float countDown = 3f;
 				
 	public static networkManager _instance;
+	//Hieu's add
+	public GameObject[] spawnItemLocation;
 
 	void Awake(){
 		_instance = this;
@@ -32,9 +34,10 @@ public class networkManager : MonoBehaviour {
 		state = "waiting";
 		spawns = new List<GameObject> ();
 		foreach(Transform i in this.transform){
-			spawns.Add(i.gameObject);
-			
+			spawns.Add(i.gameObject);	
 		}
+		//Hieu's add
+		spawnItemLocation= GameObject.FindGameObjectsWithTag ("SpawnItem");
 	}
 	
 	void OnGUI(){
@@ -159,6 +162,7 @@ public class networkManager : MonoBehaviour {
 	GameObject newPlayer(){
 		GameObject peerBall = Network.Instantiate(car_prefab,spawns[player-1].transform.position,spawns[player-1].transform.rotation,0) as GameObject;
 		peerBall.tag = "Player";
+		CheckLap.Players.Add(peerBall.GetComponent<CarRally>());
 		Instantiate (camera, Vector3.zero, Quaternion.identity);
 
 		// Rearview Camera
@@ -173,11 +177,9 @@ public class networkManager : MonoBehaviour {
 		
 	}
 	void CreateItem(){
-		GameObject[] spawn = GameObject.FindGameObjectsWithTag ("SpawnItem");
-		foreach (GameObject s in spawn) {
+		foreach (GameObject s in spawnItemLocation) {
 			s.GetComponent<SpawnItemOverNetwork>().CreateItem();		
 		}
-
 	}
-	
+
 }
