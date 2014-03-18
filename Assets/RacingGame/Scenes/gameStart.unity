@@ -603,7 +603,7 @@ GameObject:
   - 64: {fileID: 34735724}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,7 +1492,7 @@ GameObject:
   - 64: {fileID: 108231466}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1664,7 +1664,7 @@ Transform:
   m_PrefabInternal: {fileID: 474703579}
   m_GameObject: {fileID: 116108274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 207.999985, y: -172, z: 0}
+  m_LocalPosition: {x: 337, y: -209, z: 0}
   m_LocalScale: {x: .785616577, y: .785616577, z: .785616636}
   m_Children:
   - {fileID: 953937693}
@@ -2350,7 +2350,7 @@ GameObject:
   - 64: {fileID: 139182448}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2450,7 +2450,7 @@ Transform:
   m_PrefabInternal: {fileID: 474703579}
   m_GameObject: {fileID: 141147255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -227, y: 161.999985, z: 0}
+  m_LocalPosition: {x: -356, y: 199, z: 0}
   m_LocalScale: {x: 1.23990154, y: 1.23990154, z: 1.23990154}
   m_Children:
   - {fileID: 1393833382}
@@ -3022,7 +3022,7 @@ GameObject:
   - 64: {fileID: 172365068}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3362,7 +3362,7 @@ GameObject:
   - 64: {fileID: 185955710}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4599,7 +4599,7 @@ GameObject:
   - 64: {fileID: 267144023}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5760,7 +5760,7 @@ GameObject:
   - 64: {fileID: 315389557}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5932,7 +5932,7 @@ Transform:
   m_PrefabInternal: {fileID: 474703579}
   m_GameObject: {fileID: 321725758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -276, y: -200, z: 0}
+  m_LocalPosition: {x: -405, y: -237, z: 0}
   m_LocalScale: {x: .592136323, y: .592136323, z: .592136323}
   m_Children:
   - {fileID: 26221438}
@@ -6460,7 +6460,7 @@ GameObject:
   - 64: {fileID: 349304390}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6707,7 +6707,7 @@ GameObject:
   - 64: {fileID: 372862298}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7048,7 +7048,7 @@ GameObject:
   - 64: {fileID: 385905372}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7311,7 +7311,7 @@ GameObject:
   - 64: {fileID: 419969347}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7591,7 +7591,7 @@ GameObject:
   - 64: {fileID: 440401180}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8212,59 +8212,59 @@ Prefab:
       objectReference: {fileID: 1365228253}
     - target: {fileID: 400012, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 207.999985
+      value: 337
       objectReference: {fileID: 0}
     - target: {fileID: 400012, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -172
+      value: -209
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -227
+      value: -356
       objectReference: {fileID: 0}
     - target: {fileID: 400058, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 161.999985
+      value: 199
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -276
+      value: -405
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -200
+      value: -237
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 205.999985
+      value: 335.000031
       objectReference: {fileID: 0}
     - target: {fileID: 400018, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -213.999985
+      value: -251
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalScale.x
-      value: .00416666688
+      value: .00361010828
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalScale.y
-      value: .00416666688
+      value: .00361010828
       objectReference: {fileID: 0}
     - target: {fileID: 400068, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalScale.z
-      value: .00416666688
+      value: .00361010828
       objectReference: {fileID: 0}
     - target: {fileID: 400060, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 170
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 134
+      value: 264
       objectReference: {fileID: 0}
     - target: {fileID: 400076, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 224
+      value: 261
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 293e3cf9708c4cd42915ffc8cc4e84c6, type: 2}
@@ -8551,7 +8551,7 @@ Transform:
   m_PrefabInternal: {fileID: 474703579}
   m_GameObject: {fileID: 492208312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 205.999985, y: -213.999985, z: 0}
+  m_LocalPosition: {x: 335.000031, y: -251, z: 0}
   m_LocalScale: {x: 1.21580052, y: 1.21580052, z: 1.21580052}
   m_Children:
   - {fileID: 851270391}
@@ -9118,7 +9118,7 @@ GameObject:
   - 64: {fileID: 516830362}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9623,7 +9623,7 @@ GameObject:
   - 64: {fileID: 552195852}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9957,7 +9957,7 @@ GameObject:
   - 64: {fileID: 564864761}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10131,7 +10131,7 @@ GameObject:
   - 64: {fileID: 578361794}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12295,7 +12295,7 @@ GameObject:
   - 64: {fileID: 692121161}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12593,7 +12593,7 @@ GameObject:
   - 64: {fileID: 711616832}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13545,7 +13545,7 @@ GameObject:
   - 64: {fileID: 768703072}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13728,7 +13728,7 @@ GameObject:
   - 64: {fileID: 770792135}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14016,7 +14016,7 @@ GameObject:
   - 64: {fileID: 787974786}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14541,7 +14541,7 @@ GameObject:
   - 64: {fileID: 812558005}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14631,7 +14631,7 @@ GameObject:
   - 64: {fileID: 814056446}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14868,7 +14868,7 @@ GameObject:
   - 64: {fileID: 828332938}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16571,7 +16571,7 @@ GameObject:
   - 64: {fileID: 933293933}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16753,7 +16753,7 @@ GameObject:
   - 64: {fileID: 938198313}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17147,7 +17147,7 @@ GameObject:
   - 64: {fileID: 955624264}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17252,7 +17252,7 @@ Transform:
   m_GameObject: {fileID: 960175774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
+  m_LocalScale: {x: .00361010828, y: .00361010828, z: .00361010828}
   m_Children:
   - {fileID: 492208315}
   - {fileID: 343772464}
@@ -18197,7 +18197,7 @@ GameObject:
   - 64: {fileID: 999721195}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20185,7 +20185,7 @@ Transform:
   m_PrefabInternal: {fileID: 474703579}
   m_GameObject: {fileID: 1109463171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 170, z: 0}
+  m_LocalPosition: {x: 0, y: 207, z: 0}
   m_LocalScale: {x: 1.74669957, y: 1.74669957, z: 1.74669957}
   m_Children:
   - {fileID: 785089197}
@@ -20492,7 +20492,7 @@ GameObject:
   - 64: {fileID: 1128250522}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20972,7 +20972,7 @@ GameObject:
   - 64: {fileID: 1151512836}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21269,7 +21269,7 @@ GameObject:
   - 64: {fileID: 1168065131}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21829,7 +21829,7 @@ GameObject:
   - 64: {fileID: 1223120602}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23816,7 +23816,7 @@ GameObject:
   - 64: {fileID: 1352867517}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23933,7 +23933,7 @@ GameObject:
   - 64: {fileID: 1361991138}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24435,7 +24435,7 @@ Transform:
   m_PrefabInternal: {fileID: 474703579}
   m_GameObject: {fileID: 1370624466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134, y: 224, z: 0}
+  m_LocalPosition: {x: 264, y: 261, z: 0}
   m_LocalScale: {x: .99120003, y: .99120003, z: .99120003}
   m_Children:
   - {fileID: 2049055171}
@@ -24588,7 +24588,7 @@ GameObject:
   - 64: {fileID: 1372377148}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26748,7 +26748,7 @@ GameObject:
   - 64: {fileID: 1496120835}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26901,7 +26901,7 @@ GameObject:
   - 64: {fileID: 1501885906}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28815,7 +28815,359 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100216, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100168, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100068, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100174, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100118, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100194, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100132, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100116, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100240, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100100, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100154, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100206, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100208, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100166, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100250, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100232, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100126, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100204, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100124, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100052, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100144, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100164, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100128, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100242, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100228, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100252, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100130, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_TagString
+      value: PointLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 100168, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100044, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100068, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100174, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100118, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100194, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100132, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100116, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100106, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100240, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100048, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100112, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100100, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100154, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100206, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100208, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100096, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100166, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100094, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100250, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100232, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100126, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100204, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100124, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100052, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100144, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100164, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100040, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100128, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100242, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100228, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100252, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100102, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100130, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100088, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c950218382bbb6a4ba65e8e603860f7d, type: 2}
@@ -31372,7 +31724,7 @@ GameObject:
   - 64: {fileID: 1724393798}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31599,7 +31951,7 @@ GameObject:
   - 64: {fileID: 1737288341}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31857,7 +32209,7 @@ GameObject:
   - 64: {fileID: 1752531780}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32507,7 +32859,7 @@ GameObject:
   - 64: {fileID: 1788426609}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34021,13 +34373,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1895914510}
+  - 114: {fileID: 1895914511}
   m_Layer: 0
   m_Name: Sphere_Lights
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1895914510
 Transform:
   m_ObjectHideFlags: 0
@@ -34083,6 +34436,21 @@ Transform:
   - {fileID: 1752531779}
   - {fileID: 1788426608}
   m_Father: {fileID: 0}
+--- !u!114 &1895914511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1895914509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d85ee2fef182944b17da05fa1e2235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightTagName: PointLight
+  playerName: Player
+  enableDistance: 200
+  forwardDistance: 50
 --- !u!1 &1916988724
 GameObject:
   m_ObjectHideFlags: 0
@@ -34470,7 +34838,7 @@ GameObject:
   - 64: {fileID: 1948309852}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34652,7 +35020,7 @@ GameObject:
   - 64: {fileID: 1958391780}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36124,7 +36492,7 @@ GameObject:
   - 64: {fileID: 2070034308}
   m_Layer: 0
   m_Name: Street_light
-  m_TagString: Untagged
+  m_TagString: PointLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
