@@ -13,7 +13,7 @@ public class Anarchy: CarRally {
 		colorset.Add (Color.red);
 		colorset.Add (Color.black);
 		colorset.Add (Color.blue);
-
+		this.lap = 1;
 
 		weapon = new Weapon[MAXSLOT];
 		weaponslot = new int[MAXSLOT];

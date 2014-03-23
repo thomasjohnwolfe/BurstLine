@@ -13,7 +13,7 @@ public class CarRally : MonoBehaviour {
 	public GameObject target;
 	public GameObject[] model;
 	bool add = false;
-	public int lap = CheckLap.Lap;
+	public int lap = 1;
 
 	// Use this for initialization
 	void Start () {

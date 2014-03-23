@@ -55,7 +55,7 @@ public class networkManager : MonoBehaviour {
 				player = 1;
 				myCar = newPlayer();
 				myCar.GetComponent<playerID>().ID = player;
-				CreateItem();
+				//CreateItem();
 				state = "serverWait";
 				Debug.Log("Started Server");
 				
@@ -82,6 +82,8 @@ public class networkManager : MonoBehaviour {
 			GUI.Box(new Rect((Screen.width/2)-(size.x/2),(Screen.height/2)-(size.y/2)+100,(size.x),(size.y)),((int)Mathf.Ceil(countDown)).ToString());
 			countDown -= Time.deltaTime/2;
 			if (countDown <=0){
+				CreateItem();
+				GetAllPlayers();
 				state = "started";
 				myCar.GetComponent<CarUserControl>().enabled = true;
 			}
@@ -162,8 +164,10 @@ public class networkManager : MonoBehaviour {
 	GameObject newPlayer(){
 		GameObject peerBall = Network.Instantiate(car_prefab,spawns[player-1].transform.position,spawns[player-1].transform.rotation,0) as GameObject;
 		peerBall.tag = "Player";
-		CheckLap.Players.Add(peerBall.GetComponent<CarRally>());
+		//CheckLap.Players.Add(peerBall.GetComponent<CarRally>());
 		Instantiate (camera, Vector3.zero, Quaternion.identity);
+
+		//CreateItem();
 
 		// Rearview Camera
 		GameObject c =  GameObject.Find("RviewCam");//Instantiate(rearViewCam,peerBall.transform.position,peerBall.transform.rotation*Quaternion.Euler(0,180,0)) as GameObject;
@@ -179,6 +183,14 @@ public class networkManager : MonoBehaviour {
 	void CreateItem(){
 		foreach (GameObject s in spawnItemLocation) {
 			s.GetComponent<SpawnItemOverNetwork>().CreateItem();		
+		}
+	}
+
+	void GetAllPlayers(){
+		CheckLap.Players = GameObject.FindObjectsOfType(typeof(CarRally)) as CarRally[];
+		foreach(CarRally c in CheckLap.Players){
+			Debug.Log("Car's name: "+c.gameObject.name);
+			Debug.Log("Car's tag: "+c.gameObject.tag);
 		}
 	}
 
