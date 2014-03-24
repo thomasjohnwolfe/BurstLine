@@ -24,7 +24,7 @@ class UIManager_Game : MonoBehaviour
 									critLight,
 									MapBG;
 
-	private static 	UILabel 		timeTxt;
+	private static 	UILabel 		timeTxt,lapTimeMsg;
 	
 	private 		Transform 		shieldT, //tansform for Shield sprite
 									PlayerLocT; //transform for MiniMapspite
@@ -63,6 +63,8 @@ class UIManager_Game : MonoBehaviour
 		_TotalTime 	= GameObject.Find("TotalTime").GetComponent<UILabel>();
 		_Rank		= GameObject.Find("Rank").GetComponent<UILabel>();
 		_LapNumber 	= GameObject.Find("LapNumber").GetComponent<UILabel>();
+		lapTimeMsg = GameObject.Find("LapMessage").GetComponent<UILabel>();
+		lapTimeMsg.gameObject.SetActive(false);
 
 	}
 	
@@ -433,5 +435,16 @@ class UIManager_Game : MonoBehaviour
 		}
 		critLight.color = startC;
 
+	}
+
+	public void DisplayLapMsg(float time,int lapNumber){
+		StartCoroutine(CoDisplayLapMsg(time,lapNumber));
+	}
+
+	IEnumerator CoDisplayLapMsg(float time, int lapNumber){
+		lapTimeMsg.gameObject.SetActive(true);
+		lapTimeMsg.text = "Lap   " +lapNumber.ToString() +"/3 \n Laptime " + ((float)((int)(lapTime*100))/100f).ToString();
+		yield return new WaitForSeconds(time);
+		lapTimeMsg.gameObject.SetActive(false);
 	}
 }

@@ -34,6 +34,8 @@ public class CheckLap : MonoBehaviour {
 	bool isFirstCarPass(){
 		foreach(CarRally c in Players){
 			if(c.lap > Lap && c.lap <=endLap){
+
+				UIManager_Game.instance.DisplayLapMsg(5f,Lap);
 				Lap++;
 				UIManager_Game.instance.ResetLapTime();
 				networkView.RPC ("broadcastCheckLap",RPCMode.All,this.networkView.viewID,Lap);
