@@ -10,6 +10,19 @@ public class Weapon_UI:NguiSprite
 
 	public void Active(bool setting)
 	{
+
+		if(setting) Start();
+		else Stop();
 		base.sprite.alpha = setting? 1f:0.2f;
+	}
+
+	public void Start(){
+		TomTweenScale t = base.sprite.gameObject.GetComponent<TomTweenScale>();
+		t.Play();
+	}
+
+	public void Stop(){
+		TomTweenScale t = base.sprite.gameObject.GetComponent<TomTweenScale>();
+		t.Reverse();
 	}
 }
