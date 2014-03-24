@@ -52,7 +52,7 @@ MonoBehaviour:
   bladeUnsheathe: {fileID: 8300000, guid: f090fbfef0c624c968f4618333a08fec, type: 3}
   RushSound: {fileID: 8300000, guid: ef62837cbb7d142439ec44b6d03e791c, type: 3}
   RushHit: {fileID: 8300000, guid: 73a0eb1f716cd4ce08d9ceb51a12c949, type: 3}
-  PickUpSound: {fileID: 0}
+  PickUpSound: {fileID: 8300000, guid: 62a8a73887817418e92a43764dadd6bf, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
