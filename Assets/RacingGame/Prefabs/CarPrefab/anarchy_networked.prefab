@@ -2921,6 +2921,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 904df884781654643933e6bcd81620a7, type: 2}
   - {fileID: 2100000, guid: 4f70ed66facf9d749b16aae77d7759c8, type: 2}
   - {fileID: 2100000, guid: 626c1d13b021d584a9ffd47796a90216, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3027,7 +3028,7 @@ MonoBehaviour:
     revRangeBoundary: .800000012
   preserveDirectionWhileInAir: 1
   normalSpeedCap: 45
-  dragCoef: .25
+  dragCoef: .100000001
   boostTime: 10
 --- !u!114 &11400042
 MonoBehaviour:
