@@ -85,7 +85,9 @@ public class networkManager : MonoBehaviour {
 				CreateItem();
 				GetAllPlayers();
 				state = "started";
+				GameObject.FindGameObjectWithTag("CheckPointManager").SendMessage("GameStart",player);
 				myCar.GetComponent<CarUserControl>().enabled = true;
+				myCar.rigidbody.isKinematic = false;
 			}
 		}
 		
@@ -176,6 +178,7 @@ public class networkManager : MonoBehaviour {
 	
 	GameObject newPlayer(){
 		GameObject peerBall = Network.Instantiate(car_prefab,spawns[player-1].transform.position,spawns[player-1].transform.rotation,0) as GameObject;
+		peerBall.rigidbody.isKinematic = true;
 		peerBall.tag = "Player";
 		//CheckLap.Players.Add(peerBall.GetComponent<CarRally>());
 		Instantiate (camera, Vector3.zero, Quaternion.identity);
@@ -206,5 +209,7 @@ public class networkManager : MonoBehaviour {
 			Debug.Log("Car's tag: "+c.gameObject.tag);
 		}
 	}
-
+	
+	
+	
 }
