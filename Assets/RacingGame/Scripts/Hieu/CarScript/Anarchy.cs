@@ -66,7 +66,8 @@ public class Anarchy: CarRally {
 		//Debug.Log (model[0].renderer.materials[0].name);
 		foreach (GameObject m in model) {
 			m.renderer.material	= mat[i-1];	
-			color = mat[i-1].color;
+
+			color = mat[i-1].GetColor("_PaintColor");
 		}
 		//model.renderer.material.SetColor ("_Color", colorset[i-1]);
 	}
