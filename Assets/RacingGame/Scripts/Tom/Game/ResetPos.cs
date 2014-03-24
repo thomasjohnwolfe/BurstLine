@@ -12,7 +12,7 @@ public class ResetPos : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape)|| Input.GetKeyDown(KeyCode.Joystick1Button6))
 		{
-			RESETPOS(this.gameObject);
+			RESETPOS(GameObject.FindGameObjectWithTag("Player"));
 		}
 
 		if(Input.GetKeyDown(KeyCode.Backspace))
