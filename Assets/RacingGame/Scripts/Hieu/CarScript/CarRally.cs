@@ -12,6 +12,8 @@ public class CarRally : MonoBehaviour {
 	public int[] weaponslot;
 	public GameObject target;
 	public GameObject[] model;
+	public List<GameObject> route = new List<GameObject>();
+	public bool finishLap = false;
 	bool add = false;
 	public int lap = 1;
 
@@ -53,12 +55,19 @@ public class CarRally : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Weapon"){
-			print (this.gameObject.tag);
-			Network.Destroy(c.gameObject.networkView.viewID);
-			Debug.Log ("pick up item");
+			//print (this.gameObject.tag);
+			//Network.Destroy(c.gameObject.networkView.viewID);
+			//Debug.Log ("pick up item");
 			if(this.gameObject.tag!="OtherPlayer")
 			{
 				assignedWeapon();
+			}
+		}
+		if(c.gameObject.tag == "CheckLaps"){
+			if(!this.route.Contains(c.gameObject)){
+				//print (this.route.Count);
+				//print ("Route add 1"+ c.gameObject);
+				this.route.Add (c.gameObject);
 			}
 		}
 	}
@@ -76,7 +85,7 @@ public class CarRally : MonoBehaviour {
 			}
 			if(weaponFull()){
 				if(boost<3) {
-					//boost++;
+					boost++;
 					//if(UIManager_Game.RANK==LAST)
 						UIManager_Game.instance.AddBoost();
 					break;
