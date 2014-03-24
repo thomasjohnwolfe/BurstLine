@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 8f58a2fe4c3b10241ac55e2514308526
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface5
@@ -44,7 +44,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: .00700000022
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -77,4 +77,5 @@ ModelImporter:
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  additionalBone: 0
   userData: 
