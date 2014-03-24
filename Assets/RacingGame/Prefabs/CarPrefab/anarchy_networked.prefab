@@ -13,7 +13,7 @@ GameObject:
   - 23: {fileID: 2300000}
   m_Layer: 14
   m_Name: Collider
-  m_TagString: OtherPlayer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ GameObject:
   - 23: {fileID: 2300002}
   m_Layer: 14
   m_Name: LeftBladeCollider
-  m_TagString: OtherPlayer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ GameObject:
   - 23: {fileID: 2300004}
   m_Layer: 14
   m_Name: BodyCollider
-  m_TagString: OtherPlayer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -904,7 +904,7 @@ GameObject:
   - 4: {fileID: 400078}
   m_Layer: 14
   m_Name: ColliderGroup
-  m_TagString: OtherPlayer
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1600,7 +1600,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.35402679, z: 0}
+  m_LocalPosition: {x: -321.433228, y: 55.7056656, z: -174.872116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400110}
@@ -2926,12 +2926,19 @@ MonoBehaviour:
   - {fileID: 100088}
   - {fileID: 100084}
   - {fileID: 100086}
+  route: []
+  finishLap: 0
   lap: 0
   mat:
   - {fileID: 2100000, guid: 2a88439e67de3db4cae1bda402d8d53b, type: 2}
   - {fileID: 2100000, guid: 904df884781654643933e6bcd81620a7, type: 2}
   - {fileID: 2100000, guid: 4f70ed66facf9d749b16aae77d7759c8, type: 2}
   - {fileID: 2100000, guid: 626c1d13b021d584a9ffd47796a90216, type: 2}
+  exploparticle: {fileID: 100000, guid: 6274d0d0f9b01d5468b95e1e35aa21d7, type: 2}
+  finishParticle: {fileID: 100000, guid: 2675007cfea96a244886fba886c59251, type: 2}
+  exploForce: 500
+  exploRadius: 20
+  exploUpDirection: 3
   color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &11400028
 MonoBehaviour:

@@ -4,9 +4,14 @@ using System.Collections;
 public class WeaponPickUp : MonoBehaviour
 {
 	public GameObject destroyParticle;
-	void OnDestroy(){
-		GameSoundCommands.instance.PlayPickUpSound();
-		GameObject.Instantiate(destroyParticle,transform.position,transform.rotation);
-	}	
+
+	void OnTriggerEnter(Collider c){
+		if(c.gameObject.tag == "Player" || c.gameObject.tag == "OtherPlayer"){
+			Network.Destroy(this.gameObject.GetComponent<NetworkView>().viewID);
+			GameSoundCommands.instance.PlayPickUpSound();
+			GameObject.Instantiate(destroyParticle,transform.position,transform.rotation);
+		}
+	}
+	
 }
 

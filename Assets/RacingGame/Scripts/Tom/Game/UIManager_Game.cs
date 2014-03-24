@@ -45,6 +45,8 @@ class UIManager_Game : MonoBehaviour
 	public			Color			speedStartColor,speedEndColor;
 
 	private	static 	UILabel 		_LapTime,_TotalTime,_Rank,_LapNumber;
+	CarUserControl carUsercontrol;
+	float gameTime,lapTime =0;
 
 	void Awake(){
 		instance = this;
@@ -103,7 +105,14 @@ class UIManager_Game : MonoBehaviour
 			}
 		}
 	}
-	
+
+	public void FixedUpdate(){
+		LAP_TIME = lapTime.ToString();
+		TOTAL_TIME = gameTime.ToString();
+	}
+	public void ResetLapTime(){
+		lapTime = 0;
+	}
 	//public method to be called when your local car is spawned
 	public void Init()
 	{
@@ -128,6 +137,7 @@ class UIManager_Game : MonoBehaviour
 
 		PlayerGlobalTransform = GameObject.FindGameObjectWithTag ("Player").transform;
 		carStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CarRally>();
+		carUsercontrol =   GameObject.FindGameObjectWithTag("Player").GetComponent<CarUserControl>();
 		// PLAYER PREFS TEST
 		Debug.Log("weapon1: " + PlayerPrefs.GetString("weapon1"));
 		Debug.Log("weapon2: " + PlayerPrefs.GetString("weapon2"));
@@ -367,6 +377,11 @@ class UIManager_Game : MonoBehaviour
 
 	void Update()
 	{
+		if(carUsercontrol.enabled)
+		{
+			gameTime+=Time.deltaTime;
+			lapTime+=Time.deltaTime;
+		}
 		if (Input.GetKeyDown (KeyCode.Return))
 						AddBoost ();
 		if(carSpawned)

@@ -12,10 +12,7 @@ public class ResetPos : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape)|| Input.GetKeyDown(KeyCode.Joystick1Button6))
 		{
-			GameObject.FindGameObjectWithTag("Player").transform.position = startPos.transform.position;;
-			GameObject.FindGameObjectWithTag("Player").transform.rotation = startPos.transform.rotation;
-			GameObject.FindGameObjectWithTag("Player").rigidbody.velocity = Vector3.zero;
-			GameObject.FindGameObjectWithTag("Player").rigidbody.angularVelocity = Vector3.zero;
+			RESETPOS(GameObject.FindGameObjectWithTag("Player"));
 		}
 
 		if(Input.GetKeyDown(KeyCode.Backspace))
@@ -25,5 +22,10 @@ public class ResetPos : MonoBehaviour {
 
 	}
 
-
+	public void RESETPOS(GameObject g){
+		g.transform.position = startPos.transform.position;;
+		g.transform.rotation = startPos.transform.rotation;
+		g.rigidbody.velocity = Vector3.zero;
+		g.rigidbody.angularVelocity = Vector3.zero;
+	}
 }

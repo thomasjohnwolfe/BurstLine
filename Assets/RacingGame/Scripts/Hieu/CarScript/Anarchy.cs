@@ -4,10 +4,17 @@ using System.Collections.Generic;
 
 public class Anarchy: CarRally {
 	public Material[] mat;
+	public GameObject exploparticle;
+	public GameObject finishParticle;
+	public float exploForce = 500;
+	public float exploRadius = 20;
+	public float exploUpDirection = 3;
 	List<Color> colorset = new List<Color> ();
 	int index = 0;
 	bool assigncolor = false;
+	bool dead = false;
 	public Color color;
+	GameObject explodeParticleInstance;
 	// Use this for initialization
 	void Start () {
 		colorset.Add (Color.magenta);
@@ -55,6 +62,69 @@ public class Anarchy: CarRally {
 		}
 	}
 
+	void FixedUpdate(){
+		if(base.finishLap){
+			StartCoroutine(GenerateFinishParticle());
+			this.GetComponent<DisableAll>().Disable();
+		}
+
+		if(this.getHealth()==0 && !dead){
+			Die();
+		}
+	}
+
+	public void Die(){
+
+		explodeParticleInstance = (GameObject) Network.Instantiate(exploparticle,this.transform.position,Quaternion.identity,0);
+		StartCoroutine(CoDie(explodeParticleInstance));
+
+	}
+
+	IEnumerator GenerateFinishParticle(){
+		//show GUI winning
+		GameObject[] temp = new GameObject[5];
+		for(int i =0;i<5;i++){
+		temp[i] = Network.Instantiate(finishParticle,new Vector3(this.transform.position.x+Mathf.Sin(i)*2,
+		                                               this.transform.position.y+0.5f,
+		                                               this.transform.position.z+Mathf.Cos(i)*2), Quaternion.identity,0) as GameObject;
+		temp[i].transform.parent = this.transform;
+		}
+		while(true){
+			foreach(GameObject t in temp){
+				//t.transform.position += new Vector3(Mathf.Sin(Time.deltaTime),0,Mathf.Cos (Time.deltaTime));
+			}
+			yield return new WaitForSeconds(0.2f);
+		}
+
+
+	}
+
+	IEnumerator CoDie(GameObject g){
+		dead = true;
+
+
+		explodeParticleInstance.transform.parent = this.transform;
+		this.rigidbody.AddExplosionForce(exploForce,this.transform.position,exploRadius,exploUpDirection);
+		this.GetComponent<DisableAll>().Disable();
+		yield return new WaitForSeconds(3);
+		this.rigidbody.isKinematic = true;
+		g.particleEmitter.maxEnergy = 1.2f;
+		g.particleEmitter.minEmission = 50;
+		g.particleEmitter.maxEmission = 150;
+		yield return new WaitForSeconds(2);
+		GameObject.Destroy(g);
+		this.GetComponent<DisableAll>().Enable();
+		this.rigidbody.isKinematic = false;
+		GameObject.Find("ResetPosScript").GetComponent<ResetPos>().RESETPOS(this.gameObject);
+		currentHealth = 100f;
+
+		dead = false;
+		/*
+		foreach(GameObject m in model){
+			m.renderer.material.SetColor("_PaintColor",Color.black);
+		}
+		*/
+	}
 
 	[RPC]
 	void updateHealth(float val){

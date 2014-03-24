@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class SpawnItemOverNetwork : MonoBehaviour {
 	public GameObject itemPickupPrefab;
 	public Transform[] location;
+	private Transform temp;
 	public List<GameObject> itemPickUpList = new List<GameObject>();
 	// Use this for initialization
 	void Start () {
@@ -38,23 +39,24 @@ public class SpawnItemOverNetwork : MonoBehaviour {
 
 	public void CreateItem(){
 		foreach (Transform t in location) {
-			//NetworkViewID viewID = Network.AllocateViewID();
-			//networkView.RPC ("SpawnItem",RPCMode.All,viewID,t.position,t.rotation);
-			GameObject g = Network.Instantiate(itemPickupPrefab,t.position,t.rotation,0) as GameObject;		
-			g.transform.parent = t;
-			//Network.Instantiate(itemPickupPrefab,t.position,t.rotation,0)
+			temp = t;
+			NetworkViewID viewID = Network.AllocateViewID();
+			networkView.RPC ("SpawnItem",RPCMode.All,viewID,t.position,t.rotation);
+			//GameObject g = Network.Instantiate(itemPickupPrefab,t.position,t.rotation,0) as GameObject;		
+			//g.transform.parent = t;
+
 		}
 	}
-	/*
+
 	[RPC]
 	void SpawnItem(NetworkViewID viewID,Vector3 location, Quaternion rotation){
 		GameObject clone;
 		clone = Instantiate(itemPickupPrefab,location,rotation) as GameObject;
-		clone.transform.parent = this.transform;
-		itemPickUpList.Add(clone);
-		NetworkView view;
-		view = clone.GetComponent<NetworkView>();
-		view.viewID = viewID;
+		clone.transform.parent = temp;
+		//itemPickUpList.Add(clone);
+		//NetworkView view;
+		//view = clone.GetComponent<NetworkView>();
+		clone.GetComponent<NetworkView>().viewID = viewID;
 	}
-	*/
+
 }
