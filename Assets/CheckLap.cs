@@ -4,30 +4,22 @@ using System.Collections.Generic;
 
 public class CheckLap : MonoBehaviour {
 	GameObject[] spawnLocation;
-	public static List<CarRally> Players= new List<CarRally>();
+	public static CarRally[] Players;
 	float sphereRadius = 15;
 	bool checkCar= true;
-	const int beginLap = 0;
+	const int beginLap = 1;
 	const int endLap = 4;
-	public static int Lap = beginLap;
+	public int Lap = 1;
 	
 	void Start () {
-		spawnLocation = networkManager._instance.spawnItemLocation;
-		StartCoroutine(CheckCarCross());
+		spawnLocation= GameObject.FindGameObjectsWithTag ("SpawnItem");
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-	}
-
-	IEnumerator CheckCarCross(){
-		while(true){
-			if(isFirstCarPass()){
-				DeleteItems();
-				CreateItem();
-			}
-			yield return new WaitForSeconds(1);
+	void FixedUpdate () {
+		if(isFirstCarPass()){
+			ReCreateItems();
 		}
 	}
 
@@ -35,10 +27,16 @@ public class CheckLap : MonoBehaviour {
 		foreach(CarRally c in Players){
 			if(c.lap > Lap){
 				Lap++;
+				networkView.RPC ("broadcastCheckLap",RPCMode.All,this.networkView.viewID,Lap);
 				return true;
 			}
 		}
 		return false;
+	}
+
+	[RPC]
+	void broadcastCheckLap(NetworkViewID id,int _lap){
+		NetworkView.Find(id).GetComponent<CheckLap>().Lap = _lap;
 	}
 
 	bool isLastCarPass(){
@@ -53,10 +51,16 @@ public class CheckLap : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c){
 		if(c.GetComponent<CarRally>()){
+			Debug.Log("lap increase");
 			c.GetComponent<CarRally>().addLap();
 		}
 	}
 
+	void ReCreateItems(){
+		foreach(GameObject g in spawnLocation){
+			g.GetComponent<SpawnItemOverNetwork>().RecreateItem();
+		}
+	}
 	void DeleteItems(){
 		foreach(GameObject g in spawnLocation){
 			g.GetComponent<SpawnItemOverNetwork>().DestroyItems();
