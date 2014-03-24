@@ -16,6 +16,8 @@ public class ResetPos : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("Player").transform.rotation = startPos.transform.rotation;
 			GameObject.FindGameObjectWithTag("Player").rigidbody.velocity = Vector3.zero;
 			GameObject.FindGameObjectWithTag("Player").rigidbody.angularVelocity = Vector3.zero;
+			
+			GameObject.FindGameObjectWithTag("CheckPointManager").SendMessage("subPlace",GameObject.FindGameObjectWithTag("Player").GetComponent<playerID>().ID);
 		}
 
 		if(Input.GetKeyDown(KeyCode.Backspace))
