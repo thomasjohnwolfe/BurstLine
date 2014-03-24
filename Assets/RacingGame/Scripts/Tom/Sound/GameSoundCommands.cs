@@ -6,7 +6,7 @@ public class GameSoundCommands : MonoBehaviour {
 	public static 	GameSoundCommands 	instance;
 	public 			AudioClip 			StartMusic,StartSound,BoostStart,BoostStop,BoostRun,
 										Shoot,bulletHit, bladeHit,bladeSheathe,bladeUnsheathe,
-										RushSound,RushHit,PickUpSound;
+										RushSound,RushHit,PickUpSound,death;
 					AudioSource			BoostEngine;
 
 					string				lastServerState;
@@ -33,6 +33,7 @@ public class GameSoundCommands : MonoBehaviour {
 	public void PlayRushStart(){SoundManager.instance.PlaySFX(RushSound);print("playing rush start sound");}
 	public void PlayRushHit(){SoundManager.instance.PlaySFX(RushHit);print("playing rush hit sound");}
 	public void PlayPickUpSound(){SoundManager.instance.PlaySFX(PickUpSound);print("playing pickup sound");}
+	public void PlayDeathSound(){SoundManager.instance.PlaySFX(death);print("playing death sound");}
 	public void PlayShootHit(float volume){SoundManager.instance.PlaySFX(bulletHit,volume);print("playing bulletHit");}
 
 	void ListenToNetWorkManager(){
