@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 class UIManager_Game : MonoBehaviour
 {
-	public static UIManager_Game instance;
-	public 			bool 			criticalLightOn; //for coroutine trigger
+	public static 	UIManager_Game instance;
 
+	public 			bool 			criticalLightOn; //for coroutine trigger
 	[Range (0,1)]
 	public 			float 			sheildPercent;
 
@@ -37,12 +37,14 @@ class UIManager_Game : MonoBehaviour
 	private	static		Weapon_UI[] 	weapon 		= 	new Weapon_UI[3];
 	private			Boost_UI[] 		boost 		= 	new Boost_UI[3];
 
-
+	//miniMaprelated
 	public 			Transform 		boundaryL,boundaryR,boundaryT,boundaryB;
 	private			Transform		PlayerGlobalTransform;
 	private 		Vector2			mapDimensions;
 	private 		Transform		miniMapBoundries;
 	public			Color			speedStartColor,speedEndColor;
+
+	private	static 	UILabel 		_LapTime,_TotalTime,_Rank,_LapNumber;
 
 	void Awake(){
 		instance = this;
@@ -54,8 +56,34 @@ class UIManager_Game : MonoBehaviour
 		InvokeRepeating ("FindOtherPlayers", 1f, 3f);
 		miniMapBoundries = GameObject.Find ("MiniMapBoundaries").transform;
 		// = GameObject.Find("PlayerLoc");
+
+		_LapTime 	= GameObject.Find("LapTime").GetComponent<UILabel>();
+		_TotalTime 	= GameObject.Find("TotalTime").GetComponent<UILabel>();
+		_Rank		= GameObject.Find("Rank").GetComponent<UILabel>();
+		_LapNumber 	= GameObject.Find("LapNumber").GetComponent<UILabel>();
+
 	}
 	
+
+	public static string LAP_TIME{
+		get{return _LapTime.text;}
+		set{_LapTime.text = value;}
+	}
+
+	public static string RANK{
+		get{return _Rank.text;}
+		set{_Rank.text = value;}
+	}
+
+	public static string TOTAL_TIME{
+		get{return _TotalTime.text;}
+		set{_TotalTime.text = value;}
+	}
+
+	public static string LAP_NUMBER{
+		get{return _LapNumber.text;}
+		set{_LapNumber.text = value;}
+	}
 
 	private void FindOtherPlayers()
 	{
@@ -255,15 +283,16 @@ class UIManager_Game : MonoBehaviour
 		TrailRenderer t = carControl.gameObject.GetComponent<TrailRenderer>();
 		StartCoroutine(FadeTrailRenderer(t,time*0.2f));
 		yield return new WaitForSeconds(time*0.1f);
-		carControl.tomSpeedScript.Boosting = false;
+
 		//carControl.MaxSpeed /= 2f;
 
-		Debug.Log("boosting stop");
+
 
 	}
 
 	IEnumerator FadeTrailRenderer(TrailRenderer trail,float delay)
 	{
+		print ("fading trail renderer");
 		float trailInitTime = trail.time;
 		float time=0;
 		while(time < delay){
@@ -273,6 +302,9 @@ class UIManager_Game : MonoBehaviour
 		}
 		carControl.gameObject.GetComponent<TrailRenderer>().enabled=false;
 		trail.time = trailInitTime;
+		print ("faded");
+		carControl.tomSpeedScript.Boosting = false;
+		Debug.Log("boosting stop");
 		yield return null;
 	}
 
@@ -282,7 +314,7 @@ class UIManager_Game : MonoBehaviour
 		speedometer.color = carControl.tomSpeedScript.Boosting? speedEndColor : speedStartColor;
 		Shield = carStats.getHealth()/100f;
 
-		TimeTotal = Time.time.ToString();
+		//TimeTotal = Time.time.ToString();
 
 		CriticalLightON = (carStats.getHealth()<0.5f);
 
@@ -290,7 +322,7 @@ class UIManager_Game : MonoBehaviour
 		{
 			if(networkManager._instance.state == "started")
 			{
-				if(carControl.tomSpeedScript.Boosting==false)
+				if(carControl.tomSpeedScript.Boosting==false && boostMaxNum >-1)
 				{
 					GameSoundCommands.instance.PlayBoostEngine(carControl.boostTime);
 					GameSoundCommands.instance.PlayBoostStart();

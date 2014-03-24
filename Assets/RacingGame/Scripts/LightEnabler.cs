@@ -9,7 +9,7 @@ public class LightEnabler : MonoBehaviour {
 	public	float			forwardDistance	= 50f;
 			Transform 		player;
 			GameObject[] 	pointLights;
-
+			GameObject		g;
 
 	void Start () {
 		pointLights = GameObject.FindGameObjectsWithTag (lightTagName);
@@ -21,11 +21,13 @@ public class LightEnabler : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		player = GameObject.FindGameObjectWithTag (playerName).transform;
+
 		if (player != null) {
 			foreach(GameObject light in pointLights){
 				light.SetActive(Vector3.Distance(player.position+player.transform.forward*forwardDistance,light.transform.position)<enableDistance);
 			}
 		}
+		else
+			player = (g = GameObject.FindGameObjectWithTag (playerName))==null? null: g.transform;
 	}
 }

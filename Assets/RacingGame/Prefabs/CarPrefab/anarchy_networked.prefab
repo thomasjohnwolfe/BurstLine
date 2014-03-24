@@ -935,6 +935,7 @@ GameObject:
   - 114: {fileID: 11400022}
   - 114: {fileID: 11400042}
   - 96: {fileID: 9600000}
+  - 114: {fileID: 11400044}
   m_Layer: 14
   m_Name: anarchy_networked
   m_TagString: OtherPlayer
@@ -2607,7 +2608,7 @@ TrailRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 4efe5620a91cf9542993ee04a027a7f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2616,8 +2617,8 @@ TrailRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Time: .300000012
-  m_StartWidth: 1.10000002
+  m_Time: .200000003
+  m_StartWidth: 2
   m_EndWidth: .00999999978
   m_Colors:
     m_Color[0]:
@@ -3052,6 +3053,21 @@ MonoBehaviour:
   maxRolloffDistance: 500
   dopplerLevel: 1
   useDoppler: 1
+--- !u!114 &11400044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bb692bc08e41144ac059584c09e6b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m: {fileID: 2100000, guid: 4efe5620a91cf9542993ee04a027a7f5, type: 2}
+  repeatRate: .0299999993
+  Vrate: .100000001
+  Usmooth: .0199999996
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

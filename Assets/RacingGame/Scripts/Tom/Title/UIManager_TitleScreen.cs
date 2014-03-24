@@ -113,6 +113,8 @@ public class UIManager_TitleScreen : MonoBehaviour
 
 	public void LoadGame()
 	{
+		carIdx= 1;
+		SetActiveCar();
 		SavePrefs();
 		Application.LoadLevel(GameSceneName);
 	}
