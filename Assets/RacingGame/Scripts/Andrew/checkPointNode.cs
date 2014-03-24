@@ -29,8 +29,9 @@ public class checkPointNode : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider collider){
 		if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "OtherPlayer"){
+			Debug.Log("hit");
 			GameObject.Find("ResetPosScript").GetComponent<ResetPos>().startPos = this.gameObject;
-			//WPM.SendMessage("updatePlace",collider.gameObject.GetComponent<playerID>().ID,checkPoint);
+			WPM.SendMessage("addPlace",collider.gameObject.GetComponent<playerID>().ID);
 		}
 	}
 	
