@@ -101,17 +101,17 @@ public class Anarchy: CarRally {
 
 	IEnumerator CoDie(GameObject g){
 		dead = true;
-
+		GameSoundCommands.instance.PlayDeathSound();
 
 		explodeParticleInstance.transform.parent = this.transform;
 		this.rigidbody.AddExplosionForce(exploForce,this.transform.position,exploRadius,exploUpDirection);
 		this.GetComponent<DisableAll>().Disable();
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(2);
 		this.rigidbody.isKinematic = true;
 		g.particleEmitter.maxEnergy = 1.2f;
 		g.particleEmitter.minEmission = 50;
 		g.particleEmitter.maxEmission = 150;
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		GameObject.Destroy(g);
 		this.GetComponent<DisableAll>().Enable();
 		this.rigidbody.isKinematic = false;
