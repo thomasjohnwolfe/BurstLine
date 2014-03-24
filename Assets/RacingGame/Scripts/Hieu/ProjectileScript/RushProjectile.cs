@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class RushProjectile : ProjectileScript {
-
+	
 	public Rush playerRushScript;
 
 	// Use this for initialization
@@ -26,9 +26,12 @@ public class RushProjectile : ProjectileScript {
 		{
 			if(c.gameObject.tag == "OtherPlayer" && playerRushScript.rush){
 				c.gameObject.GetComponent<CarRally>().dealDamage(damage);
-				GameSoundCommands.instance.PlayShoot();
+				GameSoundCommands.instance.PlayRushHit();
+				base.ActivateParticle();
 				//Debug.Log(this.owner+" deal "+damage+" to "+c.gameObject.name);
 			}
 		}
 	}
+	
+
 }

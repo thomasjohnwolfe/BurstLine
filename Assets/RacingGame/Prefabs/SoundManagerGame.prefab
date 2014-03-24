@@ -8,7 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  m_Layer: 0
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
+  m_Layer: 14
   m_Name: SoundManagerGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,6 +28,43 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e14d54c084702849ab228024fe787ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolume: 1
+  StartMusic: {fileID: 8300000, guid: 688d41a710ba81b48815c50c5a8ff203, type: 3}
+  StartSound: {fileID: 8300000, guid: 73f3490b454a84223af94cbae6c8825d, type: 3}
+  BoostStart: {fileID: 8300000, guid: a64c8e1a777025f4dabe786ae6075eb6, type: 3}
+  BoostStop: {fileID: 8300000, guid: 2e36fc67f5535e24281438d09bc889bc, type: 3}
+  BoostRun: {fileID: 8300000, guid: dda44d909f2fe6044b8c02e44e35a1d9, type: 3}
+  Shoot: {fileID: 8300000, guid: 8d15663ecca3bf94ea305a138a345591, type: 3}
+  bulletHit: {fileID: 8300000, guid: 82e93ab2bac0459448bc813b7aab4082, type: 3}
+  bladeHit: {fileID: 8300000, guid: e9b5fa74d78bb4c3e8e63f825737d8b5, type: 3}
+  bladeSheathe: {fileID: 8300000, guid: 3f65d746083ad41559037a7a8a74bd48, type: 3}
+  bladeUnsheathe: {fileID: 8300000, guid: f090fbfef0c624c968f4618333a08fec, type: 3}
+  RushSound: {fileID: 8300000, guid: ef62837cbb7d142439ec44b6d03e791c, type: 3}
+  RushHit: {fileID: 8300000, guid: 73a0eb1f716cd4ce08d9ceb51a12c949, type: 3}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b8755f0c822f54db991fb6dd56c22a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSourceGOB: {fileID: 0}
+  assignSoundsHere: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

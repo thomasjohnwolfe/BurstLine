@@ -19,6 +19,7 @@ public class MachineGunProjectile : ProjectileScript {
 				//Debug.Log(hit.collider.gameObject.name);
 				if(hit.collider.gameObject.tag == "OtherPlayer"){
 					hit.collider.gameObject.GetComponent<CarRally>().dealDamage(damage);
+					base.ActivateParticle();
 				}
 				Network.Instantiate(Resources.Load("ParticlePrefabs/CollideParticle"),this.transform.position,Quaternion.identity,0);
 				GameSoundCommands.instance.PlayShootHit(1f/(Vector3.Distance(this.transform.position,GameObject.FindGameObjectWithTag("Player").transform.position)));

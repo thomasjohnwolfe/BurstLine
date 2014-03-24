@@ -10,6 +10,7 @@ public class Rush : Weapon {
 	bool initialized;
 
 	public override void execute(){
+		GameSoundCommands.instance.PlayRushStart();
 		isUpdate = true;
 		this.rigidbody.AddForce(this.rigidbody.velocity.normalized*speed,ForceMode.VelocityChange);
 		//scriptProjectile = this.GetComponentInChildren<RushProjectile>();
