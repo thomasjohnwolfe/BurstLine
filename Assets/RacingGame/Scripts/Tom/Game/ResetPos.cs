@@ -12,7 +12,7 @@ public class ResetPos : MonoBehaviour {
 	void Update () {
 		if(Input.GetKeyDown(KeyCode.Escape)|| Input.GetKeyDown(KeyCode.Joystick1Button6))
 		{
-			RESETPOS(this.gameObject);
+			RESETPOS(GameObject.FindGameObjectWithTag("Player"));
 		}
 
 		if(Input.GetKeyDown(KeyCode.Backspace))
@@ -23,6 +23,7 @@ public class ResetPos : MonoBehaviour {
 	}
 
 	public void RESETPOS(GameObject g){
+		GameSoundCommands.instance.PlayStartSound();
 		g.transform.position = startPos.transform.position;;
 		g.transform.rotation = startPos.transform.rotation;
 		g.rigidbody.velocity = Vector3.zero;
