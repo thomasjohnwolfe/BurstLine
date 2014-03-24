@@ -12,9 +12,9 @@ public class Anarchy: CarRally {
 	List<Color> colorset = new List<Color> ();
 	int index = 0;
 	bool assigncolor = false;
-
+	bool dead = false;
 	public Color color;
-
+	GameObject explodeParticleInstance;
 	// Use this for initialization
 	void Start () {
 		colorset.Add (Color.magenta);
@@ -68,13 +68,16 @@ public class Anarchy: CarRally {
 			this.GetComponent<DisableAll>().Disable();
 		}
 
-		if(this.getHealth()==0){
-			GameObject temp = (GameObject) Network.Instantiate(exploparticle,this.transform.position,Quaternion.identity,0);
-			temp.transform.parent = this.transform;
-			this.rigidbody.AddExplosionForce(exploForce,this.transform.position,exploRadius,exploUpDirection);
-			StartCoroutine(disableParticle(temp));
-			this.GetComponent<DisableAll>().Disable();
+		if(this.getHealth()==0 && !dead){
+			Die();
 		}
+	}
+
+	public void Die(){
+
+		explodeParticleInstance = (GameObject) Network.Instantiate(exploparticle,this.transform.position,Quaternion.identity,0);
+		StartCoroutine(CoDie(explodeParticleInstance));
+
 	}
 
 	IEnumerator GenerateFinishParticle(){
@@ -96,12 +99,26 @@ public class Anarchy: CarRally {
 
 	}
 
-	IEnumerator disableParticle(GameObject g){
-		yield return new WaitForSeconds(6);
+	IEnumerator CoDie(GameObject g){
+		dead = true;
+
+
+		explodeParticleInstance.transform.parent = this.transform;
+		this.rigidbody.AddExplosionForce(exploForce,this.transform.position,exploRadius,exploUpDirection);
+		this.GetComponent<DisableAll>().Disable();
+		yield return new WaitForSeconds(3);
 		this.rigidbody.isKinematic = true;
 		g.particleEmitter.maxEnergy = 1.2f;
 		g.particleEmitter.minEmission = 50;
 		g.particleEmitter.maxEmission = 150;
+		yield return new WaitForSeconds(2);
+		GameObject.Destroy(g);
+		this.GetComponent<DisableAll>().Enable();
+		this.rigidbody.isKinematic = false;
+		GameObject.Find("ResetPosScript").GetComponent<ResetPos>().RESETPOS(this.gameObject);
+		currentHealth = 100f;
+
+		dead = false;
 		/*
 		foreach(GameObject m in model){
 			m.renderer.material.SetColor("_PaintColor",Color.black);
