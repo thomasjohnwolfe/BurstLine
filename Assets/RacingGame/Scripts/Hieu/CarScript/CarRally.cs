@@ -57,7 +57,9 @@ public class CarRally : MonoBehaviour {
 			Network.Destroy(c.gameObject.networkView.viewID);
 			Debug.Log ("pick up item");
 			if(this.gameObject.tag!="OtherPlayer")
+			{
 				assignedWeapon();
+			}
 		}
 	}
 
