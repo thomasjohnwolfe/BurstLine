@@ -10,6 +10,7 @@ public class UV_Randomizer : MonoBehaviour
 
 	void Start (){
 		InvokeRepeating("Animate",0,repeatRate);
+		m.color = this.gameObject.GetComponent<Anarchy>().color;
 	}
 
 	IEnumerator Animate (){

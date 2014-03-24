@@ -7,6 +7,7 @@ public class Anarchy: CarRally {
 	List<Color> colorset = new List<Color> ();
 	int index = 0;
 	bool assigncolor = false;
+	public Color color;
 	// Use this for initialization
 	void Start () {
 		colorset.Add (Color.magenta);
@@ -65,6 +66,7 @@ public class Anarchy: CarRally {
 		//Debug.Log (model[0].renderer.materials[0].name);
 		foreach (GameObject m in model) {
 			m.renderer.material	= mat[i-1];	
+			color = mat[i-1].color;
 		}
 		//model.renderer.material.SetColor ("_Color", colorset[i-1]);
 	}
