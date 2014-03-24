@@ -283,15 +283,16 @@ class UIManager_Game : MonoBehaviour
 		TrailRenderer t = carControl.gameObject.GetComponent<TrailRenderer>();
 		StartCoroutine(FadeTrailRenderer(t,time*0.2f));
 		yield return new WaitForSeconds(time*0.1f);
-		carControl.tomSpeedScript.Boosting = false;
+
 		//carControl.MaxSpeed /= 2f;
 
-		Debug.Log("boosting stop");
+
 
 	}
 
 	IEnumerator FadeTrailRenderer(TrailRenderer trail,float delay)
 	{
+		print ("fading trail renderer");
 		float trailInitTime = trail.time;
 		float time=0;
 		while(time < delay){
@@ -301,6 +302,9 @@ class UIManager_Game : MonoBehaviour
 		}
 		carControl.gameObject.GetComponent<TrailRenderer>().enabled=false;
 		trail.time = trailInitTime;
+		print ("faded");
+		carControl.tomSpeedScript.Boosting = false;
+		Debug.Log("boosting stop");
 		yield return null;
 	}
 
@@ -318,7 +322,7 @@ class UIManager_Game : MonoBehaviour
 		{
 			if(networkManager._instance.state == "started")
 			{
-				if(carControl.tomSpeedScript.Boosting==false)
+				if(carControl.tomSpeedScript.Boosting==false && boostMaxNum >-1)
 				{
 					GameSoundCommands.instance.PlayBoostEngine(carControl.boostTime);
 					GameSoundCommands.instance.PlayBoostStart();
