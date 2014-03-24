@@ -23,6 +23,7 @@ public class ResetPos : MonoBehaviour {
 	}
 
 	public void RESETPOS(GameObject g){
+		GameSoundCommands.instance.PlayStartSound();
 		g.transform.position = startPos.transform.position;;
 		g.transform.rotation = startPos.transform.rotation;
 		g.rigidbody.velocity = Vector3.zero;

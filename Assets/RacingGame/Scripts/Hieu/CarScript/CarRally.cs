@@ -63,12 +63,16 @@ public class CarRally : MonoBehaviour {
 				assignedWeapon();
 			}
 		}
-		if(c.gameObject.tag == "CheckLaps"){
+		else if(c.gameObject.tag == "CheckLaps"){
 			if(!this.route.Contains(c.gameObject)){
 				//print (this.route.Count);
 				//print ("Route add 1"+ c.gameObject);
 				this.route.Add (c.gameObject);
 			}
+		}
+		else if(c.tag == "KillBox"){
+			print ("hitting killbox");
+			currentHealth=0;
 		}
 	}
 
