@@ -53,6 +53,9 @@ public class CheckLap : MonoBehaviour {
 		if(c.GetComponent<CarRally>()){
 			Debug.Log("lap increase");
 			c.GetComponent<CarRally>().addLap();
+			if(c.GetComponent<CarRally>().boost<3){
+				UIManager_Game.instance.AddBoost();
+			}
 		}
 	}
 

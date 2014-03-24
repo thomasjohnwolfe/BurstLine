@@ -38,6 +38,7 @@ public class CarRally : MonoBehaviour {
 
 	public void addLap(){
 		lap++;
+		UIManager_Game.LAP_NUMBER = lap.ToString();
 		networkView.RPC("broadcastLap",RPCMode.All,networkView.viewID,lap);
 	}
 	[RPC]
@@ -71,7 +72,6 @@ public class CarRally : MonoBehaviour {
 			}
 			if(weaponFull()){
 				if(boost<3) {
-					Debug.Break(); 
 					boost++;
 					UIManager_Game.instance.AddBoost();
 				}

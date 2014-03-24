@@ -262,7 +262,7 @@ class UIManager_Game : MonoBehaviour
 			return false;
 		}
 		setBoostNumber(boostMaxNum);
-
+		carStats.boost--;
 		StartCoroutine(setBoostValueInSpeedScript(carControl.boostTime));
 		return true;
 

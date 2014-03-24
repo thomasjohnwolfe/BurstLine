@@ -15,7 +15,7 @@ public class Anarchy: CarRally {
 		colorset.Add (Color.black);
 		colorset.Add (Color.blue);
 		this.lap = 1;
-
+		UIManager_Game.LAP_NUMBER = lap.ToString();
 		weapon = new Weapon[MAXSLOT];
 		weaponslot = new int[MAXSLOT];
 		weapon = this.GetComponents<Weapon>();
