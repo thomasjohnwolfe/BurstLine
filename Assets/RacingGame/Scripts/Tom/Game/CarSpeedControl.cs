@@ -54,8 +54,8 @@ public class CarSpeedControl
 	{
 		if(speed > carCtlScript.MaxSpeed*0.1f)
 		{
-			car.AddForce(-velNorm * speed* carCtlScript.dragCoef,ForceMode.Force);
-			carCtlScript.MaxTorque = speedRatio * -maxTorque  + maxTorque +1f ;
+			car.AddForce(-velNorm * speed* carCtlScript.dragCoef*Time.deltaTime,ForceMode.VelocityChange);
+			//carCtlScript.MaxTorque = speedRatio * -maxTorque  + maxTorque +1f ;
 		}
 	}
 
