@@ -24,20 +24,29 @@ public class CheckLap : MonoBehaviour {
 	}
 
 	void CheckFinishLap(){
-		foreach(CarRally c in Players){
-			if(c.lap == endLap){
-				c.finishLap = true;
+		if(Players!=null)
+		{
+			foreach(CarRally c in Players){
+				if(c.lap == endLap){
+					c.finishLap = true;
+				}
 			}
 		}
 	}
 
 	bool isFirstCarPass(){
-		foreach(CarRally c in Players){
-			if(c.lap > Lap && c.lap <=endLap){
-				Lap++;
-				UIManager_Game.instance.ResetLapTime();
-				networkView.RPC ("broadcastCheckLap",RPCMode.All,this.networkView.viewID,Lap);
-				return true;
+		if(Players!=null)
+		{
+			foreach(CarRally c in Players){
+				if(c.lap > Lap && c.lap <=endLap){
+
+					UIManager_Game.instance.DisplayLapMsg(5f,Lap);
+					GameSoundCommands.instance.PlayStartSound();
+					Lap++;
+					UIManager_Game.instance.ResetLapTime();
+					networkView.RPC ("broadcastCheckLap",RPCMode.All,this.networkView.viewID,Lap);
+					return true;
+				}
 			}
 		}
 		return false;
