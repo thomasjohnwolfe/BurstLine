@@ -15,7 +15,7 @@ GameObject:
   - 148: {fileID: 14800000}
   m_Layer: 0
   m_Name: FinishLine
-  m_TagString: Untagged
+  m_TagString: CheckLaps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.8114815, y: 76.5001526, z: -295.328369}
-  m_LocalScale: {x: 5.22119856, y: 11.797678, z: 28.9526463}
+  m_LocalPosition: {x: -84.9149017, y: 64.6031265, z: -425.953278}
+  m_LocalScale: {x: 5.22119856, y: 14.4907179, z: 43.4090424}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -82,6 +82,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3db03b96d62f54e97a2ffef7be2599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lap: 1
+  route:
+  - {fileID: 100000}
 --- !u!148 &14800000
 NetworkView:
   m_ObjectHideFlags: 1
