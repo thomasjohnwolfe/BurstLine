@@ -5,7 +5,7 @@ public class Blades : Weapon {
 	public GameObject[] particle;
 	float time;
 	BladeProjectile[] script;
-	bool blade = false;
+	public bool blade = false;
 	public override void execute(){
 		isUpdate = true;
 		this.networkView.RPC ("EmitBladeParticle",RPCMode.All,this.networkView.viewID,"BladeOpen",1);
@@ -25,6 +25,7 @@ public class Blades : Weapon {
 		if(i==1){
 			time= Time.time;
 			NetworkView.Find(id).animation.CrossFade(name);
+			GameSoundCommands.instance.PlayBladeSheathe();
 			blade = true;
 			foreach(BladeProjectile e in script){
 				e.enabled = true;
@@ -36,6 +37,7 @@ public class Blades : Weapon {
 		}
 		else{
 			NetworkView.Find(id).animation.CrossFade(name);
+			GameSoundCommands.instance.PlayBladeUnSheathe();
 			blade= false;
 			foreach(BladeProjectile e in script){
 				e.enabled = false;

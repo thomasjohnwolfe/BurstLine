@@ -6,7 +6,9 @@ public class Rush : Weapon {
 	float time;
 	RushProjectile scriptProjectile;
 	RushParticle scriptParticle;
-	bool rush = false;
+	public bool rush = false;
+	bool initialized;
+
 	public override void execute(){
 		isUpdate = true;
 		this.rigidbody.AddForce(this.rigidbody.velocity.normalized*speed,ForceMode.VelocityChange);

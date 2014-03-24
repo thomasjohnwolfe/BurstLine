@@ -5,7 +5,7 @@ public class GameSoundCommands : MonoBehaviour {
 
 	public static 	GameSoundCommands 	instance;
 	public 			AudioClip 			StartMusic,StartSound,BoostStart,BoostStop,BoostRun,
-										Shoot,bulletHit;
+										Shoot,bulletHit, bladeHit,bladeSheathe,bladeUnsheathe;
 					AudioSource			BoostEngine;
 
 					string				lastServerState;
@@ -26,6 +26,9 @@ public class GameSoundCommands : MonoBehaviour {
 	public void PlayBoostEngine(float time){BoostEngine = SoundManager.instance.AddAudioLoopingSource(BoostRun,time);print ("adding EngineLoop");}
 	public void StopBoostEngine(){SoundManager.instance.PlaySFX(StartSound);print ("playing boostStop sound");}
 	public void PlayShoot(){SoundManager.instance.PlaySFX(Shoot);print("playing SHOOT sound");}
+	public void PlayBladeHit(){SoundManager.instance.PlaySFX(bladeHit);print("playing blade hit sound");}
+	public void PlayBladeUnSheathe(){SoundManager.instance.PlaySFX(bladeUnsheathe);print("playing blade sheath sound");}
+	public void PlayBladeSheathe(){SoundManager.instance.PlaySFX(bladeSheathe);print("playing blade unsheate sound");}
 	public void PlayShootHit(float volume){SoundManager.instance.PlaySFX(bulletHit,volume);print("playing bulletHit");}
 
 	void ListenToNetWorkManager(){
