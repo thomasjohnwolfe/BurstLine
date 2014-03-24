@@ -379,7 +379,7 @@ class UIManager_Game : MonoBehaviour
 
 	void Update()
 	{
-		if(carUsercontrol.enabled)
+		if(carUsercontrol!=null && carUsercontrol.enabled)
 		{
 			gameTime+=Time.deltaTime;
 			lapTime+=Time.deltaTime;

@@ -5,12 +5,13 @@ public class TitleSoundCommands : MonoBehaviour
 {
 	public AudioClip StartMusic;
 	void Start(){
-		StartCoroutine(PlayTitleMusic());
+		//StartCoroutine(PlayTitleMusic());
 	}
 
 	IEnumerator PlayTitleMusic(){
-		yield return new WaitForSeconds(2f);
-		SoundManager.instance.PlayMusic(StartMusic);
+		//yield return new WaitForSeconds(.25f);
+		//SoundManager.instance.PlayMusic(StartMusic);
+		yield return null;
 	}
 }
 
