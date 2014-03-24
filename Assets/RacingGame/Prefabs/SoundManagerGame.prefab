@@ -8,8 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 14
   m_Name: SoundManagerGame
   m_TagString: Untagged
@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e14d54c084702849ab228024fe787ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolume: 1
+  musicVolume: .100000001
   StartMusic: {fileID: 8300000, guid: 688d41a710ba81b48815c50c5a8ff203, type: 3}
   StartSound: {fileID: 8300000, guid: 73f3490b454a84223af94cbae6c8825d, type: 3}
   BoostStart: {fileID: 8300000, guid: a64c8e1a777025f4dabe786ae6075eb6, type: 3}
