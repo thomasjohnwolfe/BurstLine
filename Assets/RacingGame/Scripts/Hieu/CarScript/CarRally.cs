@@ -74,6 +74,7 @@ public class CarRally : MonoBehaviour {
 				if(boost<3) {
 					boost++;
 					UIManager_Game.instance.AddBoost();
+					break;
 				}
 				else {
 					break;
