@@ -18,7 +18,7 @@ public class BladeProjectile : ProjectileScript {
 		{
 			if(c.gameObject.tag == "OtherPlayer" && playerBladeScript.blade){
 				base.ActivateParticle();
-				GameSoundCommands.instance.PlayBladeHit();
+				//GameSoundCommands.instance.PlayBladeHit();
 				c.gameObject.GetComponent<CarRally>().dealDamage(damage);
 				//Debug.Log(this.owner+" deal "+damage+" to "+c.gameObject.name);
 			}

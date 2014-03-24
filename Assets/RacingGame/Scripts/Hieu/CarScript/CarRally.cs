@@ -53,9 +53,11 @@ public class CarRally : MonoBehaviour {
 
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Weapon"){
+			print (this.gameObject.tag);
 			Network.Destroy(c.gameObject.networkView.viewID);
 			Debug.Log ("pick up item");
-			assignedWeapon();
+			if(this.gameObject.tag!="OtherPlayer")
+				assignedWeapon();
 		}
 	}
 

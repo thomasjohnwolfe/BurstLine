@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour{
 	}
 	[RPC]
 	public void disableWeapon(NetworkViewID id,int i){
+		if(tag=="Player")
 		NetworkView.Find(id).GetComponent<CarRally>().removeWeapon(i);
 	}
 }

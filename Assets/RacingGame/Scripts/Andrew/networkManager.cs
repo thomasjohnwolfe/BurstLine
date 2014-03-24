@@ -157,6 +157,19 @@ public class networkManager : MonoBehaviour {
 	void startGame(){
 		GameSoundCommands.instance.PlayStartSound ();
 		state = "countDown";
+
+		GameObject[] cars = GameObject.FindGameObjectsWithTag("OtherPlayer");
+		foreach (GameObject car in cars){
+			//GameObject.Destroy(car.GetComponent<CarController>());
+			//GameObject.Destroy(car.GetComponent<CarSelfRighting>());
+			//GameObject.Destroy(car.GetComponent<ObjectResetter>());
+			//GameObject.Destroy(car.GetComponent<Anarchy>());
+			//GameObject.Destroy(car.GetComponent<MachineGun>());
+			//GameObject.Destroy(car.GetComponent<Rush>());
+			//GameObject.Destroy(car.GetComponent<Blades>());
+			GameObject.Destroy(car.GetComponent<UV_Randomizer>());
+		}
+
 	}
 	
 	

@@ -40,6 +40,7 @@ public class ProjectileScript : MonoBehaviour {
 	
 	IEnumerator CoActivateParticle(GameObject particle){
 		particle.SetActive(true);
+		GameSoundCommands.instance.PlayBladeHit();
 		particle.transform.position = transform.position;
 		particle.transform.rotation = transform.rotation;
 		yield return new WaitForSeconds(2f);
