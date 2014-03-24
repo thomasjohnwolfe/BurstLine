@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ShaderForgeInternal
-  m_Shader: {fileID: 4800000, guid: b2ad59b33142dee43b218daaa48cac72, type: 3}
+  m_Shader: {fileID: 4800000, guid: 306e023c46b741a43be342f11d28a396, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -21,4 +21,12 @@ Material:
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
-    m_Colors: {}
+    m_Colors:
+      data:
+        first:
+          name: _node4
+        second: {r: 1, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _RailColor
+        second: {r: 1, g: 0, b: 0, a: 1}
