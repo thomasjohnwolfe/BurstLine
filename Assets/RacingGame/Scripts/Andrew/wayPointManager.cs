@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 public class wayPointManager : MonoBehaviour {
-
+	
 	private List<GameObject> points;
 	
 	public int winner = 0;
@@ -94,7 +94,6 @@ public class wayPointManager : MonoBehaviour {
 	}
 	
 	void addPlace(int _ID){
-	
 		foreach(KeyValuePair<int,float> i in cars){
 			if (i.Key == _ID){
 				cars[i.Key] += 1;
