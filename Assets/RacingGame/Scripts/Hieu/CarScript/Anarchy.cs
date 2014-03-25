@@ -63,7 +63,11 @@ public class Anarchy: CarRally {
 	}
 
 	void FixedUpdate(){
-		if (base.finishLap && !base.defeat) {
+		if (this.defeat) {
+			this.GetComponent<DisableAll> ().Disable ();
+		}
+		else if (this.finishLap && !this.defeat) {
+			Debug.Log("player "+this.GetComponent<playerID>().ID+" win ");
 			if(UIManager_Game.RANK=="1")
 				UIManager_Game.instance.DisplayVictory (8f);
 			StartCoroutine (GenerateFinishParticle ());

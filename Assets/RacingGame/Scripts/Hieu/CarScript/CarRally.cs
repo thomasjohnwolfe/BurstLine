@@ -89,15 +89,15 @@ public class CarRally : MonoBehaviour {
 				break;
 			}
 			if(weaponFull()){
-				if(boost<3) {
-					boost++;
-					if(UIManager_Game.RANK!="1")
-						UIManager_Game.instance.AddBoost();
+
+				//boost++;
+				//if(UIManager_Game.RANK!="1")
+				//{
+					UIManager_Game.instance.AddBoost();
 					break;
-				}
-				else {
-					break;
-				}
+				//}
+
+
 			}
 		}
 		//}while(weaponIsAlreadyPickUp(slot) && !add);

@@ -70,9 +70,9 @@ public class CheckLap : MonoBehaviour {
 	void OnTriggerEnter(Collider c){
 		if(c.GetComponent<CarRally>() && CheckFinishLap(c.GetComponent<CarRally>())){
 			c.GetComponent<CarRally>().addLap();
-			if(c.GetComponent<CarRally>().boost<3){
+
 				UIManager_Game.instance.AddBoost();
-			}
+
 		}
 	}
 

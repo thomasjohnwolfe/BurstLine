@@ -459,7 +459,7 @@ class UIManager_Game : MonoBehaviour
 
 	IEnumerator CoDisplayLapMsg(float time, int lapNumber){
 		lapTimeMsg.gameObject.SetActive(true);
-		lapTimeMsg.text = "Lap   " +lapNumber.ToString() +"/3 \n Laptime " + ((float)((int)(lapTime*100))/100f).ToString();
+		lapTimeMsg.text = "Lap   " +lapNumber.ToString() +"/2 \n Laptime " + ((float)((int)(lapTime*100))/100f).ToString();
 		yield return new WaitForSeconds(time);
 		lapTimeMsg.gameObject.SetActive(false);
 	}
