@@ -47,8 +47,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: d650d98b3c4028a4a8b7225c1a6482f8, type: 2}
   mSprites:
   - name: arrow
-    x: 1196
-    y: 1445
+    x: 827
+    y: 367
     width: 18
     height: 46
     borderLeft: 0
@@ -60,8 +60,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 0
   - name: arrowWhite
-    x: 1196
-    y: 1398
+    x: 846
+    y: 367
     width: 18
     height: 46
     borderLeft: 0
@@ -73,8 +73,8 @@ MonoBehaviour:
     paddingTop: 4
     paddingBottom: 0
   - name: bar
-    x: 0
-    y: 617
+    x: 2050
+    y: 1280
     width: 471
     height: 768
     borderLeft: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
     paddingBottom: 34
   - name: bg
     x: 0
-    y: 1386
+    y: 361
     width: 826
     height: 662
     borderLeft: 0
@@ -99,8 +99,8 @@ MonoBehaviour:
     paddingTop: 15
     paddingBottom: 169
   - name: Blades
-    x: 1389
-    y: 1215
+    x: 827
+    y: 503
     width: 179
     height: 170
     borderLeft: 0
@@ -112,8 +112,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: boostSprite
-    x: 472
-    y: 25
+    x: 547
+    y: 104
     width: 256
     height: 256
     borderLeft: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Button
-    x: 903
-    y: 1401
+    x: 1011
+    y: 1010
     width: 13
     height: 13
     borderLeft: 4
@@ -138,8 +138,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: critlight
-    x: 1886
-    y: 1429
+    x: 0
+    y: 27
     width: 151
     height: 150
     borderLeft: 0
@@ -151,8 +151,8 @@ MonoBehaviour:
     paddingTop: 348
     paddingBottom: 348
   - name: Dark
-    x: 887
-    y: 1399
+    x: 1007
+    y: 642
     width: 15
     height: 15
     borderLeft: 4
@@ -164,8 +164,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Font - Header
-    x: 472
-    y: 282
+    x: 1716
+    y: 1128
     width: 256
     height: 512
     borderLeft: 0
@@ -177,8 +177,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Font - Normal
-    x: 842
-    y: 946
+    x: 2050
+    y: 432
     width: 256
     height: 256
     borderLeft: 0
@@ -190,8 +190,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Highlight
-    x: 869
-    y: 1399
+    x: 1007
+    y: 658
     width: 17
     height: 15
     borderLeft: 3
@@ -203,8 +203,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Honeycomb
-    x: 1083
-    y: 1403
+    x: 827
+    y: 414
     width: 112
     height: 88
     borderLeft: 1
@@ -215,9 +215,22 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: Layout
+    x: 0
+    y: 1024
+    width: 1024
+    height: 1024
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: Light
-    x: 850
-    y: 1396
+    x: 865
+    y: 374
     width: 18
     height: 18
     borderLeft: 2
@@ -229,8 +242,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Machine Gun
-    x: 1518
-    y: 1404
+    x: 827
+    y: 848
     width: 183
     height: 175
     borderLeft: 0
@@ -242,8 +255,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: map
-    x: 827
-    y: 1492
+    x: 1025
+    y: 1084
     width: 690
     height: 556
     borderLeft: 0
@@ -254,9 +267,35 @@ MonoBehaviour:
     paddingRight: 3
     paddingTop: 54
     paddingBottom: 86
+  - name: Msg
+    x: 1025
+    y: 1641
+    width: 1024
+    height: 407
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 295
+    paddingBottom: 322
+  - name: Msg2
+    x: 1025
+    y: 693
+    width: 959
+    height: 390
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 21
+    paddingRight: 44
+    paddingTop: 299
+    paddingBottom: 335
   - name: NGUI
-    x: 827
-    y: 1415
+    x: 152
+    y: 101
     width: 255
     height: 76
     borderLeft: 0
@@ -268,8 +307,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Rush
-    x: 1702
-    y: 1406
+    x: 827
+    y: 674
     width: 183
     height: 173
     borderLeft: 0
@@ -281,8 +320,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: shieldmeter
-    x: 1518
-    y: 1580
+    x: 1025
+    y: 224
     width: 469
     height: 468
     borderLeft: 0
@@ -294,8 +333,8 @@ MonoBehaviour:
     paddingTop: 189
     paddingBottom: 189
   - name: speedNum
-    x: 842
-    y: 1203
+    x: 0
+    y: 178
     width: 546
     height: 182
     borderLeft: 0
@@ -307,8 +346,8 @@ MonoBehaviour:
     paddingTop: 503
     paddingBottom: 161
   - name: track1map
-    x: 0
-    y: 26
+    x: 1495
+    y: 102
     width: 369
     height: 590
     borderLeft: 0
@@ -320,8 +359,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: track2map
-    x: 472
-    y: 795
+    x: 2050
+    y: 689
     width: 369
     height: 590
     borderLeft: 0
@@ -333,8 +372,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: X
-    x: 827
-    y: 1394
+    x: 865
+    y: 393
     width: 22
     height: 20
     borderLeft: 0

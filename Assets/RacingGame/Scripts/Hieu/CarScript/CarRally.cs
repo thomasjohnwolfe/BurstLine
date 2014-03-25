@@ -90,7 +90,7 @@ public class CarRally : MonoBehaviour {
 			if(weaponFull()){
 				if(boost<3) {
 					boost++;
-					//if(UIManager_Game.RANK==LAST)
+					if(UIManager_Game.RANK!="1")
 						UIManager_Game.instance.AddBoost();
 					break;
 				}

@@ -43,12 +43,12 @@ public class networkManager : MonoBehaviour {
 	void OnGUI(){
 		Vector2 size = new Vector2(512/2,128/2);
 		if (state == "waiting"){
-			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/2)-(size.y/2),(size.x),(size.y)),"CONNECT")){
+			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/4)-(size.y/2),(size.x),(size.y)),"CONNECT")){
 				MasterServer.ClearHostList();
 				MasterServer.RequestHostList("Race");
 			}
 			
-			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/2)-(size.y/2)+100,(size.x),(size.y)),"START NEW SERVER")){
+			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/4)-(size.y/2)+100,(size.x),(size.y)),"START NEW SERVER")){
 				Network.InitializeServer(4, connectionPort, false);
 				MasterServer.RegisterHost("Race","Balls");
 				players = 1;
@@ -64,7 +64,11 @@ public class networkManager : MonoBehaviour {
 			if (MasterServer.PollHostList().Length != 0 && !Network.isServer) {
 				HostData[] hostData = MasterServer.PollHostList();
 				connectionIP = hostData[0].ip[0];
-				Network.Connect(connectionIP, connectionPort);
+
+				//Network.Connect(connectionIP, connectionPort);
+
+				Network.Connect("10.245.20.127", connectionPort);
+
 				MasterServer.ClearHostList();
 				state = "clientWait";
 				Debug.Log("Connected as Client");
