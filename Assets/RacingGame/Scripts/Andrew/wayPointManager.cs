@@ -94,26 +94,21 @@ public class wayPointManager : MonoBehaviour {
 	}
 	
 	void addPlace(int _ID){
-		//Dictionary<int,float> temp = new Dictionary<int, float>(cars);
+	
 		foreach(KeyValuePair<int,float> i in cars){
 			if (i.Key == _ID){
 				cars[i.Key] += 1;
-				//temp[i.Key] += 1;
 				Debug.Log("UPDATED");
 			}
 		}
-		//cars = temp;
 	}
 	void subPlace(int _ID){
-		//Dictionary<int,float> temp = new Dictionary<int, float>(cars);
 		foreach(KeyValuePair<int,float> i in cars){
 			if (i.Key == _ID){
 				cars[i.Key] += 1;
-				//temp[i.Key] += 1;
 				Debug.Log("UPDATED");
 			}
 		}
-		//cars = temp;
 	}
 	
 	

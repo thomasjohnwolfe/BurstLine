@@ -14,6 +14,7 @@ public class CarRally : MonoBehaviour {
 	public GameObject[] model;
 	public List<GameObject> route = new List<GameObject>();
 	public bool finishLap = false;
+	public bool defeat = false;
 	bool add = false;
 	public int lap = 1;
 

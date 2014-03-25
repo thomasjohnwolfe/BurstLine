@@ -45,6 +45,7 @@ class UIManager_Game : MonoBehaviour
 	public			Color			speedStartColor,speedEndColor;
 
 	private	static 	UILabel 		_LapTime,_TotalTime,_Rank,_LapNumber;
+	private static	UISprite		victoryMessage;
 	CarUserControl carUsercontrol;
 	float gameTime,lapTime =0;
 
@@ -65,9 +66,12 @@ class UIManager_Game : MonoBehaviour
 		_LapNumber 	= GameObject.Find("LapNumber").GetComponent<UILabel>();
 		lapTimeMsg = GameObject.Find("LapMessage").GetComponent<UILabel>();
 		lapTimeMsg.gameObject.SetActive(false);
+		victoryMessage = GameObject.Find("VictorySprite").GetComponent<UISprite>();
+		victoryMessage.gameObject.SetActive(false);
 
 	}
-	
+
+
 
 	public static string LAP_TIME{
 		get{return _LapTime.text;}
@@ -436,6 +440,18 @@ class UIManager_Game : MonoBehaviour
 		critLight.color = startC;
 
 	}
+
+	public void DisplayVictory(float time){
+		StartCoroutine(CoDisplayVictory(time));
+	}
+	
+	IEnumerator CoDisplayVictory(float time){
+		victoryMessage.gameObject.SetActive (true);
+		yield return new WaitForSeconds (time);
+		victoryMessage.gameObject.SetActive (false);
+	}
+
+
 
 	public void DisplayLapMsg(float time,int lapNumber){
 		StartCoroutine(CoDisplayLapMsg(time,lapNumber));

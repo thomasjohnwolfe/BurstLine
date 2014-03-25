@@ -63,14 +63,28 @@ public class Anarchy: CarRally {
 	}
 
 	void FixedUpdate(){
-		if(base.finishLap){
-			StartCoroutine(GenerateFinishParticle());
-			this.GetComponent<DisableAll>().Disable();
+		if (base.finishLap && !base.defeat) {
+			if(UIManager_Game.RANK=="1")
+				UIManager_Game.instance.DisplayVictory (8f);
+			StartCoroutine (GenerateFinishParticle ());
+			GameObject[] otherplayer = GameObject.FindGameObjectsWithTag ("OtherPlayer");
+			NetworkViewID ids;
+			foreach (GameObject g in otherplayer) {
+					ids = g.networkView.viewID;
+					networkView.RPC ("SendDefeat", RPCMode.All, ids);
+			}
+			//networkView.RPC ("SendDefeat",RPC
+			this.GetComponent<DisableAll> ().Disable ();
 		}
 
 		if(this.getHealth()==0 && !dead){
 			Die();
 		}
+	}
+
+	[RPC]
+	void SendDefeat(NetworkViewID id){
+		NetworkView.Find (id).GetComponent<CarRally> ().defeat = true;
 	}
 
 	public void Die(){

@@ -65,9 +65,9 @@ public class networkManager : MonoBehaviour {
 				HostData[] hostData = MasterServer.PollHostList();
 				connectionIP = hostData[0].ip[0];
 
-				//Network.Connect(connectionIP, connectionPort);
+				Network.Connect(connectionIP, connectionPort);
 
-				Network.Connect("10.245.20.127", connectionPort);
+				//Network.Connect("10.245.20.127", connectionPort);
 
 				MasterServer.ClearHostList();
 				state = "clientWait";
