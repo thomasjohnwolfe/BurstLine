@@ -13,11 +13,12 @@ public class CarRally : MonoBehaviour {
 	public GameObject target;
 	public GameObject[] model;
 	public List<GameObject> route = new List<GameObject>();
+	public List<GameObject> listPoint = new List<GameObject>();
 	public bool finishLap = false;
 	public bool defeat = false;
 	bool add = false;
 	public int lap = 1;
-
+	public int rank = 0;
 	// Use this for initialization
 	void Start () {
 		weaponslot = new int[MAXSLOT];
