@@ -19,6 +19,7 @@ public class CarRally : MonoBehaviour {
 	bool add = false;
 	public int lap = 1;
 	public int rank = 0;
+	public int rankNode = 0;
 	// Use this for initialization
 	void Start () {
 		weaponslot = new int[MAXSLOT];
@@ -56,6 +57,11 @@ public class CarRally : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider c){
+		if(c.gameObject.tag == "CheckRank"){
+			rankNode++;
+			networkView.RPC ("broadcastRankNode",RPCMode.All,networkView.viewID,this.rankNode);
+		}
+
 		if(c.gameObject.tag == "Weapon"){
 			//print (this.gameObject.tag);
 			//Network.Destroy(c.gameObject.networkView.viewID);
@@ -78,6 +84,10 @@ public class CarRally : MonoBehaviour {
 		}
 	}
 
+	[RPC]
+	void broadcastRankNode(NetworkViewID id,int node){
+		NetworkView.Find(id).GetComponent<CarRally>().rankNode = node;
+	}
 
 	public void assignedWeapon(){
 		int slot = -1;
