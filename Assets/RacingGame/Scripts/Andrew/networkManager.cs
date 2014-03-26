@@ -6,6 +6,7 @@ public class networkManager : MonoBehaviour {
 	
 	private string connectionIP = "127.0.0.1";
 	public int connectionPort = 25001;
+	private string myIP = "127.0.0.1";
 	
 	public GameObject car_prefab;
 	public GameObject camera;
@@ -36,6 +37,8 @@ public class networkManager : MonoBehaviour {
 		foreach(Transform i in this.transform){
 			spawns.Add(i.gameObject);	
 		}
+		myIP = Network.player.ipAddress;
+		
 		//Hieu's add
 		spawnItemLocation= GameObject.FindGameObjectsWithTag ("SpawnItem");
 	}
@@ -44,23 +47,29 @@ public class networkManager : MonoBehaviour {
 		Vector2 size = new Vector2(512/2,128/2);
 		if (state == "waiting"){
 			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/4)-(size.y/2),(size.x),(size.y)),"CONNECT")){
-				MasterServer.ClearHostList();
-				MasterServer.RequestHostList("Race");
+				Network.Connect(connectionIP, connectionPort);
+				state = "clientWait";
+				Debug.Log("Connected as Client");
+				
+				//MasterServer.ClearHostList();
+				//MasterServer.RequestHostList("Race");
 			}
+			connectionIP = GUI.TextField(new Rect((Screen.width/2)+(size.x/2)+20,(Screen.height/4)-(size.y/4),(size.x/2),(size.y/2)),connectionIP);
 			
 			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/4)-(size.y/2)+100,(size.x),(size.y)),"START NEW SERVER")){
 				Network.InitializeServer(4, connectionPort, false);
-				MasterServer.RegisterHost("Race","Balls");
+				//MasterServer.RegisterHost("Race","Balls");
 				players = 1;
 				player = 1;
 				myCar = newPlayer();
 				myCar.GetComponent<playerID>().ID = player;
-				//CreateItem();
 				state = "serverWait";
 				Debug.Log("Started Server");
 				
 			}
+			GUI.Label(new Rect((Screen.width/2)+(size.x/2)+20,(Screen.height/4)-(size.y/4)+100,(size.x/2),(size.y/2)),"On "+myIP);
 			
+			/*
 			if (MasterServer.PollHostList().Length != 0 && !Network.isServer) {
 				HostData[] hostData = MasterServer.PollHostList();
 				connectionIP = hostData[0].ip[0];
@@ -72,14 +81,14 @@ public class networkManager : MonoBehaviour {
 				MasterServer.ClearHostList();
 				state = "clientWait";
 				Debug.Log("Connected as Client");
-			}	
+			}	*/
 		}
 		
 		if (state == "serverWait"){
 			if (GUI.Button(new Rect((Screen.width/2)-(size.x/2),(Screen.height/2)-(size.y/2)+100,(size.x),(size.y)),"START GAME WITH "+players.ToString()+" PLAYERS") || players == 4){
 				networkView.RPC("startGame",RPCMode.All);
 			}
-			
+			GUI.Label(new Rect((Screen.width/2)+(size.x/2)+20,(Screen.height/4)-(size.y/4)+100,(size.x/2),(size.y/2)),"On "+myIP);
 		}
 		
 		if (state == "countDown"){
