@@ -49,7 +49,7 @@ public class wayPointManager : MonoBehaviour {
 	
 	void Update(){
 		if (ID > 0){
-			updateRanks();
+			//updateRanks();
 		}
 		
 	}
@@ -87,7 +87,7 @@ public class wayPointManager : MonoBehaviour {
 		foreach(int i in ranks){
 			place++;
 			if (i == ID){
-				UIManager_Game.RANK = place.ToString();
+				//UIManager_Game.RANK = place.ToString();
 			}
 		}
 		

@@ -20,6 +20,7 @@ public class CarRally : MonoBehaviour {
 	public int lap = 1;
 	public int rank = 0;
 	public int rankNode = 0;
+	public Transform checkpoint;
 	// Use this for initialization
 	void Start () {
 		weaponslot = new int[MAXSLOT];
@@ -43,8 +44,23 @@ public class CarRally : MonoBehaviour {
 
 	public void addLap(){
 		lap++;
-		UIManager_Game.LAP_NUMBER = lap.ToString();
+		if(this.gameObject.tag == "Player"){
+			UIManager_Game.LAP_NUMBER = lap.ToString();
+		}
 		networkView.RPC("broadcastLap",RPCMode.All,networkView.viewID,lap);
+	}
+
+	public void setRank(int _rank){
+		this.rank = _rank;
+		networkView.RPC ("broadcastRank",RPCMode.All,networkView.viewID,rank);
+		if(this.gameObject.tag == "Player"){
+			UIManager_Game.RANK = rank.ToString();
+		}
+	}
+
+	[RPC] 
+	void broadcastRank(NetworkViewID id,int _rank){
+		NetworkView.Find (id).GetComponent<CarRally>().rank = _rank;
 	}
 	[RPC]
 	void broadcastLap(NetworkViewID id,int _lap){
@@ -55,30 +71,34 @@ public class CarRally : MonoBehaviour {
 		NetworkView.Find (_ID).GetComponent<CarRally> ().currentHealth = _currentHealth;
 	}
 
-
 	void OnTriggerEnter(Collider c){
-		if(c.gameObject.tag == "CheckRank"){
+		if(c.gameObject.tag == "CheckPoint" && this.gameObject.tag == "Player"){
+			checkpoint = c.transform;
+		}
+
+		if(c.gameObject.tag == "CheckRank" && this.gameObject.tag == "Player"){
 			rankNode++;
+			Debug.Log (this.gameObject.tag+" has "+rankNode+" node");
 			networkView.RPC ("broadcastRankNode",RPCMode.All,networkView.viewID,this.rankNode);
 		}
 
-		if(c.gameObject.tag == "Weapon"){
+		if(c.gameObject.tag == "Weapon" && this.gameObject.tag == "Player"){
 			//print (this.gameObject.tag);
 			//Network.Destroy(c.gameObject.networkView.viewID);
 			//Debug.Log ("pick up item");
-			if(this.gameObject.tag!="OtherPlayer")
-			{
+			//if(this.gameObject.tag!="OtherPlayer")
+			//{
 				assignedWeapon();
-			}
+			//}
 		}
-		else if(c.gameObject.tag == "CheckLaps"){
+		if(c.gameObject.tag == "CheckLaps"){
 			if(!this.route.Contains(c.gameObject)){
 				//print (this.route.Count);
 				//print ("Route add 1"+ c.gameObject);
 				this.route.Add (c.gameObject);
 			}
 		}
-		else if(c.tag == "KillBox"){
+		if(c.tag == "KillBox"){
 			print ("hitting killbox");
 			currentHealth=0;
 		}
@@ -100,15 +120,13 @@ public class CarRally : MonoBehaviour {
 				break;
 			}
 			if(weaponFull()){
-
 				//boost++;
-				//if(UIManager_Game.RANK!="1")
-				//{
+				if(UIManager_Game.RANK!="1")
+				{
 					UIManager_Game.instance.AddBoost();
 					break;
-				//}
-
-
+				}
+				break;
 			}
 		}
 		//}while(weaponIsAlreadyPickUp(slot) && !add);

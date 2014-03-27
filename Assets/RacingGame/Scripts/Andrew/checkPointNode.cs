@@ -10,7 +10,7 @@ public class checkPointNode : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		this.gameObject.renderer.enabled = false;
-		WPM = GameObject.FindGameObjectWithTag("CheckPointManager");
+		//WPM = GameObject.FindGameObjectWithTag("CheckPointManager");
 	}
 	
 	// Update is called once per frame
@@ -26,7 +26,7 @@ public class checkPointNode : MonoBehaviour {
 			Gizmos.DrawSphere(Vector3.Lerp(this.transform.position,next.transform.position,(Time.time/2)%1),5f);
 		}
 	}
-	
+	/*
 	void OnTriggerEnter(Collider collider){
 		if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "OtherPlayer"){
 			Debug.Log("hit");
@@ -34,6 +34,6 @@ public class checkPointNode : MonoBehaviour {
 			WPM.SendMessage("addPlace",collider.gameObject.GetComponent<playerID>().ID);
 		}
 	}
-	
+	*/
 	
 }

@@ -9,6 +9,7 @@ public class RushProjectile : ProjectileScript {
 	void Start () {
 		playerRushScript = GameObject.FindGameObjectWithTag("Player").GetComponent<Rush>();
 		time = Time.time;
+
 	}
 	
 	// Update is called once per frame

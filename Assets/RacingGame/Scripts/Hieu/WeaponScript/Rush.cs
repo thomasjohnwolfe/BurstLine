@@ -17,6 +17,7 @@ public class Rush : Weapon {
 		//scriptParticle = this.GetComponentInChildren<RushParticle>();
 		this.networkView.RPC("EmitRushParticle",RPCMode.All,this.networkView.viewID,1);
 		time = Time.time;
+		this.owner.collider.enabled = false;
 		assignToPrefab(this,scriptProjectile);
 	}
 	void Update(){
@@ -24,6 +25,7 @@ public class Rush : Weapon {
 			if(rush && (Time.time-time)> lifetime){
 				Debug.Log("stop emiting");
 				this.networkView.RPC("EmitRushParticle",RPCMode.All,this.networkView.viewID,0);
+				this.owner.collider.enabled = true;
 				isUpdate = false;
 				this.networkView.RPC ("disableWeapon",RPCMode.All,this.networkView.viewID,index);
 			}
