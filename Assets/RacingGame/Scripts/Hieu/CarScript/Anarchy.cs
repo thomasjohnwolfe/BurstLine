@@ -43,6 +43,11 @@ public class Anarchy: CarRally {
 	
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.Escape)|| Input.GetKeyDown(KeyCode.Joystick1Button6))
+		{
+			RESETPOS(this.gameObject);
+		}
+
 		if (!assigncolor) {
 			index = this.GetComponentInChildren<playerID> ().ID;
 		}
@@ -60,6 +65,15 @@ public class Anarchy: CarRally {
 				}
 			}
 		}
+	}
+
+	public void RESETPOS(GameObject g){
+		//GameObject.FindGameObjectWithTag("CheckPointManager").SendMessage("subPlace",GameObject.FindGameObjectWithTag("Player").GetComponent<playerID>().ID);
+		GameSoundCommands.instance.PlayStartSound();
+		g.transform.position = checkpoint.transform.position;;
+		g.transform.rotation = checkpoint.transform.rotation;
+		g.rigidbody.velocity = Vector3.zero;
+		g.rigidbody.angularVelocity = Vector3.zero;
 	}
 
 	void FixedUpdate(){

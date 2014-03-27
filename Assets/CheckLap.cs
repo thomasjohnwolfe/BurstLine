@@ -39,11 +39,10 @@ public class CheckLap : MonoBehaviour {
 		{
 			foreach(CarRally c in Players){
 				if(c.lap > Lap && c.lap <=endLap){
-
-					UIManager_Game.instance.DisplayLapMsg(5f,Lap);
-					GameSoundCommands.instance.PlayStartSound();
+					//UIManager_Game.instance.DisplayLapMsg(5f,Lap);
+					//GameSoundCommands.instance.PlayStartSound();
 					Lap++;
-					UIManager_Game.instance.ResetLapTime();
+					//UIManager_Game.instance.ResetLapTime();
 					networkView.RPC ("broadcastCheckLap",RPCMode.All,this.networkView.viewID,Lap);
 					return true;
 				}
@@ -70,10 +69,14 @@ public class CheckLap : MonoBehaviour {
 	void OnTriggerEnter(Collider c){
 		if(c.GetComponent<CarRally>() && CheckFinishLap(c.GetComponent<CarRally>())){
 			c.GetComponent<CarRally>().addLap();
-
-				UIManager_Game.instance.AddBoost();
-
+			UIManager_Game.instance.AddBoost();
+			if(c.gameObject.tag == "Player"){
+				UIManager_Game.instance.DisplayLapMsg(5f,Lap);
+				GameSoundCommands.instance.PlayStartSound();
+				UIManager_Game.instance.ResetLapTime();
+			}
 		}
+
 	}
 
 	bool CheckFinishLap(CarRally carScript){

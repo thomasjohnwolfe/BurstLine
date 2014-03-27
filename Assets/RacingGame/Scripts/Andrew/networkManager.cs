@@ -217,6 +217,7 @@ public class networkManager : MonoBehaviour {
 
 	void GetAllPlayers(){
 		CheckLap.Players = GameObject.FindObjectsOfType(typeof(CarRally)) as CarRally[];
+		RankManager.players = GameObject.FindObjectsOfType(typeof(CarRally)) as CarRally[];
 		foreach(CarRally c in CheckLap.Players){
 			Debug.Log("Car's name: "+c.gameObject.name);
 			Debug.Log("Car's tag: "+c.gameObject.tag);
