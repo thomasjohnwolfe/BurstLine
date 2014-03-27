@@ -23,6 +23,10 @@ public class CheckLap : MonoBehaviour {
 		}
 	}
 
+	void OnDestroy(){
+		Players = null;
+	}
+
 	void CheckFinishLap(){
 		if(Players!=null)
 		{

@@ -147,7 +147,8 @@ public class Anarchy: CarRally {
 		GameObject.Destroy(g);
 		this.GetComponent<DisableAll>().Enable();
 		this.rigidbody.isKinematic = false;
-		GameObject.Find("ResetPosScript").GetComponent<ResetPos>().RESETPOS(this.gameObject);
+		//GameObject.Find("ResetPosScript").GetComponent<ResetPos>().RESETPOS(this.gameObject);
+		RESETPOS(this.gameObject);
 		currentHealth = 100f;
 
 		dead = false;

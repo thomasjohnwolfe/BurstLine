@@ -4,32 +4,55 @@ using System.Collections.Generic;
 
 
 public class RankManager : MonoBehaviour {
-	public static CarRally[] players = new CarRally[0];
+	public static CarRally[] players ;
 	public static int POINTLENGTH = 11;
 	public Transform[] points = new Transform[POINTLENGTH];
-	List<CarRally> temp = new List<CarRally>();
-	List<float> distanceList = new List<float>();
+	List<CarRally> temp;
+	List<float> distanceList;
 	public static int index = 0;
 	int PLAYERSIZE = 0;
 	bool loadAllPlayer = false;
 	// Use this for initialization
 	void Start () {
+
+		temp = new List<CarRally>();
+		distanceList = new List<float>();
+		//StartCoroutine("getPlayerSize");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if(players.Length != 0 && !loadAllPlayer){
-			PLAYERSIZE = players.Length;
-			loadAllPlayer = true;
+		if(PLAYERSIZE == 0 && !loadAllPlayer){
+			if(players !=null){
+				PLAYERSIZE = players.Length;
+				loadAllPlayer = true;
+			}
 		}
+
 		CopyToTemp();
-		if(PLAYERSIZE !=0){
+		if(players != null){
 			setRank();
 			CheckRankBaseOnDistanceOnly();
 		}
 	}
-
+	//this is super important when dealing with static variable.
+	//When the level is loaded again, the static variable still reference to the old address
+	//need to reset them and set to null,or subtract in case of delagate.
+	void OnDestroy(){
+		players = null;
+	}
+	/*
+	IEnumerator getPlayerSize(){
+		if(players !=null){
+			PLAYERSIZE = players.Length;
+		}
+		yield return new WaitForEndOfFrame();
+		if(PLAYERSIZE !=0){
+			StopCoroutine("getPlayerSize");
+		}
+	}
+	*/
 	void CopyToTemp(){
 		if(temp.Count == 0 && players!=null){
 			foreach(CarRally c in players){
@@ -103,6 +126,16 @@ public class RankManager : MonoBehaviour {
 
 	void setRank(){
 		//Debug.Log ("running : "+ PLAYERSIZE);
+		//Debug.Log(temp.Count);
+		/*
+		if( ((GameObject)temp[0].gameObject) == null){
+			Debug.Log("reset");
+			temp.Clear();
+			RankManager.players = GameObject.FindObjectsOfType(typeof(CarRally)) as CarRally[];
+			CopyToTemp();
+		}
+		*/
+		//Debug.Log(players[0].gameObject.name);
 		for(int i=0; i<PLAYERSIZE; i++){
 			distanceList.Add(Vector3.Distance(temp[i].gameObject.transform.position,points[index].position));
 		}

@@ -78,7 +78,7 @@ public class CarRally : MonoBehaviour {
 
 		if(c.gameObject.tag == "CheckRank" && this.gameObject.tag == "Player"){
 			rankNode++;
-			Debug.Log (this.gameObject.tag+" has "+rankNode+" node");
+			//Debug.Log (this.gameObject.tag+" has "+rankNode+" node");
 			networkView.RPC ("broadcastRankNode",RPCMode.All,networkView.viewID,this.rankNode);
 		}
 
@@ -91,14 +91,14 @@ public class CarRally : MonoBehaviour {
 				assignedWeapon();
 			//}
 		}
-		if(c.gameObject.tag == "CheckLaps"){
+		if(c.gameObject.tag == "CheckLaps"&& this.gameObject.tag == "Player"){
 			if(!this.route.Contains(c.gameObject)){
 				//print (this.route.Count);
 				//print ("Route add 1"+ c.gameObject);
 				this.route.Add (c.gameObject);
 			}
 		}
-		if(c.tag == "KillBox"){
+		if(c.tag == "KillBox"&& this.gameObject.tag == "Player"){
 			print ("hitting killbox");
 			currentHealth=0;
 		}
